@@ -5,6 +5,10 @@ The reproducible checks are in [e2e/acceptance.mjs](../e2e/acceptance.mjs).
 The same 15 acceptance checks passed on both Obsidian **1.13.7**
 ([minimum-version report](verification-min.json)) and **1.15.1**
 ([current-version report](verification.json)).
+The public [1.0.0 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.0.0)
+and all three downloaded assets are checked in
+[release-verification.json](release-verification.json). The release's source
+commit passed the [three-OS CI run](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/actions/runs/43368257543).
 
 ## Scope
 

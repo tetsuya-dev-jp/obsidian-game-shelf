@@ -1,5 +1,15 @@
 # Decision-trail review
 
+**Delivery update by the implementation owner:** The source, screenshots, demo
+and [1.0.0 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.0.0)
+are now public. All three downloaded release assets match the tested files;
+the release source passed three-OS CI. See
+[release-verification.json](release-verification.json) and the published
+[decision trail](decisions.tsv). This closes the publication and media flags
+from the earlier review below. The mobile, development-tooling and personal
+directory-submission limits remain. This update is factual delivery evidence,
+not an additional independent review.
+
 **Requested review route:** `gpt-6-luna` (medium reasoning, forked context). Runtime model identity was not independently observable in this session.
 **Scope:** `.audit/decisions.tsv`, `docs/verification*.json` and `.md`, `docs/submission.md`, `docs/review-security.md`, and the available task transcript. No code or implementation was reviewed or changed.
 

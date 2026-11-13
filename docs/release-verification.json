@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-13T04:55:45.928Z",
+  "release": "https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.0.0",
+  "sourceCommit": "355ea078df42d676e4be74cf7a1247d0ae033a21",
+  "sourceCI": "https://github.com/tetsuya-dev-jp/obsidian-game-shelf/actions/runs/43368257543",
+  "sourceCIConclusion": "success",
+  "files": [
+    {
+      "name": "main.js",
+      "bytes": 165550,
+      "directByteComparison": "identical"
+    },
+    {
+      "name": "manifest.json",
+      "bytes": 322,
+      "directByteComparison": "identical"
+    },
+    {
+      "name": "styles.css",
+      "bytes": 14428,
+      "directByteComparison": "identical"
+    }
+  ],
+  "nativeVersions": [
+    "1.13.7",
+    "1.15.1"
+  ],
+  "nativeChecksPerVersion": 15,
+  "offlineTests": 32,
+  "communityDirectory": "Ready for owner submission; not approved",
+  "nativeMobile": "Not tested"
+}

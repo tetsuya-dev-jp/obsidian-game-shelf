@@ -3,6 +3,11 @@
 Checked against the official documentation on 2026-11-13. This checklist is
 preparation for submission, not a claim of approval.
 
+The [1.0.0 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.0.0)
+is public. All three installable assets were downloaded and compared directly
+with the files tested locally; they are identical. The source commit passed
+Linux, macOS and Windows CI. See [release verification](release-verification.json).
+
 ## Current route
 
 The current route is the [Obsidian Community directory](https://community.obsidian.md),

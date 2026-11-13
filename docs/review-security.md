@@ -1,5 +1,9 @@
 # Independent security and data-integrity review
 
+This is the historical review trail. The second review below records the fixes
+made before 1.0.0; the original findings are retained for traceability and do
+not describe unresolved defects in the published release.
+
 Reviewed the current `src/notes.ts`, `src/note-format.ts`, `src/main.ts`, `src/settings.ts`, and `src/source.ts`, plus their callers in `src/view.ts`. No implementation or test files were changed. Findings below are ordered by impact; line numbers refer to the reviewed files.
 
 ## Findings
