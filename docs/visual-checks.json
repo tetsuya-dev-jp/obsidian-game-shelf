@@ -1,0 +1,126 @@
+{
+  "capturedAt": "2026-11-13T04:50:11.236Z",
+  "runtime": "Real Obsidian 1.15.1 under xvfb; narrow desktop viewport, not native mobile",
+  "results": [
+    {
+      "name": "library-dark.png",
+      "dismissedTooltips": 1,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1384,
+      "horizontalOverflow": false,
+      "buttons": 18,
+      "accessibility": {
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "library-light.png",
+      "dismissedTooltips": 0,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1384,
+      "horizontalOverflow": false,
+      "buttons": 18,
+      "accessibility": {
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "discover.png",
+      "dismissedTooltips": 0,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1384,
+      "horizontalOverflow": false,
+      "buttons": 10,
+      "accessibility": {
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "journal.png",
+      "dismissedTooltips": 0,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1384,
+      "horizontalOverflow": false,
+      "buttons": 22,
+      "accessibility": {
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "library-ja.png",
+      "dismissedTooltips": 0,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1384,
+      "horizontalOverflow": false,
+      "buttons": 18,
+      "accessibility": {
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "narrow-library.png",
+      "dismissedTooltips": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 334,
+      "horizontalOverflow": false,
+      "buttons": 18,
+      "accessibility": {
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "narrow-journal.png",
+      "dismissedTooltips": 1,
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 334,
+      "horizontalOverflow": false,
+      "buttons": 6,
+      "accessibility": {
+        "violations": [],
+        "incomplete": []
+      }
+    },
+    {
+      "name": "narrow-discover.png",
+      "dismissedTooltips": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 334,
+      "horizontalOverflow": false,
+      "buttons": 4,
+      "accessibility": {
+        "violations": [],
+        "incomplete": []
+      }
+    }
+  ]
+}

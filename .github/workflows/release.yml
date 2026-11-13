@@ -1,0 +1,24 @@
+name: Release
+on:
+  push:
+    tags: ['*.*.*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - name: Verify version and publish installable assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          node -e 'if (JSON.parse(require("fs").readFileSync("manifest.json")).version !== process.env.RELEASE_TAG) process.exit(1)'
+          gh release create "$RELEASE_TAG" main.js manifest.json styles.css --title "Game Shelf $RELEASE_TAG" --notes-file RELEASE_NOTES.md

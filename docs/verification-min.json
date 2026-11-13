@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-13T04:42:56.095Z",
+  "app": {
+    "version": "1.13.7",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) obsidian/1.13.7 Chrome/150.0.7871.212 Electron/43.3.0 Safari/537.36"
+  },
+  "checks": [
+    {
+      "name": "native plugin loaded and isolated",
+      "status": "pass",
+      "details": {
+        "loaded": true,
+        "vault": "/home/tetsuya/dev/obsidian-game-shelf/e2e/.runtime/vault"
+      }
+    },
+    {
+      "name": "manual creation and collision safety work offline",
+      "status": "pass",
+      "details": {
+        "paths": [
+          "E2E checks/E2E Path Safety.md",
+          "E2E checks/E2E Path Safety (Edition).md"
+        ],
+        "distinct": true,
+        "networkEnabled": false
+      }
+    },
+    {
+      "name": "live search through visible UI distinguishes editions",
+      "status": "pass",
+      "details": {
+        "results": 4,
+        "originalAndRemake": true
+      }
+    },
+    {
+      "name": "keyboard navigation reaches the selected game",
+      "status": "pass",
+      "details": {
+        "arrowDownFocus": 1,
+        "detailLoaded": true
+      }
+    },
+    {
+      "name": "duplicate import leaves existing Markdown byte-for-byte intact",
+      "status": "pass",
+      "details": {
+        "existing": true,
+        "path": "Games/ゼルダの伝説 時のオカリナ.md",
+        "preserved": true
+      }
+    },
+    {
+      "name": "same-title editions get distinct notes without overwrite",
+      "status": "pass",
+      "details": {
+        "original": "Games/ゼルダの伝説 時のオカリナ (1998 N64).md",
+        "remake": "Games/ゼルダの伝説 時のオカリナ.md",
+        "preserved": true
+      }
+    },
+    {
+      "name": "journal writes real YAML totals and preserves earlier entries",
+      "status": "pass",
+      "details": {
+        "nativeMetadataTotal": 55,
+        "priorTextPreserved": true
+      }
+    },
+    {
+      "name": "refresh protects personal and edited source fields",
+      "status": "pass",
+      "details": {
+        "conflictDetected": true,
+        "personalPropertiesPreserved": true,
+        "bodyPreserved": true
+      }
+    },
+    {
+      "name": "stale refresh preview refuses concurrent edits",
+      "status": "pass",
+      "details": {
+        "concurrentEditRejected": true
+      }
+    },
+    {
+      "name": "YAML comments survive personal edits and journal updates",
+      "status": "pass",
+      "details": {
+        "leadingComment": true,
+        "inlineComment": true,
+        "journalWritten": true
+      }
+    },
+    {
+      "name": "property-name changes preserve existing notes and profiles",
+      "status": "pass",
+      "details": {
+        "existingNotesRetained": 7,
+        "newProfileApplied": true,
+        "oldProfilePreserved": true
+      }
+    },
+    {
+      "name": "renaming a freshly created note preserves identity lookup",
+      "status": "pass",
+      "details": {
+        "identityPreserved": true
+      }
+    },
+    {
+      "name": "offline local covers decode in the native renderer",
+      "status": "pass",
+      "details": {
+        "loadedLocalImages": 7
+      }
+    },
+    {
+      "name": "searchable native settings definitions are available",
+      "status": "pass",
+      "details": {
+        "definitions": 18
+      }
+    },
+    {
+      "name": "native Settings toggle disables outbound lookups",
+      "status": "pass",
+      "details": {
+        "nativeControl": true,
+        "outboundRequests": 0
+      }
+    }
+  ]
+}

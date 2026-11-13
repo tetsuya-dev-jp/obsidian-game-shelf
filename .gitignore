@@ -1,0 +1,8 @@
+node_modules/
+.vitest/
+main.js
+*.zip
+.audit/
+e2e/.runtime/
+.impeccable/review/
+.impeccable/questions/
