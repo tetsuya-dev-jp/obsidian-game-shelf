@@ -87,6 +87,7 @@ export class NoteStore {
   list(): LibraryItem[] {
     if (!this.index) {
       this.index = new Map();
+      // Find game notes moved outside the creation folder using cached metadata only.
       for (const file of this.app.vault.getMarkdownFiles()) this.updateIndex(file);
     }
     return [...this.index.values()];

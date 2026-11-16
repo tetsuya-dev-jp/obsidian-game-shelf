@@ -3,6 +3,7 @@ import obsidianmd from 'eslint-plugin-obsidianmd';
 export default defineConfig([
   globalIgnores([
     'node_modules/**',
+    '.audit/**',
     'main.js',
     'esbuild.config.mjs',
     'scripts/**',

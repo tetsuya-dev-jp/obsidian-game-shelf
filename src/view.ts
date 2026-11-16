@@ -226,9 +226,9 @@ export class ShelfView extends ItemView {
     });
     owner.registerDomEvent(image, 'error', () => {
       image.remove();
-      fallback.removeClass('gs-visually-hidden');
+      fallback.removeClass('is-loaded');
     });
-    owner.registerDomEvent(image, 'load', () => fallback.addClass('gs-visually-hidden'));
+    owner.registerDomEvent(image, 'load', () => fallback.addClass('is-loaded'));
   }
   private localCover(item: LibraryItem): string | null {
     if (!item.cover) return null;
@@ -274,6 +274,7 @@ export class ShelfView extends ItemView {
       button.buttonEl.setAttribute('aria-pressed', String(this.tab === tab));
     }
     const shell = root.createDiv({ cls: 'gs-shell' });
+    shell.toggleClass('is-discover', this.tab === 'discover');
     shell.toggleClass(
       'has-details',
       this.tab === 'discover' || this.libraryPath !== null || this.manual,

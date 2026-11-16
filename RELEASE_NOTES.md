@@ -1,14 +1,14 @@
-# Game Shelf 1.0.0
+# Game Shelf 1.0.1
 
-Create a game note from Games Never Die, keep a local cover library, and write
-dated play journals without an API key or another required plugin.
+Addresses the automated Community-directory review of version 1.0.0.
 
-- Search and inspect editions before creating Markdown notes.
-- Filter a cover grid or compact list by play status, platform and genre.
-- Keep personal ratings, ownership, dates and playtime in editable properties.
-- Choose source fields, plain Markdown templates and property names.
-- Review metadata changes while preserving personal writing and YAML comments.
-- English/Japanese UI, native themes, keyboard navigation and narrow panes.
+- Parse provider text in an inert document fragment without creating a wrapper element.
+- Replace `:has()` layout selectors with an explicit Discover-view class.
+- Remove `!important` declarations and `clip-path` while preserving pane spacing
+  and cover-image fallbacks.
+- Generate GitHub build-provenance attestations for all three installable assets
+  before publishing from the release workflow.
+- Document cached vault-wide indexing, which preserves moved and renamed game notes.
 
 Install `main.js`, `manifest.json` and `styles.css` in your vault's
 `<config folder>/plugins/game-shelf/`, or add this repository through BRAT.

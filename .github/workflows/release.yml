@@ -4,6 +4,8 @@ on:
     tags: ['*.*.*']
 permissions:
   contents: write
+  id-token: write
+  attestations: write
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -15,6 +17,13 @@ jobs:
           package-manager-cache: false
       - run: npm ci --ignore-scripts
       - run: npm run check
+      - name: Attest installable assets
+        uses: actions/attest@v4
+        with:
+          subject-path: |
+            main.js
+            manifest.json
+            styles.css
       - name: Verify version and publish installable assets
         env:
           GH_TOKEN: ${{ github.token }}

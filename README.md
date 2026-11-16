@@ -156,6 +156,13 @@ Game Shelf sends **no vault text, personal ratings, play logs or telemetry** to 
 service. Online search is initially off. There is no background crawling,
 scheduled refresh, account sync, self-updater, advertising or analytics.
 
+The local library lists Markdown file paths across the vault and checks
+Obsidian's cached frontmatter for Game Shelf identities. This keeps game notes
+discoverable after you move or rename them, including outside the creation
+folder. Indexing does not read note bodies; only recognized game notes enter
+the library. The index stays in memory and is updated by vault events. File
+paths and cached properties are not sent to the game provider.
+
 When you enable online use and explicitly search or look up a game:
 
 | Destination | Purpose |

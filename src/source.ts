@@ -13,7 +13,7 @@ export class SourceError extends Error {}
 
 function text(element: Element | null): string {
   if (!element) return '';
-  const copy = element.ownerDocument.createElement('div');
+  const copy = element.ownerDocument.createDocumentFragment();
   copy.append(element.cloneNode(true));
   copy.querySelectorAll('script,style,svg,[hidden]').forEach((node) => node.remove());
   return (copy.textContent ?? '').replace(/\s+/g, ' ').trim();

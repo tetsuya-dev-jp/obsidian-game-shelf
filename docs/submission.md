@@ -8,6 +8,12 @@ is public. All three installable assets were downloaded and compared directly
 with the files tested locally; they are identical. The source commit passed
 Linux, macOS and Windows CI. See [release verification](release-verification.json).
 
+The owner submitted the draft for automated review on 2026-11-16. The local
+1.0.1 update addresses its source/CSS warnings and adds release-asset
+attestations to the release workflow. See [review responses](official-review.md)
+for each finding, fresh checks, and the remaining publication steps. Version
+1.0.1 has not been published or rescanned by the directory.
+
 ## Current route
 
 The current route is the [Obsidian Community directory](https://community.obsidian.md),

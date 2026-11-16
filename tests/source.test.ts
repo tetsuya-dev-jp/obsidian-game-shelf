@@ -58,6 +58,17 @@ describe('HTML parsing', () => {
     expect(() => parseGame('<main><h1>Blocked</h1></main>', 'x')).toThrow(/Expected game/);
   });
 
+  it('ignores executable, decorative and hidden text while preserving date scope', () => {
+    const html = gameHtml.replace(
+      'Test &amp; Game',
+      'Test &amp; Game<script>badScript()</script><style>.bad{color:red}</style>' +
+        '<svg><title>Decoration</title></svg><span hidden>Hidden title</span>',
+    );
+    const game = parseGame(html, 'test-game');
+    expect(game.title).toBe('Test & Game');
+    expect(game.release_dates[0]?.scope).toBe('JP');
+  });
+
   it('parses only result cards, including zero results, and rejects a changed search shape', () => {
     const page = parseSearch(searchHtml, 'Test', 1);
     expect([page.total, page.total_pages]).toEqual([1234, 45]);

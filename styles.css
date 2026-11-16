@@ -1,9 +1,9 @@
-.gs-root {
+.view-content.gs-root {
   --gs-action-background: color-mix(in srgb, var(--interactive-accent) 80%, black);
   --gs-gap: 16px;
   container-type: inline-size;
   /* The native status bar overlays the bottom of narrow desktop panes. */
-  padding: 0 0 var(--status-bar-height, 28px) !important;
+  padding: 0 0 var(--status-bar-height, 28px);
   font-family: var(--font-interface);
   font-size: var(--font-ui-small);
   color: var(--text-normal);
@@ -125,7 +125,7 @@
 .gs-shell.has-details {
   grid-template-columns: minmax(310px, 1fr) minmax(300px, 380px);
 }
-.gs-shell:has(.gs-search-pane) {
+.gs-shell.is-discover {
   grid-template-columns: 300px minmax(0, 1fr);
 }
 .gs-library,
@@ -418,9 +418,9 @@
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
-.gs-result-count {
+.gs-root p.gs-result-count {
   color: var(--text-muted);
-  margin-bottom: 12px !important;
+  margin-bottom: 12px;
   font-size: 12px;
 }
 .gs-added {
@@ -646,12 +646,8 @@
   line-height: 1.8;
   overflow-wrap: anywhere;
 }
-.gs-visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  overflow: hidden !important;
-  clip-path: inset(50%);
+.gs-cover-fallback.is-loaded {
+  display: none;
 }
 @keyframes gs-pulse {
   from {
@@ -683,7 +679,7 @@
     min-height: 36px;
   }
   .gs-shell.has-details,
-  .gs-shell:has(.gs-search-pane) {
+  .gs-shell.is-discover {
     grid-template-columns: minmax(0, 1fr);
   }
   .gs-library,

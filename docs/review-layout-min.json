@@ -1,0 +1,127 @@
+{
+  "app": "Game Shelf - vault - Obsidian 1.13.7",
+  "layouts": [
+    {
+      "theme": "dark",
+      "viewportWidth": 1440,
+      "tab": "library",
+      "width": 1384,
+      "overflow": false,
+      "columns": 1,
+      "discover": false,
+      "hasDetails": false,
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "28px",
+      "countMarginBottom": null
+    },
+    {
+      "theme": "dark",
+      "viewportWidth": 1440,
+      "tab": "discover",
+      "width": 1384,
+      "overflow": false,
+      "columns": 2,
+      "discover": true,
+      "hasDetails": true,
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "28px",
+      "countMarginBottom": null
+    },
+    {
+      "theme": "dark",
+      "viewportWidth": 390,
+      "tab": "library",
+      "width": 334,
+      "overflow": false,
+      "columns": 1,
+      "discover": false,
+      "hasDetails": false,
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "28px",
+      "countMarginBottom": null
+    },
+    {
+      "theme": "dark",
+      "viewportWidth": 390,
+      "tab": "discover",
+      "width": 346,
+      "overflow": false,
+      "columns": 1,
+      "discover": true,
+      "hasDetails": true,
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "28px",
+      "countMarginBottom": null
+    },
+    {
+      "theme": "light",
+      "viewportWidth": 1440,
+      "tab": "library",
+      "width": 1384,
+      "overflow": false,
+      "columns": 1,
+      "discover": false,
+      "hasDetails": false,
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "28px",
+      "countMarginBottom": null
+    },
+    {
+      "theme": "light",
+      "viewportWidth": 1440,
+      "tab": "discover",
+      "width": 1384,
+      "overflow": false,
+      "columns": 2,
+      "discover": true,
+      "hasDetails": true,
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "28px",
+      "countMarginBottom": null
+    },
+    {
+      "theme": "light",
+      "viewportWidth": 390,
+      "tab": "library",
+      "width": 334,
+      "overflow": false,
+      "columns": 1,
+      "discover": false,
+      "hasDetails": false,
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "28px",
+      "countMarginBottom": null
+    },
+    {
+      "theme": "light",
+      "viewportWidth": 390,
+      "tab": "discover",
+      "width": 346,
+      "overflow": false,
+      "columns": 1,
+      "discover": true,
+      "hasDetails": true,
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "28px",
+      "countMarginBottom": null
+    }
+  ],
+  "covers": {
+    "loadedHidden": true,
+    "errorVisible": true
+  },
+  "indexing": {
+    "movedOutsideCreationFolder": true,
+    "coldIndexLookup": true,
+    "ordinaryNoteExcluded": true,
+    "noteBodyReads": 0
+  }
+}

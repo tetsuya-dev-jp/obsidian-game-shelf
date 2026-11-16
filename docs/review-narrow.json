@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-16T14:26:53.772Z",
+  "app": "Game Shelf - vault - Obsidian 1.15.1",
+  "viewport": [
+    390,
+    844
+  ],
+  "create": {
+    "top": 597.953125,
+    "bottom": 635.953125,
+    "focused": true,
+    "overflow": false,
+    "uncovered": true,
+    "activatedBy": "Chromium Enter key"
+  },
+  "save": {
+    "top": 765.78125,
+    "bottom": 795.78125,
+    "x": 110.5078125,
+    "y": 780.78125,
+    "focused": true,
+    "uncovered": true,
+    "activatedBy": "Chromium mouse click"
+  },
+  "persistedMinutes": 17,
+  "bodyVerified": true
+}
