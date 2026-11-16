@@ -1,8 +1,10 @@
 # Automated Community-directory review responses
 
 The supplied review is dated 2026-11-16 and covers release 1.0.0, commit
-`355ea07`. The entry was still a draft. These responses describe the local
-1.0.1 update; they do not claim a new directory verdict or published release.
+`355ea07`. The entry was still a draft. These responses describe the published
+[1.0.1 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.0.1).
+They do not claim a new directory verdict. Downloaded assets and attestations
+were verified; see [release verification](release-verification-1.0.1.json).
 
 | Finding | Response |
 | --- | --- |
@@ -10,7 +12,7 @@ The supplied review is dated 2026-11-16 and covers release 1.0.0, commit
 | `clip-path`, `styles.css:654` | Remove the rule. Cover fallbacks are decorative inside an `aria-hidden` container and can use `display: none` after image loading, then return on an image error. |
 | Six `!important` declarations | Remove all six. Scope pane padding to `.view-content.gs-root`, give the result-count selector enough specificity, and remove the obsolete visually-hidden declarations. |
 | Two `:has()` selectors | Use an explicit `.is-discover` class set by the view, including the narrow-pane container query. |
-| Missing attestations for `main.js` and `styles.css` | Add `actions/attest@v4` after checks and before release publication, with `id-token` and `attestations` write permissions. Include all three assets: `main.js`, `manifest.json`, `styles.css`. Actual attestations require the GitHub release workflow to run. |
+| Missing attestations for `main.js` and `styles.css` | Add `actions/attest@v4` after checks and before release publication, with `id-token` and `attestations` write permissions. Include all three assets: `main.js`, `manifest.json`, `styles.css`. The release workflow succeeded and all three downloaded assets passed verification against its identity, the source commit and the `1.0.1` tag. |
 | Vault enumeration recommendation | Retain the one cached Markdown-path enumeration needed to discover game notes moved outside the creation folder. Index from Obsidian's cached frontmatter without reading bodies; retain only recognized Game Shelf entries. Document the access and purpose in README. A native check confirms cold-index discovery of a moved note, exclusion of an unrelated note and zero note-body reads. This behavioral recommendation can remain visible in future scans. |
 | Vault writes, dependencies and reproducible build passed | Preserve the existing write safeguards and browser build. A new directory build-reproduction check remains pending publication. |
 
@@ -47,5 +49,6 @@ gh attestation verify styles.css --repo tetsuya-dev-jp/obsidian-game-shelf
 
 Native checks used the existing isolated test vault and separate temporary
 profiles on Linux under xvfb. Native iOS/Android and arbitrary third-party
-themes were not tested. GitHub-hosted execution, actual attestation verification,
-and the official 1.0.1 rescan remain pending release publication.
+themes were not tested. The release source passed GitHub-hosted Linux, Windows
+and macOS CI, and the release workflow and downloaded-asset attestation checks
+passed. The official 1.0.1 rescan remains pending.

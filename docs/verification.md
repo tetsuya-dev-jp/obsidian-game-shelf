@@ -1,5 +1,17 @@
 # Verification
 
+## Version 1.0.1
+
+The [1.0.1 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.0.1)
+addresses the automated Community-directory source/CSS warnings. Its source
+passed Linux, Windows and macOS CI; all three published assets match the tested
+local files and their attestations verify against the source commit, release
+tag and workflow. See [release verification](release-verification-1.0.1.json).
+Fresh native acceptance, layout and narrow-control checks are linked from
+[review responses](official-review.md). The directory's new review is pending.
+
+## Version 1.0.0 baseline
+
 The authoritative native-run results are in [verification.json](verification.json).
 The reproducible checks are in [e2e/acceptance.mjs](../e2e/acceptance.mjs).
 The same 15 acceptance checks passed on both Obsidian **1.13.7**
