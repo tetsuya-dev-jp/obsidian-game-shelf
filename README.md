@@ -36,6 +36,8 @@ keyboard operation and narrow panes. There are no default hotkeys.
 Choose the language of new notes separately from the interface. Automatic
 source selection uses Games Never Die for Japanese notes and IGDB for English
 notes. Saved notes retain their writing language and original source.
+With automatic language settings, Obsidian languages other than Japanese fall
+back to English for both the interface and new notes.
 
 ![Find and preview a game](docs/media/discover.png)
 

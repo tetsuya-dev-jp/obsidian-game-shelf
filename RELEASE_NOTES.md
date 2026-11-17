@@ -10,12 +10,14 @@ IGDB uses your own Twitch Client ID and Client Secret, with an in-app guide in
 both languages and a connection test. There is no Game Shelf server or shared
 application key. The secret is accessed through Obsidian SecretStorage; only its
 reference is saved in plugin settings. Access tokens stay in memory.
-See [the setup guide](docs/igdb-setup.md).
+See [the setup guide](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/blob/1.1.0/docs/igdb-setup.md).
 
 New installations follow Obsidian's interface language, use that language for
 new notes, and choose GND for Japanese or IGDB for English. Online search is on
 by default; credentials are empty until configured. Existing saved preferences are
 preserved. IGDB does not provide the GND-specific articles or Steam statistics.
+Obsidian languages other than Japanese fall back to English for the interface
+and new notes when both language settings are automatic.
 
 Each note keeps its own writing language and source identity. Changing defaults
 does not rewrite existing notes or switch their refresh source. For pre-1.1.0
