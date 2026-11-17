@@ -1,5 +1,21 @@
 # Verification
 
+## Version 1.0.2
+
+The [1.0.2 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.0.2)
+removes the document-fragment construction still flagged in the supplied
+1.0.1 review. Provider text is extracted from an element cloned within its
+inert document, preserving script/style/SVG/hidden-node filtering.
+The parser-specific lint gate was checked against the 1.0.1 source: it rejects
+that fragment call and accepts the corrected code. All 34 unit tests, lint,
+types and build passed, along with the [15 native acceptance checks](verification-1.0.2.json)
+on Obsidian 1.15.1. The source passed Linux, Windows and macOS CI, and all three
+downloaded release assets match the tested local files with verified source/tag/
+workflow-bound attestations. See [release verification](release-verification-1.0.2.json).
+The official 1.0.2 verdict has not been observed; browser integration was
+disconnected when checked. Mobile execution and additional visual checks were
+not repeated for this parser-only change.
+
 ## Version 1.0.1
 
 The [1.0.1 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.0.1)

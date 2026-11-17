@@ -14,17 +14,23 @@ CSS warnings are absent. The DOM-helper warning at `src/source.ts:16` remains:
 the previous replacement with `createDocumentFragment()` did not resolve it.
 The local lint pass was insufficient evidence of the official scanner's result.
 
-The 1.0.2 correction removes wrapper construction entirely. `importNode()` clones
+The published [1.0.2 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.0.2)
+removes wrapper construction entirely. `importNode()` clones
 only the requested element within its original inert document. Filtering still
 excludes executable, decorative and hidden text, including a hidden root.
 A parser-specific lint restriction rejects native element/fragment construction
 even when the installed typed Obsidian rule misses it. An explicit regression
 check rejects the 1.0.1 source at line 16 and accepts the corrected parser.
 
-Local 1.0.2 checks passed: 34 unit tests, ESLint, TypeScript, browser build,
+Version 1.0.2 checks passed: 34 unit tests, ESLint, TypeScript, browser build,
 release consistency, production dependency audit and all 15 native Obsidian
 1.15.1 acceptance checks. See [native results](verification-1.0.2.json).
-The 1.0.2 directory rescan has not yet been observed. The vault-enumeration
+The source passed Linux, Windows and macOS CI. The release workflow succeeded;
+all three published assets match the tested local files and have verified
+attestations bound to commit `9388494`, tag `1.0.2` and the release workflow.
+See [release verification](release-verification-1.0.2.json).
+The 1.0.2 directory rescan has not yet been observed because the owner's browser
+extension was disconnected during the verification attempt. The vault-enumeration
 recommendation remains intentional for moved-note discovery, as described below.
 
 ## Findings and implementation responses

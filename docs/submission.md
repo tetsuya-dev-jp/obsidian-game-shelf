@@ -16,8 +16,14 @@ and their attestations verify against the release workflow, source commit and
 `1.0.1` tag. See [release verification](release-verification-1.0.1.json) and
 [review responses](official-review.md). The supplied 1.0.1 rescan confirms the
 attestation, dependency and reproducible-build passes; its DOM-helper warning
-still remains. The prepared 1.0.2 update removes wrapper construction and adds
-a local regression gate. The entry remains a draft, not community-approved.
+still remains in that review. The published
+[1.0.2 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.0.2)
+removes wrapper construction and adds a local regression gate. Its source
+passed three-OS CI, and all three downloaded files match the tested local
+assets and have verified attestations; see
+[1.0.2 release verification](release-verification-1.0.2.json).
+The latest observed entry was a draft; a new directory verdict has not been
+observed and community approval is not claimed.
 
 ## Current route
 

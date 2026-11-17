@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-11-17T00:23:41.768Z",
+  "version": "1.0.2",
+  "sourceCommit": "938849426b93b35d08b07a4bc5cfb945cb765258",
+  "releaseUrl": "https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.0.2",
+  "sourceCiUrl": "https://github.com/tetsuya-dev-jp/obsidian-game-shelf/actions/runs/43986680178",
+  "sourceCiOperatingSystems": [
+    "ubuntu-latest",
+    "windows-latest",
+    "macos-latest"
+  ],
+  "releaseWorkflowUrl": "https://github.com/tetsuya-dev-jp/obsidian-game-shelf/actions/runs/43986970823",
+  "assets": [
+    {
+      "name": "main.js",
+      "bytes": 165593,
+      "matchesTestedLocalFile": true,
+      "attestationVerified": true,
+      "sourceRef": "refs/tags/1.0.2",
+      "sourceCommit": "938849426b93b35d08b07a4bc5cfb945cb765258",
+      "signerWorkflow": "tetsuya-dev-jp/obsidian-game-shelf/.github/workflows/release.yml"
+    },
+    {
+      "name": "manifest.json",
+      "bytes": 322,
+      "matchesTestedLocalFile": true,
+      "attestationVerified": true,
+      "sourceRef": "refs/tags/1.0.2",
+      "sourceCommit": "938849426b93b35d08b07a4bc5cfb945cb765258",
+      "signerWorkflow": "tetsuya-dev-jp/obsidian-game-shelf/.github/workflows/release.yml"
+    },
+    {
+      "name": "styles.css",
+      "bytes": 14297,
+      "matchesTestedLocalFile": true,
+      "attestationVerified": true,
+      "sourceRef": "refs/tags/1.0.2",
+      "sourceCommit": "938849426b93b35d08b07a4bc5cfb945cb765258",
+      "signerWorkflow": "tetsuya-dev-jp/obsidian-game-shelf/.github/workflows/release.yml"
+    }
+  ]
+}
