@@ -13,4 +13,17 @@ export default defineConfig([
   ]),
   ...obsidianmd.configs.recommended,
   { files: ['**/*.ts'], languageOptions: { parserOptions: { projectService: true } } },
+  {
+    files: ['src/source.ts'],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector:
+            'CallExpression[callee.property.name=/^(createElement|createElementNS|createDocumentFragment)$/]',
+          message: 'Keep provider parsing in its inert document without creating DOM wrappers.',
+        },
+      ],
+    },
+  },
 ]);

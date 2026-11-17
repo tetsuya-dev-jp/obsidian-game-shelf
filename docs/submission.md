@@ -14,8 +14,10 @@ addresses its source/CSS warnings and is now public. Its source passed Linux,
 macOS and Windows CI. All three downloaded assets match the tested local files,
 and their attestations verify against the release workflow, source commit and
 `1.0.1` tag. See [release verification](release-verification-1.0.1.json) and
-[review responses](official-review.md). The directory's 1.0.1 rescan remains
-pending; this is not a claim of community approval.
+[review responses](official-review.md). The supplied 1.0.1 rescan confirms the
+attestation, dependency and reproducible-build passes; its DOM-helper warning
+still remains. The prepared 1.0.2 update removes wrapper construction and adds
+a local regression gate. The entry remains a draft, not community-approved.
 
 ## Current route
 

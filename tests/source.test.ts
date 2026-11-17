@@ -69,6 +69,12 @@ describe('HTML parsing', () => {
     expect(game.release_dates[0]?.scope).toBe('JP');
   });
 
+  it('ignores a hidden root element when extracting a required title', () => {
+    expect(() => parseGame(gameHtml.replace('<h1>', '<h1 hidden>'), 'test-game')).toThrow(
+      /Expected game title/,
+    );
+  });
+
   it('parses only result cards, including zero results, and rejects a changed search shape', () => {
     const page = parseSearch(searchHtml, 'Test', 1);
     expect([page.total, page.total_pages]).toEqual([1234, 45]);

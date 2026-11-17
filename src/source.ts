@@ -12,9 +12,8 @@ type Cached<T> = { value: T; at: number };
 export class SourceError extends Error {}
 
 function text(element: Element | null): string {
-  if (!element) return '';
-  const copy = element.ownerDocument.createDocumentFragment();
-  copy.append(element.cloneNode(true));
+  if (!element || element.matches('script,style,svg,[hidden]')) return '';
+  const copy = element.ownerDocument.importNode(element, true);
   copy.querySelectorAll('script,style,svg,[hidden]').forEach((node) => node.remove());
   return (copy.textContent ?? '').replace(/\s+/g, ' ').trim();
 }
