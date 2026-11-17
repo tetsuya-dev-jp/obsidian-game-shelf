@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-11-17T23:37:10.545431+00:00",
+  "version": "1.1.1",
+  "sourceCommit": "b95907cf695ae4d41cb5331ed24fb49eb7f2b483",
+  "releaseUrl": "https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.1.1",
+  "publishedAt": "2026-11-17T23:35:54Z",
+  "sourceCiUrl": "https://github.com/tetsuya-dev-jp/obsidian-game-shelf/actions/runs/44200207055",
+  "sourceCiHead": "b95907cf695ae4d41cb5331ed24fb49eb7f2b483",
+  "sourceCiOperatingSystems": [
+    "ubuntu-latest",
+    "windows-latest",
+    "macos-latest"
+  ],
+  "releaseWorkflowUrl": "https://github.com/tetsuya-dev-jp/obsidian-game-shelf/actions/runs/44200587646",
+  "attestationWorkflowStep": "success",
+  "independentCryptographicAttestationVerification": "not performed",
+  "assets": [
+    {
+      "name": "main.js",
+      "bytes": 200495,
+      "matchesTestedLocalFile": true,
+      "downloadUrl": "https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/download/1.1.1/main.js"
+    },
+    {
+      "name": "manifest.json",
+      "bytes": 322,
+      "matchesTestedLocalFile": true,
+      "downloadUrl": "https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/download/1.1.1/manifest.json"
+    },
+    {
+      "name": "styles.css",
+      "bytes": 16801,
+      "matchesTestedLocalFile": true,
+      "downloadUrl": "https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/download/1.1.1/styles.css"
+    }
+  ],
+  "verification": {
+    "unitTests": 57,
+    "nativeScenariosPerVersion": 9,
+    "obsidianVersions": [
+      "1.13.7",
+      "1.15.1"
+    ],
+    "emulatedLayouts": 127,
+    "productionAuditVulnerabilities": 0,
+    "independentStaticReview": "passed"
+  },
+  "limits": [
+    "Native iOS/Android hardware, Safari/WebKit and real software keyboards not tested",
+    "Authenticated live IGDB requests not retested"
+  ]
+}

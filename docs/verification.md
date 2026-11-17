@@ -24,6 +24,14 @@ minimum supported 1.13.7
 The independent [static review](review-1.1.1.json) found no actionable security
 or logic issues. The production dependency audit reported zero vulnerabilities.
 
+The [1.1.1 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.1.1)
+is public and is the latest release. Its exact source commit passed Windows,
+macOS and Linux CI. The release workflow and asset-attestation step succeeded.
+All three published installable files were downloaded and compared directly
+with the tested local files; they match byte for byte. See
+[release verification](release-verification-1.1.1.json) for the source, workflow,
+asset details and verification limits.
+
 ## Mobile layout follow-up (2026-11-18)
 
 The [mobile regression suite](../e2e/mobile.mjs) runs the built plugin inside

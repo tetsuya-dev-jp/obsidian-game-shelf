@@ -40,6 +40,16 @@ is public; its source passed three-OS CI and all three downloaded assets match
 the tested local files. See [release verification](release-verification-1.1.0.json).
 No new official Community-directory verdict is claimed.
 
+## 1.1.1 release
+
+The [1.1.1 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.1.1)
+improves mobile layouts and replaces per-note language selection with one
+global note language. Its exact source passed three-OS CI. All three published
+assets match the tested local files; the release workflow and asset-attestation
+step succeeded. See [release verification](release-verification-1.1.1.json) and
+[native/layout verification](verification.md). Native iOS/Android and
+Safari/WebKit execution remain unverified.
+
 ## Current route
 
 The current route is the [Obsidian Community directory](https://community.obsidian.md),
