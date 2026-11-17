@@ -657,10 +657,12 @@
     opacity: 1;
   }
 }
-.game-shelf-note .image-embed[src*='gnd-'] {
+.game-shelf-note .image-embed[src*='gnd-'],
+.game-shelf-note .image-embed[src*='igdb-'] {
   max-width: 144px;
 }
-.game-shelf-note .image-embed[src*='gnd-'] img {
+.game-shelf-note .image-embed[src*='gnd-'] img,
+.game-shelf-note .image-embed[src*='igdb-'] img {
   max-height: 192px;
   width: auto;
   object-fit: contain;

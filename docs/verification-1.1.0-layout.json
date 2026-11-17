@@ -24,5 +24,22 @@
       "labelWidth": 266,
       "links": 2
     }
-  ]
+  ],
+  "coverStyles": {
+    "app": "Obsidian 1.15.1 desktop",
+    "checks": [
+      {
+        "source": "igdb-native-style.png",
+        "embedWidth": "144px",
+        "imageHeight": "192px",
+        "decoded": true
+      },
+      {
+        "source": "gnd-native-style.png",
+        "embedWidth": "144px",
+        "imageHeight": "192px",
+        "decoded": true
+      }
+    ]
+  }
 }

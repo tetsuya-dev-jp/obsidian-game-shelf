@@ -24,7 +24,9 @@ These checks use synthetic credentials, API responses and images. They verify
 native UI, persistence and integration, not authenticated upstream availability.
 No real user secret was accessed. Native iOS/Android execution was not tested.
 Narrow desktop setup controls are checked separately in the
-[layout report](verification-1.1.0-layout.json); this is not a mobile run.
+[layout report](verification-1.1.0-layout.json). A native 1.15.1 reading-view
+check also decoded both GND and IGDB local covers and verified the same
+144px/192px size limits. These are not mobile runs.
 
 Independent [correctness/security](review-1.1.0-security.md) and
 [Obsidian policy/API](review-1.1.0-policy.md) re-reviews passed after fixing the
