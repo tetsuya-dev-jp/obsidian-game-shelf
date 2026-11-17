@@ -148,7 +148,6 @@ export class ShelfView extends ItemView {
       this.selected = { kind: 'empty' };
       if (!this.manual) this.options = null;
     }
-    if (this.options) this.options.language = noteLocale(this.shelf.settings);
     this.render();
   }
   private t(key: Parameters<GameShelf['t']>[0]): string {
@@ -156,7 +155,6 @@ export class ShelfView extends ItemView {
   }
   private defaults(title: string): CreateOptions {
     return {
-      language: noteLocale(this.shelf.settings),
       title,
       status: 'backlog',
       rating: null,
@@ -230,12 +228,12 @@ export class ShelfView extends ItemView {
   private image(
     parent: HTMLElement,
     url: string | null,
-    title: string,
     cls = '',
     owner = this.screen,
   ): void {
     const container = parent.createDiv({ cls: `gs-cover ${cls}`, attr: { 'aria-hidden': 'true' } });
-    const fallback = container.createSpan({ text: title, cls: 'gs-cover-fallback' });
+    const fallback = container.createSpan({ cls: 'gs-cover-fallback' });
+    setIcon(fallback, 'gamepad-2');
     if (!url) return;
     const image = container.createEl('img', {
       attr: { src: url, alt: '', loading: 'lazy', referrerpolicy: 'no-referrer' },
@@ -455,7 +453,7 @@ export class ShelfView extends ItemView {
         },
       });
       card.toggleClass('is-selected', item.path === this.libraryPath);
-      this.image(card, this.localCover(item), item.title, '', this.resultsComponent);
+      this.image(card, this.localCover(item), '', this.resultsComponent);
       const info = card.createSpan({ cls: 'gs-card-info' });
       info.createSpan({ cls: 'gs-card-title', text: item.title });
       info.createSpan({
@@ -545,7 +543,7 @@ export class ShelfView extends ItemView {
           'is-selected',
           this.selected.kind === 'ready' && gameId(this.selected.game) === gameId(item),
         );
-        this.image(button, item.cover_url, item.title, 'gs-result-cover');
+        this.image(button, item.cover_url, 'gs-result-cover');
         const info = button.createSpan({ cls: 'gs-result-info' });
         info.createSpan({ text: item.title, cls: 'gs-result-title' });
         info.createSpan({ text: item.subtitle ?? '', cls: 'gs-card-meta' });
@@ -657,7 +655,7 @@ export class ShelfView extends ItemView {
         { icon: 'arrow-left' },
       );
     const hero = parent.createDiv({ cls: 'gs-detail-hero' });
-    if (game) this.image(hero, game.cover_url, game.title, 'gs-detail-cover');
+    if (game) this.image(hero, game.cover_url, 'gs-detail-cover');
     const heading = hero.createDiv({ cls: 'gs-detail-heading' });
     heading.createEl('h2', { text: game?.title ?? this.t('manual') });
     if (game) {
@@ -667,7 +665,7 @@ export class ShelfView extends ItemView {
       });
       heading.createEl('p', { text: game.tags.join(' · '), cls: 'gs-subtle' });
     }
-    const language = options.language ?? noteLocale(this.shelf.settings);
+    const language = noteLocale(this.shelf.settings);
     if (game && game.dataLanguage !== language)
       parent.createEl('p', { cls: 'gs-subtle', text: this.shelf.t('dataLanguageMismatch', {
         language: this.t(game.dataLanguage === 'ja' ? 'languageJa' : 'languageEn'),
@@ -743,7 +741,6 @@ export class ShelfView extends ItemView {
           [property(this.shelf.settings, 'status')]: options.status,
           [property(this.shelf.settings, 'rating')]: options.rating,
           [property(this.shelf.settings, 'ownership')]: options.ownership,
-          [property(this.shelf.settings, 'note_language')]: language,
         };
         const body = this.shelf.notes.body(
           options.title,
@@ -848,7 +845,7 @@ export class ShelfView extends ItemView {
       { icon: 'x' },
     );
     const hero = parent.createDiv({ cls: 'gs-detail-hero' });
-    this.image(hero, this.localCover(item), item.title, 'gs-detail-cover');
+    this.image(hero, this.localCover(item), 'gs-detail-cover');
     const title = hero.createDiv({ cls: 'gs-detail-heading' });
     title.createEl('h2', { text: item.title });
     title.createEl('p', { cls: 'gs-subtle', text: item.platforms.join(' · ') });
@@ -863,40 +860,6 @@ export class ShelfView extends ItemView {
     const noteSettings = this.shelf.notes.settingsFor(file);
     const read = (key: string) => (record(fm) ? fm[property(noteSettings, key)] : undefined);
     const personal = parent.createDiv({ cls: 'gs-personal-grid' });
-    let writingLanguage = noteSettings.noteLanguage === 'auto' ? '' : noteSettings.noteLanguage;
-    const languageRow = this.field(personal, this.t('noteWritingLanguage'));
-    const languageGuide = writingLanguage ? null : languageRow.createEl('p', {
-      cls: 'gs-subtle', text: this.t('noteWritingLanguageGuide'),
-    });
-    const languageSelect = this.select(
-      languageRow,
-      this.t('noteWritingLanguage'),
-      writingLanguage,
-      [
-        ['', this.t('noteWritingLanguagePrompt')],
-        ['en', this.t('languageEn')],
-        ['ja', this.t('languageJa')],
-      ],
-      (value) => {
-        if (value !== 'en' && value !== 'ja') {
-          languageSelect.value = writingLanguage;
-          return;
-        }
-        languageSelect.disabled = true;
-        submit.setDisabled(true);
-        void this.run(async () => {
-          try {
-            await this.shelf.notes.setLanguage(file, value);
-            writingLanguage = value;
-            languageGuide?.remove();
-          } finally {
-            languageSelect.value = writingLanguage;
-            languageSelect.disabled = false;
-            submit.setDisabled(this.busy || !writingLanguage);
-          }
-        });
-      },
-    );
     this.select(
       this.field(personal, this.t('status')),
       this.t('status'),
@@ -962,11 +925,11 @@ export class ShelfView extends ItemView {
     minutes.max = '1440';
     const submit = new ButtonComponent(journal).setButtonText(this.t('saveSession')).setCta();
     submit.buttonEl.type = 'submit';
-    submit.setDisabled(this.busy || !writingLanguage);
+    submit.setDisabled(this.busy);
     this.screen.registerDomEvent(journal, 'submit', (event) => {
       event.preventDefault();
       void this.run(async () => {
-        if (this.busy || !writingLanguage) return;
+        if (this.busy) return;
         this.busy = true;
         submit.setDisabled(true);
         try {
@@ -979,11 +942,11 @@ export class ShelfView extends ItemView {
           this.journalMinutes = '';
           this.drafts.delete(item.path);
           new Notice(this.t('saved'));
-          this.render();
         } finally {
           this.busy = false;
-          submit.setDisabled(!writingLanguage);
+          submit.setDisabled(false);
         }
+        this.render();
       });
     });
     if (item.source !== 'manual' && this.shelf.settings.online)

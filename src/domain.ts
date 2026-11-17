@@ -137,7 +137,6 @@ export interface LibraryItem {
   id: string;
   source: Provider | 'manual';
   sourceId: string;
-  noteLanguage: Locale | null;
   slug: string | null;
   title: string;
   status: PlayStatus;

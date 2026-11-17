@@ -1,40 +1,32 @@
-# Game Shelf 1.1.0
+# Game Shelf 1.1.1
 
-Create English game notes with IGDB or Japanese game notes with Games Never
-Die. The interface and new-note language can be selected independently.
-Headings, media labels, validation messages, setup instructions and play-log
-units support English and Japanese. Source text is retained as supplied;
-missing translations are not invented.
+This update improves phone and tablet layouts and simplifies note language
+settings.
 
-IGDB uses your own Twitch Client ID and Client Secret, with an in-app guide in
-both languages and a connection test. There is no Game Shelf server or shared
-application key. The secret is accessed through Obsidian SecretStorage; only its
-reference is saved in plugin settings. Access tokens stay in memory.
-See [the setup guide](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/blob/1.1.0/docs/igdb-setup.md).
+- Keep the header in place while scrolling the library or details vertically.
+  Prevent horizontal overflow and contain scroll gestures within Game Shelf.
+- Use a single pane at widths of 960px or less, including portrait tablets and
+  split views. Reflow narrow forms, keep button labels readable, and constrain
+  date fields and filters to the available width.
+- Increase touch controls to at least 44px high, use at least 16px input text,
+  and reserve space for Obsidian's floating navigation and bottom safe area.
+  Missing covers now show a gamepad icon instead of squeezed title text.
+- Use the global **Note language** setting for new notes and new play-log
+  entries. Remove per-note language metadata, the language selector in details,
+  and the language-selection requirement for older notes. Existing
+  `note_language` properties are ignored and left intact. Existing prose,
+  previous entries, source identity and property-name profiles are preserved.
+- Keep the journal ready for another entry after saving.
 
-New installations follow Obsidian's interface language, use that language for
-new notes, and choose GND for Japanese or IGDB for English. Online search is on
-by default; credentials are empty until configured. Existing saved preferences are
-preserved. IGDB does not provide the GND-specific articles or Steam statistics.
-Obsidian languages other than Japanese fall back to English for the interface
-and new notes when both language settings are automatic.
+Validation: 57 unit tests, lint, TypeScript checks, build and release checks
+passed. Nine native fixture scenarios passed on isolated Obsidian desktop
+1.13.7 and 1.15.1. Another 127 layout checks covered English/Japanese phone and tablet
+sizes, synthesized touch input, saved journal content and draft retention
+after rotation. These desktop emulations are not native mobile tests;
+iOS/Android hardware, Safari/WebKit and real software keyboards remain
+unverified. Authenticated live IGDB requests were not retested.
 
-Each note keeps its own writing language and source identity. Changing defaults
-does not rewrite existing notes or switch their refresh source. For pre-1.1.0
-notes, choose the note's writing language in its library detail before adding
-another play-log entry. This changes the language property, not existing prose.
-Source descriptions are saved as plain text to prevent unselected Markdown
-embeds. Refresh still protects personal edits and refuses cross-source changes.
-
-Validation: 56 unit tests, official Obsidian lint rules, types, build and release
-checks passed. Nine native fixture scenarios passed on Obsidian 1.13.7 and
-1.15.1, including bilingual setup, cross-language note creation, per-note logs,
-legacy language selection, localized commands, credential persistence checks,
-refresh protection and custom properties across reload. Independent static
-security and Obsidian policy re-reviews passed after corrections.
-Authenticated live IGDB requests and native iOS/Android execution remain untested.
-
-Install or update Game Shelf from **Settings → Community plugins** when the
-plugin is available in your directory. For manual installation, download
-`main.js`, `manifest.json` and `styles.css` from this release into your vault's
+Install or update from **Settings → Community plugins** when Game Shelf is
+available in your directory. For manual installation, download `main.js`,
+`manifest.json` and `styles.css` into your vault's
 `<config folder>/plugins/game-shelf/`. Requires Obsidian 1.13.7 or later.

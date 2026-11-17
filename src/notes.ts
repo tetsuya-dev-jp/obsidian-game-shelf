@@ -33,7 +33,6 @@ import {
 } from './note-format';
 
 export interface CreateOptions {
-  language?: Locale;
   title: string;
   status: string;
   rating: number | null;
@@ -76,14 +75,12 @@ export class NoteStore {
     for (const field of fields) {
       const id = properties[field];
       if (typeof id === 'string' && /^(gnd:|igdb:|manual:)/.test(id)) {
-        const settings = {
+        return {
           ...this.settings,
           propertyNames:
             this.context.schemas[id] ??
             (field === property(this.settings, 'game_id') ? this.settings.propertyNames : {}),
         };
-        const language = properties[property(settings, 'note_language')];
-        return { ...settings, noteLanguage: language === 'ja' || language === 'en' ? language : 'auto' };
       }
     }
     return this.settings;
@@ -235,7 +232,7 @@ export class NoteStore {
   }
   private async createFromGame(game: Game, options: CreateOptions): Promise<CreateResult> {
     const settings = structuredClone(this.settings);
-    const language = options.language ?? noteLocale(settings);
+    const language = noteLocale(settings);
     const id = gameId(game);
     const existing = this.find(id);
     if (existing) return { file: existing, existing: true, warning: null };
@@ -256,7 +253,6 @@ export class NoteStore {
       cssclasses: ['game-shelf-note'],
       [property(settings, 'title')]: options.title.trim(),
       [property(settings, 'cover')]: cover,
-      [property(settings, 'note_language')]: language,
     };
     const body = this.body(
       options.title,
@@ -278,7 +274,7 @@ export class NoteStore {
   }
   async manual(options: CreateOptions): Promise<CreateResult> {
     const settings = structuredClone(this.settings);
-    const language = options.language ?? noteLocale(settings);
+    const language = noteLocale(settings);
     const id = `manual:${crypto.randomUUID()}`;
     const metadata: Metadata = {
       ...this.personal(options, settings),
@@ -286,7 +282,6 @@ export class NoteStore {
       [property(settings, 'game_id')]: id,
       [property(settings, 'game_source')]: 'manual',
       [property(settings, 'title')]: options.title.trim(),
-      [property(settings, 'note_language')]: language,
     };
     const file = await this.write(
       options.title,
@@ -356,21 +351,12 @@ export class NoteStore {
         fm[property(settings, 'finished')] = localDate();
     });
   }
-  async setLanguage(file: TFile, language: Locale): Promise<void> {
-    const settings = this.settingsFor(file);
-    await this.updateProperties(file, (fm) => {
-      fm[property(settings, 'note_language')] = language;
-    });
-  }
   async session(file: TFile, note: string, minutes: number | null): Promise<void> {
     const settings = this.settingsFor(file);
-    let language: Locale | null = null;
+    const language = noteLocale(settings);
     await this.updateProperties(
       file,
       (parsed) => {
-        const stored = parsed[property(settings, 'note_language')];
-        if (stored !== 'en' && stored !== 'ja') throw new LocalizedError('chooseNoteLanguage');
-        language = stored;
         const key = property(settings, 'playtime_minutes');
         const previous = parsed[key];
         if (
@@ -381,10 +367,7 @@ export class NoteStore {
           throw new LocalizedError('invalidPlaytime');
         parsed[key] = (typeof previous === 'number' ? previous : 0) + (minutes ?? 0);
       },
-      (body) => {
-        if (language === null) throw new LocalizedError('chooseNoteLanguage');
-        return appendSession(body, localDate(), note, minutes, language);
-      },
+      (body) => appendSession(body, localDate(), note, minutes, language),
     );
   }
   private async updateProperties(

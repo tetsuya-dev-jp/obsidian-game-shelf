@@ -2,6 +2,11 @@
   --gs-action-background: color-mix(in srgb, var(--interactive-accent) 80%, black);
   --gs-gap: 16px;
   container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
   /* The native status bar overlays the bottom of narrow desktop panes. */
   padding: 0 0 var(--status-bar-height, 28px);
   font-family: var(--font-interface);
@@ -45,6 +50,9 @@
 .gs-root button {
   cursor: pointer;
   white-space: normal;
+  height: auto;
+  min-height: var(--gs-control-height, var(--input-height));
+  max-width: 100%;
 }
 .gs-root button:disabled {
   cursor: default;
@@ -66,13 +74,16 @@
   caret-color: var(--interactive-accent);
 }
 .gs-header {
+  flex: none;
   min-height: 70px;
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  flex-wrap: wrap;
   border-bottom: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
 }
 .gs-brand {
   display: flex;
@@ -80,11 +91,8 @@
   gap: 10px;
   min-width: 0;
 }
-.gs-header {
-  position: sticky;
-  top: 0;
-  z-index: 3;
-  background: var(--background-primary);
+.gs-brand h1 {
+  white-space: nowrap;
 }
 .gs-brand-icon {
   display: flex;
@@ -96,6 +104,8 @@
 }
 .gs-nav {
   display: flex;
+  flex-shrink: 0;
+  max-width: 100%;
   gap: 4px;
   padding: 3px;
   border: 1px solid var(--background-modifier-border);
@@ -109,7 +119,7 @@
   border: 0;
   padding: 7px 12px;
   height: auto;
-  min-height: 32px;
+  min-height: max(32px, var(--gs-control-height, 0px));
 }
 .gs-nav button.is-active {
   color: var(--text-normal);
@@ -119,8 +129,12 @@
 }
 .gs-shell {
   display: grid;
+  flex: 1;
   grid-template-columns: minmax(0, 1fr);
-  min-height: calc(100% - 70px);
+  min-height: 0;
+  overflow: hidden auto;
+  overscroll-behavior: none;
+  scroll-padding-block: 16px;
 }
 .gs-shell.has-details {
   grid-template-columns: minmax(310px, 1fr) minmax(300px, 380px);
@@ -135,6 +149,7 @@
   padding: 24px;
 }
 .gs-detail {
+  container: gs-detail / inline-size;
   border-left: 1px solid var(--background-modifier-border);
   background: var(--background-secondary);
   display: flex;
@@ -150,12 +165,17 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: wrap;
   margin-bottom: 20px;
 }
 .gs-with-icon {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
+}
+.gs-root .gs-with-icon {
+  white-space: nowrap;
 }
 .gs-button-icon {
   display: flex;
@@ -168,21 +188,24 @@
 .gs-toolbar {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 14px;
 }
 .gs-toolbar input {
-  flex: 1;
-  min-width: 80px;
-  width: 100%;
+  flex: 1 1 180px;
+  min-width: 0;
+  width: auto;
   height: 36px;
 }
 .gs-toolbar select {
-  max-width: 160px;
+  flex: 1 1 140px;
+  min-width: 0;
+  max-width: 100%;
   height: 36px;
 }
 .gs-toolbar button {
-  min-height: 36px;
+  min-height: max(36px, var(--gs-control-height, 0px));
 }
 .gs-statuses {
   display: flex;
@@ -210,16 +233,19 @@
   background: var(--background-modifier-hover);
 }
 .gs-facets {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
   margin-bottom: 20px;
 }
 .gs-facets select {
-  max-width: 50%;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 .gs-game-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(142px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 142px), 1fr));
   gap: 20px 16px;
   align-items: start;
 }
@@ -268,11 +294,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
-  text-align: center;
+  padding: 8px;
   color: var(--text-muted);
-  line-height: 1.6;
-  overflow-wrap: anywhere;
+}
+.gs-cover-fallback svg {
+  width: 32px;
+  height: 32px;
+  max-width: 100%;
+  max-height: 100%;
 }
 .gs-card-info {
   display: flex;
@@ -299,6 +328,7 @@
 }
 .gs-card-foot {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   justify-content: space-between;
   align-items: center;
@@ -457,6 +487,7 @@
 }
 .gs-detail-hero {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   align-items: flex-start;
   min-width: 0;
@@ -468,6 +499,7 @@
 }
 .gs-detail-heading {
   display: flex;
+  flex: 1 1 160px;
   flex-direction: column;
   gap: 10px;
   min-width: 0;
@@ -494,12 +526,21 @@
 .gs-field-label {
   color: var(--text-muted);
   font-size: 12px;
+  overflow-wrap: anywhere;
 }
 .gs-field input,
 .gs-field select {
   width: 100%;
   min-width: 0;
   height: 36px;
+  max-width: 100%;
+}
+.gs-field input[type='date'] {
+  overflow: hidden;
+}
+.gs-field input[type='date']::-webkit-date-and-time-value {
+  min-width: 0;
+  text-align: start;
 }
 .gs-personal-grid {
   display: grid;
@@ -559,7 +600,7 @@
 }
 .gs-create-fields > .mod-cta {
   align-self: flex-start;
-  min-height: 38px;
+  min-height: max(38px, var(--gs-control-height, 0px));
   padding-inline: 20px;
 }
 .gs-provenance {
@@ -574,7 +615,7 @@
   border-top: 1px solid var(--background-modifier-border);
 }
 .gs-create-action button {
-  min-height: 38px;
+  min-height: max(38px, var(--gs-control-height, 0px));
   padding-inline: 20px;
 }
 .gs-journal {
@@ -589,9 +630,12 @@
   resize: vertical;
   min-height: 112px;
   line-height: 1.7;
+  min-width: 0;
+  max-width: 100%;
 }
 .gs-journal input {
-  max-width: 220px;
+  min-width: 0;
+  max-width: min(100%, 220px);
 }
 .gs-journal button {
   align-self: flex-start;
@@ -667,27 +711,10 @@
   width: auto;
   object-fit: contain;
 }
-@container (max-width: 700px) {
-  .gs-header {
-    padding: 12px 16px;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .gs-brand h1 {
-    font-size: 18px;
-  }
-  .gs-nav button {
-    padding: 6px 10px;
-    min-height: 36px;
-  }
+@container (max-width: 960px) {
   .gs-shell.has-details,
   .gs-shell.is-discover {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .gs-library,
-  .gs-search-pane,
-  .gs-detail {
-    padding: 20px 16px;
   }
   .gs-detail {
     border-left: 0;
@@ -700,8 +727,29 @@
   .gs-shell:not(.has-selection) > .gs-search-pane + .gs-detail {
     display: none;
   }
-  .gs-toolbar {
+}
+@container gs-detail (max-width: 340px) {
+  .gs-personal-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@container (max-width: 700px) {
+  .gs-header {
+    padding: 12px 16px;
+    gap: 10px;
     flex-wrap: wrap;
+  }
+  .gs-brand h1 {
+    font-size: 18px;
+  }
+  .gs-nav button {
+    padding: 6px 10px;
+    min-height: max(36px, var(--gs-control-height, 0px));
+  }
+  .gs-library,
+  .gs-search-pane,
+  .gs-detail {
+    padding: 20px 16px;
   }
   .gs-toolbar input {
     flex-basis: 100%;
@@ -714,7 +762,7 @@
     flex-shrink: 0;
   }
   .gs-game-grid {
-    grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 128px), 1fr));
     gap: 18px 12px;
   }
   .gs-detail-cover {
@@ -728,8 +776,37 @@
     padding-block: 5px;
   }
   .gs-statuses button {
-    min-height: 34px;
+    min-height: max(34px, var(--gs-control-height, 0px));
   }
+  .gs-create-action button,
+  .gs-journal button {
+    width: 100%;
+  }
+}
+.is-mobile .view-content.gs-root {
+  --gs-control-height: 44px;
+  --gs-input-font-size: max(16px, var(--font-ui-small));
+  /* Obsidian's floating navigation can overlap the view on phones. */
+  padding-bottom: max(
+    var(--view-bottom-spacing, 0px),
+    var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px))
+  );
+}
+@media (pointer: coarse) {
+  .gs-root {
+    --gs-control-height: 44px;
+    --gs-input-font-size: max(16px, var(--font-ui-small));
+  }
+}
+.gs-root :is(input:not([type='checkbox']), select) {
+  min-height: var(--gs-control-height, var(--input-height));
+}
+.gs-root :is(input, select, textarea) {
+  font-size: var(--gs-input-font-size, inherit);
+}
+.gs-root summary,
+.gs-root .gs-checkbox {
+  min-height: var(--gs-control-height, 0px);
 }
 @media (prefers-reduced-motion: reduce) {
   .gs-skeleton {

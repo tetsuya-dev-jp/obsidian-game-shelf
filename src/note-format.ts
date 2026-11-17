@@ -28,7 +28,6 @@ export const PROPERTY_KEYS = [
   'game_source',
   'game_slug',
   'source_id',
-  'note_language',
   'metadata_language',
   'game_url',
   'title',
@@ -75,6 +74,8 @@ export function validateMapping(mapping: unknown): Record<string, string> {
   if (!record(mapping)) throw new LocalizedError('invalidMapping');
   const result: Record<string, string> = {};
   for (const [key, value] of Object.entries(mapping)) {
+    // Discard the retired field without invalidating other saved property names.
+    if (key === 'note_language') continue;
     if (
       !PROPERTY_KEYS.some((k) => k === key) ||
       typeof value !== 'string' ||
@@ -339,7 +340,6 @@ export function libraryItem(
     id,
     source: match[1] === 'gnd' ? 'gamesneverdie' : match[1] === 'igdb' ? 'igdb' : 'manual',
     sourceId: match[2],
-    noteLanguage: read('note_language') === 'en' ? 'en' : read('note_language') === 'ja' ? 'ja' : null,
     slug: typeof slug === 'string' ? slug : null,
     title:
       typeof title === 'string' ? title : (path.split('/').pop()?.replace(/\.md$/, '') ?? path),

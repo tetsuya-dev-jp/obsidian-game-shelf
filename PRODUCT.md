@@ -27,7 +27,7 @@ Existing verified Python source at ../gamesneverdie-client. Primary user-opinion
 - Personal writing is owned by the user and survives metadata refresh and plugin removal.
 - A game and its editions are distinct; an existing note is opened rather than silently duplicated.
 - Offline writing is available immediately. Online setup is explained in English and Japanese without requiring another plugin.
-- UI and new-note languages are independent. Existing notes retain their provider identity, writing language and personal text; changing defaults does not translate or migrate old notes.
+- UI and generated-note languages are independent. One global note language controls new note headings and new play-log entries. Existing notes retain their provider identity and personal text; changing the setting does not translate existing prose.
 - Reveal optional metadata and spoilers deliberately.
 - Collection management and reflection have equal weight, confirmed by the user.
 

@@ -33,9 +33,10 @@ installation, Dataview, or other plugin is required. Manual notes work offline.
 
 The interface follows your Obsidian theme and supports English and Japanese,
 keyboard operation and narrow panes. There are no default hotkeys.
-Choose the language of new notes separately from the interface. Automatic
+Choose the language of generated note text separately from the interface. Automatic
 source selection uses Games Never Die for Japanese notes and IGDB for English
-notes. Saved notes retain their writing language and original source.
+notes. Existing notes retain their original source and text; new play-log
+entries follow the current global note language setting.
 With automatic language settings, Obsidian languages other than Japanese fall
 back to English for both the interface and new notes.
 
@@ -227,10 +228,10 @@ value. SecretStorage is scoped to the vault and is not an assurance of encrypted
 storage. Protect your devices and backups. Synced settings may contain a secret
 reference without the secret; configure it on each device when necessary.
 
-Each new note stores its writing language independently of the interface and
-future defaults. For notes created before 1.1.0, choose **Note writing language**
-in the library detail before adding another play-log entry. This choice saves
-only the language property; it does not translate or rewrite existing prose.
+The global **Note language** setting controls headings in new notes and newly
+added play-log entries in any note. Notes need no individual language setting.
+Existing prose and old entries are not translated or rewritten. Previously
+saved `note_language` properties are ignored and left intact.
 
 [The site's disclaimer](https://gamesneverdie.com/ja/disclaimer) asks users to
 refrain from automated bulk extraction; its
@@ -284,6 +285,11 @@ node e2e/launch.mjs stop
 The harness uses a dedicated test vault/profile and stops only its own process
 group. `--live` explicitly opts into the upstream search checks; see the test
 script's fixture prerequisites. Do not point it at a personal vault.
+
+For the mobile layout regression suite, run `node e2e/mobile.mjs` while the
+isolated harness is running. It checks English/Japanese layouts, synthesized
+touch input and saved journal content at phone/tablet sizes. It uses fixture
+search responses and desktop Chromium, not native iOS/Android.
 
 ## License and attribution
 

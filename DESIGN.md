@@ -22,12 +22,14 @@ An Obsidian-native working library. The game covers provide personality; the int
 | Typography              | `--font-interface`, 13px body, 12px metadata, 22px page heading                                       |
 | Spacing                 | 4, 8, 12, 16, 24, 32px                                                                                |
 | Radius                  | host `--radius-s`, `--radius-m`, `--radius-l`                                                         |
-| Covers                  | 3:4 aspect ratio, object-fit cover, image fallback with title                                         |
-| Layout                  | 16–24px pane padding; grid min 144px; search rail 300px; collapse below 700px                         |
+| Covers                  | 3:4 aspect ratio, object-fit cover, gamepad icon fallback                                              |
+| Layout                  | 16–24px pane padding; grid min 128–142px; search rail 300px; single pane at 960px and below             |
 
 ## Interaction contract
 
 Search is submitted explicitly to avoid needless requests. Enter submits, arrow keys move result focus, Escape returns from detail where appropriate. Source failures offer retry and manual creation without losing the query. No automatic network on startup. State survives switching between library and discovery during a session. No silent overwrites, remote HTML insertion, or default hotkeys.
+
+The header stays outside the vertically scrolling content. Narrow detail forms use one column; touch controls are at least 44px tall, with inputs at least 16px to avoid focus zoom on iOS. Mobile padding reserves Obsidian's floating navigation and safe area. Missing covers use a gamepad icon; titles remain in the adjacent text.
 
 ## Verification contract
 

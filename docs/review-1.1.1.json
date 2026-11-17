@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-18",
+  "version": "1.1.1",
+  "baseCommit": "92680dfaf56f4faa52e2c3e255c235fd2b290a36",
+  "reviewerModel": "gpt-6-sol",
+  "reviewType": "independent static review of the complete relevant diff and new mobile regression suite",
+  "passed": true,
+  "securityConcerns": [],
+  "logicErrors": [],
+  "suggestions": [],
+  "summary": "No actionable security or logic errors found in the reviewed changes.",
+  "scope": [
+    "Responsive sizing, scrolling and mobile controls",
+    "Global note language and removal of per-note language selection",
+    "Existing prose, source identity and property mapping preservation",
+    "Unit and native regression tests",
+    "Documentation of behavior and verification limits"
+  ],
+  "limits": [
+    "The reviewer did not run the application or tests",
+    "Release version metadata and release notes were prepared separately"
+  ]
+}

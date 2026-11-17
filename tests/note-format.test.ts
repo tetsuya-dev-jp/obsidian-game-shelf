@@ -114,15 +114,24 @@ describe('mapping and source metadata', () => {
     expect(metadata).not.toHaveProperty('note_language');
   });
 
-  it('projects both providers and mapped per-note languages without guessing from the source', () => {
-    const custom = parseSettings({ propertyNames: { note_language: 'writing_language' } });
+  it('projects both providers without a per-note language', () => {
+    const custom = parseSettings({ propertyNames: { title: 'game_title' } });
     const english = libraryItem('Games/Example.md', 0, {
-      game_id: 'igdb:1942', game_slug: 'human-readable', writing_language: 'ja',
+      game_id: 'igdb:1942', game_slug: 'human-readable', game_title: 'Example', note_language: 'ja',
     }, custom);
-    expect(english).toMatchObject({ source: 'igdb', sourceId: '1942', noteLanguage: 'ja' });
+    expect(english).toMatchObject({ source: 'igdb', sourceId: '1942', title: 'Example' });
+    expect(english).not.toHaveProperty('noteLanguage');
     const legacy = libraryItem('Games/Legacy.md', 0, { game_id: 'gnd:legacy' }, custom);
-    expect(legacy).toMatchObject({ source: 'gamesneverdie', sourceId: 'legacy', noteLanguage: null });
+    expect(legacy).toMatchObject({ source: 'gamesneverdie', sourceId: 'legacy' });
     expect(libraryItem('Other.md', 0, { game_id: 'unrelated:example' }, custom)).toBeNull();
+  });
+
+  it('discards retired language mappings without losing saved settings or other property names', () => {
+    const propertyNames = { game_id: 'shelf_identity', title: 'game_title', note_language: 'writing_language' };
+    const active = { game_id: 'shelf_identity', title: 'game_title' };
+    expect(validateMapping(propertyNames)).toEqual(active);
+    expect(parseSettings({ folder: 'My games', noteLanguage: 'ja', online: false, propertyNames }))
+      .toMatchObject({ folder: 'My games', noteLanguage: 'ja', online: false, propertyNames: active });
   });
 
   it('keeps UI language, note language, provider and secret references independent in settings', () => {

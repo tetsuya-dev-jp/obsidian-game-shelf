@@ -1,0 +1,2198 @@
+{
+  "date": "2026-11-17T23:30:41.564Z",
+  "nativeMobile": false,
+  "syntheticNetwork": true,
+  "layouts": [
+    {
+      "language": "ja",
+      "screen": "library",
+      "viewport": [
+        320,
+        568
+      ],
+      "paneWidth": 276,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "list",
+      "viewport": [
+        320,
+        568
+      ],
+      "paneWidth": 276,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "detail",
+      "viewport": [
+        320,
+        568
+      ],
+      "paneWidth": 276,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "manual",
+      "viewport": [
+        320,
+        568
+      ],
+      "paneWidth": 276,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "discover",
+      "viewport": [
+        320,
+        568
+      ],
+      "paneWidth": 276,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "library",
+      "viewport": [
+        360,
+        800
+      ],
+      "paneWidth": 316,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "list",
+      "viewport": [
+        360,
+        800
+      ],
+      "paneWidth": 316,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "detail",
+      "viewport": [
+        360,
+        800
+      ],
+      "paneWidth": 316,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "manual",
+      "viewport": [
+        360,
+        800
+      ],
+      "paneWidth": 316,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "discover",
+      "viewport": [
+        360,
+        800
+      ],
+      "paneWidth": 316,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "library",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "list",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "detail",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "manual",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "discover",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "library",
+      "viewport": [
+        430,
+        932
+      ],
+      "paneWidth": 386,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "list",
+      "viewport": [
+        430,
+        932
+      ],
+      "paneWidth": 386,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "detail",
+      "viewport": [
+        430,
+        932
+      ],
+      "paneWidth": 386,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "manual",
+      "viewport": [
+        430,
+        932
+      ],
+      "paneWidth": 386,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "discover",
+      "viewport": [
+        430,
+        932
+      ],
+      "paneWidth": 386,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "library",
+      "viewport": [
+        600,
+        960
+      ],
+      "paneWidth": 556,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "list",
+      "viewport": [
+        600,
+        960
+      ],
+      "paneWidth": 556,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "detail",
+      "viewport": [
+        600,
+        960
+      ],
+      "paneWidth": 556,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "manual",
+      "viewport": [
+        600,
+        960
+      ],
+      "paneWidth": 556,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "discover",
+      "viewport": [
+        600,
+        960
+      ],
+      "paneWidth": 556,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "library",
+      "viewport": [
+        744,
+        1133
+      ],
+      "paneWidth": 700,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "list",
+      "viewport": [
+        744,
+        1133
+      ],
+      "paneWidth": 700,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "detail",
+      "viewport": [
+        744,
+        1133
+      ],
+      "paneWidth": 700,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "manual",
+      "viewport": [
+        744,
+        1133
+      ],
+      "paneWidth": 700,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "discover",
+      "viewport": [
+        744,
+        1133
+      ],
+      "paneWidth": 700,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "library",
+      "viewport": [
+        768,
+        1024
+      ],
+      "paneWidth": 724,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "list",
+      "viewport": [
+        768,
+        1024
+      ],
+      "paneWidth": 724,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "detail",
+      "viewport": [
+        768,
+        1024
+      ],
+      "paneWidth": 724,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "manual",
+      "viewport": [
+        768,
+        1024
+      ],
+      "paneWidth": 724,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "discover",
+      "viewport": [
+        768,
+        1024
+      ],
+      "paneWidth": 724,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "library",
+      "viewport": [
+        820,
+        1180
+      ],
+      "paneWidth": 776,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "list",
+      "viewport": [
+        820,
+        1180
+      ],
+      "paneWidth": 776,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "detail",
+      "viewport": [
+        820,
+        1180
+      ],
+      "paneWidth": 776,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "manual",
+      "viewport": [
+        820,
+        1180
+      ],
+      "paneWidth": 776,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "discover",
+      "viewport": [
+        820,
+        1180
+      ],
+      "paneWidth": 776,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "library",
+      "viewport": [
+        844,
+        390
+      ],
+      "paneWidth": 800,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "list",
+      "viewport": [
+        844,
+        390
+      ],
+      "paneWidth": 800,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "detail",
+      "viewport": [
+        844,
+        390
+      ],
+      "paneWidth": 800,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "manual",
+      "viewport": [
+        844,
+        390
+      ],
+      "paneWidth": 800,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "discover",
+      "viewport": [
+        844,
+        390
+      ],
+      "paneWidth": 800,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "library",
+      "viewport": [
+        1024,
+        768
+      ],
+      "paneWidth": 980,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "list",
+      "viewport": [
+        1024,
+        768
+      ],
+      "paneWidth": 980,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "detail",
+      "viewport": [
+        1024,
+        768
+      ],
+      "paneWidth": 980,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "manual",
+      "viewport": [
+        1024,
+        768
+      ],
+      "paneWidth": 980,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "discover",
+      "viewport": [
+        1024,
+        768
+      ],
+      "paneWidth": 980,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "library",
+      "viewport": [
+        1133,
+        744
+      ],
+      "paneWidth": 1089,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "list",
+      "viewport": [
+        1133,
+        744
+      ],
+      "paneWidth": 1089,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "detail",
+      "viewport": [
+        1133,
+        744
+      ],
+      "paneWidth": 1089,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "manual",
+      "viewport": [
+        1133,
+        744
+      ],
+      "paneWidth": 1089,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "discover",
+      "viewport": [
+        1133,
+        744
+      ],
+      "paneWidth": 1089,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "library",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1396,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "list",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1396,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "detail",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1396,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "manual",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1396,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "discover",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1396,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "keyboard-space",
+      "viewport": [
+        390,
+        420
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "search-results",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "screen": "search-preview",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "library",
+      "viewport": [
+        320,
+        568
+      ],
+      "paneWidth": 276,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "list",
+      "viewport": [
+        320,
+        568
+      ],
+      "paneWidth": 276,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "detail",
+      "viewport": [
+        320,
+        568
+      ],
+      "paneWidth": 276,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "manual",
+      "viewport": [
+        320,
+        568
+      ],
+      "paneWidth": 276,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "discover",
+      "viewport": [
+        320,
+        568
+      ],
+      "paneWidth": 276,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "library",
+      "viewport": [
+        360,
+        800
+      ],
+      "paneWidth": 316,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "list",
+      "viewport": [
+        360,
+        800
+      ],
+      "paneWidth": 316,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "detail",
+      "viewport": [
+        360,
+        800
+      ],
+      "paneWidth": 316,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "manual",
+      "viewport": [
+        360,
+        800
+      ],
+      "paneWidth": 316,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "discover",
+      "viewport": [
+        360,
+        800
+      ],
+      "paneWidth": 316,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "library",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "list",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "detail",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "manual",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "discover",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "library",
+      "viewport": [
+        430,
+        932
+      ],
+      "paneWidth": 386,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "list",
+      "viewport": [
+        430,
+        932
+      ],
+      "paneWidth": 386,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "detail",
+      "viewport": [
+        430,
+        932
+      ],
+      "paneWidth": 386,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "manual",
+      "viewport": [
+        430,
+        932
+      ],
+      "paneWidth": 386,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "discover",
+      "viewport": [
+        430,
+        932
+      ],
+      "paneWidth": 386,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "library",
+      "viewport": [
+        600,
+        960
+      ],
+      "paneWidth": 556,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "list",
+      "viewport": [
+        600,
+        960
+      ],
+      "paneWidth": 556,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "detail",
+      "viewport": [
+        600,
+        960
+      ],
+      "paneWidth": 556,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "manual",
+      "viewport": [
+        600,
+        960
+      ],
+      "paneWidth": 556,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "discover",
+      "viewport": [
+        600,
+        960
+      ],
+      "paneWidth": 556,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "library",
+      "viewport": [
+        744,
+        1133
+      ],
+      "paneWidth": 700,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "list",
+      "viewport": [
+        744,
+        1133
+      ],
+      "paneWidth": 700,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "detail",
+      "viewport": [
+        744,
+        1133
+      ],
+      "paneWidth": 700,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "manual",
+      "viewport": [
+        744,
+        1133
+      ],
+      "paneWidth": 700,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "discover",
+      "viewport": [
+        744,
+        1133
+      ],
+      "paneWidth": 700,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "library",
+      "viewport": [
+        768,
+        1024
+      ],
+      "paneWidth": 724,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "list",
+      "viewport": [
+        768,
+        1024
+      ],
+      "paneWidth": 724,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "detail",
+      "viewport": [
+        768,
+        1024
+      ],
+      "paneWidth": 724,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "manual",
+      "viewport": [
+        768,
+        1024
+      ],
+      "paneWidth": 724,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "discover",
+      "viewport": [
+        768,
+        1024
+      ],
+      "paneWidth": 724,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "library",
+      "viewport": [
+        820,
+        1180
+      ],
+      "paneWidth": 776,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "list",
+      "viewport": [
+        820,
+        1180
+      ],
+      "paneWidth": 776,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "detail",
+      "viewport": [
+        820,
+        1180
+      ],
+      "paneWidth": 776,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "manual",
+      "viewport": [
+        820,
+        1180
+      ],
+      "paneWidth": 776,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "discover",
+      "viewport": [
+        820,
+        1180
+      ],
+      "paneWidth": 776,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "library",
+      "viewport": [
+        844,
+        390
+      ],
+      "paneWidth": 800,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "list",
+      "viewport": [
+        844,
+        390
+      ],
+      "paneWidth": 800,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "detail",
+      "viewport": [
+        844,
+        390
+      ],
+      "paneWidth": 800,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "manual",
+      "viewport": [
+        844,
+        390
+      ],
+      "paneWidth": 800,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "discover",
+      "viewport": [
+        844,
+        390
+      ],
+      "paneWidth": 800,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "library",
+      "viewport": [
+        1024,
+        768
+      ],
+      "paneWidth": 980,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "list",
+      "viewport": [
+        1024,
+        768
+      ],
+      "paneWidth": 980,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "detail",
+      "viewport": [
+        1024,
+        768
+      ],
+      "paneWidth": 980,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "manual",
+      "viewport": [
+        1024,
+        768
+      ],
+      "paneWidth": 980,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "discover",
+      "viewport": [
+        1024,
+        768
+      ],
+      "paneWidth": 980,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "library",
+      "viewport": [
+        1133,
+        744
+      ],
+      "paneWidth": 1089,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "list",
+      "viewport": [
+        1133,
+        744
+      ],
+      "paneWidth": 1089,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "detail",
+      "viewport": [
+        1133,
+        744
+      ],
+      "paneWidth": 1089,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "manual",
+      "viewport": [
+        1133,
+        744
+      ],
+      "paneWidth": 1089,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "discover",
+      "viewport": [
+        1133,
+        744
+      ],
+      "paneWidth": 1089,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "library",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1396,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "list",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1396,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "detail",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1396,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "manual",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1396,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": true,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "discover",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "paneWidth": 1396,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "keyboard-space",
+      "viewport": [
+        390,
+        420
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "search-results",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "search-preview",
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 346,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": true,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "screen": "light-search-results",
+      "viewport": [
+        744,
+        1133
+      ],
+      "paneWidth": 700,
+      "rootOverflow": [
+        0,
+        0
+      ],
+      "horizontalOverflow": 0,
+      "libraryVisible": false,
+      "detailVisible": false,
+      "issues": []
+    }
+  ],
+  "interactions": [
+    {
+      "language": "ja",
+      "touchCreate": true,
+      "rotationPreservesDraft": true,
+      "touchSaveAboveKeyboard": true,
+      "persistedMinutes": 17
+    },
+    {
+      "language": "ja",
+      "verticalTouchScroll": true,
+      "noHorizontalPan": true,
+      "headerFixed": true
+    },
+    {
+      "language": "en",
+      "touchCreate": true,
+      "rotationPreservesDraft": true,
+      "touchSaveAboveKeyboard": true,
+      "persistedMinutes": 17
+    },
+    {
+      "language": "en",
+      "verticalTouchScroll": true,
+      "noHorizontalPan": true,
+      "headerFixed": true
+    },
+    {
+      "floatingNavigationReserved": 84
+    }
+  ],
+  "app": "Game Shelf - vault - Obsidian 1.15.1"
+}

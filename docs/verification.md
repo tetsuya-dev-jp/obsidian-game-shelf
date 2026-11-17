@@ -1,5 +1,52 @@
 # Verification
 
+## Version 1.1.1: global note language simplification (2026-11-18)
+
+Note creation and new play-log entries now use the global **Note language**
+setting. New notes no longer write language metadata. The per-note language
+selector and the save gate for older notes have been removed. Existing
+`note_language` values are ignored; existing prose, previous entries and custom
+properties are retained.
+Retired language mappings are discarded when loading saved settings and
+property profiles, preserving the remaining mappings.
+
+The updated [native bilingual suite](../e2e/bilingual.mjs) checks global English,
+Japanese and automatic settings across existing notes; absent, English and
+unsupported stored language values; new notes without language metadata;
+consecutive UI saves; retained prose, provider identity and property-name
+profiles across reload. Results are in the
+[language simplification report](verification-language-simplification.json).
+Earlier versioned reports below describe the behavior of those releases.
+All 57 unit tests, lint, TypeScript checks, build and release validation passed.
+All nine native scenarios passed on isolated Obsidian desktop 1.15.1 and the
+minimum supported 1.13.7
+([minimum-version report](verification-language-simplification-1.13.7.json)).
+The independent [static review](review-1.1.1.json) found no actionable security
+or logic issues. The production dependency audit reported zero vulnerabilities.
+
+## Mobile layout follow-up (2026-11-18)
+
+The [mobile regression suite](../e2e/mobile.mjs) runs the built plugin inside
+isolated Obsidian desktop with synthesized touch input and mobile control CSS.
+The [report](mobile-checks.json) records English/Japanese checks across 12
+viewports from 320×568 to 1440×1000, including portrait/landscape tablets and
+phone landscape. It covers library/grid/list, details, manual creation, search,
+preview and returning to results.
+
+Checks reject horizontal overflow, clipped action labels, short touch targets
+and input fonts below 16px. Synthesized touch events create notes, scroll the content
+without moving the header, and save journal text plus 17 minutes through the
+native vault/cache. Rotation preserves the draft; a 390×420 viewport checks
+save-button reachability with reduced space. Floating-navigation padding and a
+light-theme tablet layout are checked separately. Missing covers use icons
+instead of squeezing duplicate titles into small placeholders.
+
+These are desktop Chromium emulations. They do not verify a real software
+keyboard, iOS rubber-banding, native mobile navigation or physical devices.
+The installed Linux WebKit could not launch because required shared libraries
+(including ICU 74) are missing, so Safari/WebKit behavior remains unverified.
+No system dependencies were installed for this check.
+
 ## Version 1.1.0
 
 The English/Japanese update passed 56 unit tests, official Obsidian lint rules,

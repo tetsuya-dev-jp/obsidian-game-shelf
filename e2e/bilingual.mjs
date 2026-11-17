@@ -8,7 +8,7 @@ assert.equal(state.vaultPath, new URL('./.runtime/vault', import.meta.url).pathn
 const client = await connect();
 const evaluate = (fn, ...args) => client.evaluate(`(${fn.toString()})(${args.map((arg) => JSON.stringify(arg)).join(',')})`, { timeoutMs: 30000 });
 const report = { date: new Date().toISOString(), syntheticNetwork: true, nativeMobile: false, checks: [] };
-const root = 'E2E bilingual 1.1.0';
+const root = 'E2E language simplification';
 let saved;
 async function check(name, fn) {
   const details = await fn();
@@ -125,19 +125,19 @@ try {
     await until(`!!document.querySelector('.gs-note-preview pre')`);
     const preview = await client.evaluate(`document.querySelector('.gs-note-preview pre').textContent`);
     assert(preview.includes('## My notes') && preview.includes('## Play log') && preview.includes('Trailer 1'));
-    assert(preview.includes('igdb:424242') && preview.includes('note_language: "en"'));
+    assert(preview.includes('igdb:424242') && !preview.includes('note_language:'));
     await client.evaluate(`document.querySelector('.gs-create-action button').click()`);
     await until(`app.plugins.plugins['game-shelf'].notes.list().some(x=>x.id==='igdb:424242')`);
     return evaluate(async () => {
       const p = app.plugins.plugins['game-shelf']; const file = p.notes.find('igdb:424242');
       const body = await app.vault.read(file);
-      if (!body.includes('## My notes') || !body.includes('An English overview') || !body.includes('igdb-424242.png')) throw new Error('Saved note differs from preview');
+      if (!body.includes('## My notes') || !body.includes('An English overview') || !body.includes('igdb-424242.png') || body.includes('note_language:')) throw new Error('Saved note differs from preview');
       window.gameShelfFixture.englishPath = file.path;
       return { noteLanguage: 'en', uiLanguage: 'ja', localCover: true, sourceId: 'igdb:424242' };
     });
   });
 
-  await check('Japanese notes, English notes and manual notes preserve their own log language', async () => evaluate(async () => {
+  await check('all notes use the global language for new entries and retain existing prose', async () => evaluate(async () => {
     const p = app.plugins.plugins['game-shelf'];
     const english = p.notes.find('igdb:424242');
     await p.updateSettings({ ...p.settings, language: 'en', noteLanguage: 'ja', provider: 'auto' });
@@ -148,13 +148,23 @@ try {
     await p.notes.session(english, 'English session', 12);
     const jaBody = await app.vault.read(japanese.file), enBody = await app.vault.read(english);
     if (!jaBody.includes('17 分') || !jaBody.includes('## プレイ記録') || !jaBody.includes('予告編')) throw new Error('Japanese writing labels missing');
-    if (!enBody.includes('12 min') || !enBody.includes('## Play log')) throw new Error('Existing English note changed language');
+    if (!enBody.includes('12 分') || !enBody.includes('## Play log')) throw new Error('Global language or original English headings lost');
+    await p.updateSettings({ ...p.settings, noteLanguage: 'en' });
+    await p.notes.session(japanese.file, 'Global English entry', 7);
+    const updatedJapanese = await app.vault.read(japanese.file);
+    if (!updatedJapanese.includes('7 min') || !updatedJapanese.includes('17 分') || !updatedJapanese.includes('## プレイ記録')) throw new Error('New global language changed previous text');
+    await p.updateSettings({ ...p.settings, noteLanguage: 'auto', language: 'en' });
+    await p.notes.session(english, 'Automatic English entry', 8);
+    await p.updateSettings({ ...p.settings, language: 'ja' });
+    await p.notes.session(english, 'Automatic Japanese entry', 9);
+    const updatedEnglish = await app.vault.read(english);
+    if (!updatedEnglish.includes('8 min') || !updatedEnglish.includes('9 分') || !updatedEnglish.includes('12 分')) throw new Error('Automatic note language did not follow the interface');
     const manual = await p.notes.manual({ title: '手動ノート', status: 'playing', rating: 4, ownership: 'owned', groups: [], saveCover: false });
     const manualBody = await app.vault.read(manual.file);
-    if (!manualBody.includes('note_language: "ja"')) throw new Error('Manual note language not saved');
+    if (manualBody.includes('note_language:') || !manualBody.includes('## プレイ記録')) throw new Error('Manual note did not use global settings');
     const again = await p.notes.create(game, { title: '重複', status: 'backlog', rating: null, ownership: 'owned', groups: [], saveCover: false });
     if (!again.existing || again.file.path !== japanese.file.path) throw new Error('Duplicate source identity not retained');
-    return { englishLog: '12 min', japaneseLog: '17 分', manualLanguage: 'ja', duplicateOpened: true };
+    return { globalJapaneseForBothNotes: true, globalEnglishForExistingJapaneseNote: true, automaticLanguage: true, originalTextRetained: true, noLanguageProperty: true, duplicateOpened: true };
   }));
 
   await check('source refresh preserves edited titles, body and source identity after defaults change', async () => evaluate(async () => {
@@ -176,28 +186,40 @@ try {
     return { conflictProtected: true, bodyPreserved: true, wrongSourceRejected };
   }));
 
-  await check('legacy notes require an explicit language before saving another session', async () => evaluate(async () => {
-    const p = app.plugins.plugins['game-shelf'];
-    await p.updateSettings({ ...p.settings, noteLanguage: 'en' });
-    const created = await p.notes.manual({ title: 'Legacy note', status: 'backlog', rating: null, ownership: 'owned', groups: [], saveCover: false });
-    await app.vault.process(created.file, (body) => body.replace(/^note_language:.*\n/m, ''));
-    await new Promise((resolve) => setTimeout(resolve, 350));
-    await p.updateSettings({ ...p.settings, language: 'ja', noteLanguage: 'ja' });
-    const before = await app.vault.read(created.file);
-    let rejected = false;
-    try { await p.notes.session(created.file, 'Must not be saved', 9); } catch { rejected = true; }
-    if (!rejected || await app.vault.read(created.file) !== before) throw new Error('Legacy session changed an unresolved note');
-    const view = await p.openShelf('library');
-    view.selectLibrary(created.file.path);
-    const select = document.querySelector(`select[aria-label="${p.t('noteWritingLanguage')}"]`);
-    if (!select || select.value !== '') throw new Error('Explicit language control missing');
-    select.value = 'en'; select.dispatchEvent(new Event('change', { bubbles: true }));
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    await p.notes.session(created.file, 'English after selection', 9);
-    const after = await app.vault.read(created.file);
-    if (!after.includes('9 min') || !after.includes('## My notes')) throw new Error('Chosen language or original prose lost');
-    return { unresolvedSaveRejected: true, unchangedOnRejection: true, nativeLanguageSelection: true, savedUnit: 'min' };
-  }));
+  await check('stored and absent note languages never block logging or override global settings', async () => {
+    for (const stored of [null, 'en', 'fr']) {
+      const path = await evaluate(async stored => {
+        const p = app.plugins.plugins['game-shelf'];
+        await p.updateSettings({ ...p.settings, noteLanguage: 'en' });
+        const created = await p.notes.manual({ title: `Existing note ${stored ?? 'unset'}`, status: 'backlog', rating: null, ownership: 'owned', groups: [], saveCover: false });
+        if (stored) await app.fileManager.processFrontMatter(created.file, fm => { fm.note_language = stored; });
+        await app.vault.process(created.file, body => body + '\nOriginal hand-written paragraph.\n');
+        await new Promise(resolve => setTimeout(resolve, 350));
+        await p.updateSettings({ ...p.settings, language: 'ja', noteLanguage: 'ja' });
+        (await p.openShelf('library')).selectLibrary(created.file.path);
+        if (document.querySelector('select[aria-label="Note writing language"], select[aria-label="ノートの記録言語"]')) throw new Error('Per-note language control remains');
+        return created.file.path;
+      }, stored);
+      for (const entry of [1, 2]) {
+        await evaluate(entry => {
+          const button = document.querySelector('.gs-journal button');
+          if (button.disabled) throw new Error('Existing note cannot save a log');
+          const textarea = document.querySelector('.gs-journal-text');
+          textarea.value = `Entry ${entry} using global settings`;
+          textarea.dispatchEvent(new Event('input', { bubbles: true }));
+          const minutes = document.querySelector('.gs-journal input');
+          minutes.value = '9'; minutes.dispatchEvent(new Event('input', { bubbles: true }));
+          button.click();
+        }, entry);
+        await until(`app.plugins.plugins['game-shelf'].notes.list().find(x=>x.path===${JSON.stringify(path)})?.minutes===${entry * 9} && !document.querySelector('.gs-journal button').disabled`);
+      }
+      const after = await evaluate(path => app.vault.read(app.vault.getFileByPath(path)), path);
+      if (!after.includes('9 分') || !after.includes('## My notes') || !after.includes('Original hand-written paragraph.')) throw new Error('Global language or existing prose lost');
+      if (!after.includes('Entry 1 using global settings') || !after.includes('Entry 2 using global settings')) throw new Error('Consecutive UI saves lost an entry');
+      if (stored ? !after.includes(`note_language: ${stored}`) : /^note_language:/m.test(after)) throw new Error('Existing language metadata was changed');
+    }
+    return { absentAndStoredLanguagesIgnored: true, noLanguagePrompt: true, consecutiveUiSaves: true, persistedMinutes: 18, savedUnit: '分', originalTextRetained: true };
+  });
 
   await check('language switching retains four unique working localized commands', async () => evaluate(async () => {
     const p = app.plugins.plugins['game-shelf'];
@@ -228,21 +250,24 @@ try {
 
   await check('custom property-name profiles survive plugin reload for both providers', async () => evaluate(async () => {
     const p = app.plugins.plugins['game-shelf'];
-    await p.updateSettings({ ...p.settings, noteLanguage: 'en', propertyNames: { game_id: 'shelf_identity', note_language: 'writing_language', title: 'game_title' } });
+    await p.updateSettings({ ...p.settings, noteLanguage: 'en', propertyNames: { game_id: 'shelf_identity', title: 'game_title' } });
     const source = await p.sourceFor('igdb').get('424242');
     const alternate = { ...source, id: '424243', slug: 'another-fixture' };
     const created = await p.notes.create(alternate, { title: 'Mapped properties', status: 'completed', rating: 5, ownership: 'owned', groups: ['basics'], saveCover: false });
+    await app.fileManager.processFrontMatter(created.file, fm => { fm.writing_language = 'en'; });
+    p.schemas['igdb:424243'].note_language = 'writing_language';
     await p.updateSettings({ ...p.settings, propertyNames: {}, language: 'ja', noteLanguage: 'ja' });
     const path = created.file.path;
     await app.plugins.unloadPlugin('game-shelf'); await app.plugins.loadPlugin('game-shelf');
     const reloaded = app.plugins.plugins['game-shelf'];
     await new Promise((resolve) => setTimeout(resolve, 350));
     const item = reloaded.notes.list().find((item) => item.path === path);
-    if (!item || item.id !== 'igdb:424243' || item.noteLanguage !== 'en' || item.title !== 'Mapped properties') throw new Error('Mapped note lost on reload');
-    await reloaded.notes.session(reloaded.notes.file(path), 'Still in English', 3);
+    if (!item || item.id !== 'igdb:424243' || item.title !== 'Mapped properties') throw new Error('Mapped note lost on reload');
+    if ('note_language' in reloaded.schemas[item.id]) throw new Error('Retired property mapping retained');
+    await reloaded.notes.session(reloaded.notes.file(path), 'Global language after reload', 3);
     const body = await app.vault.read(reloaded.notes.file(path));
-    if (!body.includes('3 min')) throw new Error('Reload lost per-note language');
-    return { restoredId: item.id, language: item.noteLanguage, propertyProfile: true };
+    if (!body.includes('3 分') || !body.includes('writing_language: en')) throw new Error('Reload lost global language or previous data');
+    return { restoredId: item.id, globalLanguage: 'ja', propertyProfile: true, retiredMappingIgnored: true };
   }));
 } catch (error) {
   report.checks.push({ name: 'execution', status: 'fail', details: error.message });
@@ -259,6 +284,6 @@ try {
     delete window.gameShelfFixture;
   }, saved, root).catch((error) => { report.cleanupError = error.message; });
   await client.call('Fetch.disable').catch(() => {});
-  await writeFile(new URL('../docs/verification-1.1.0.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
+  await writeFile(new URL('../docs/verification-language-simplification.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
   client.close();
 }
