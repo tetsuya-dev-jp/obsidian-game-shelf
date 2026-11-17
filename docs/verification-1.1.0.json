@@ -1,0 +1,105 @@
+{
+  "date": "2026-11-17T10:47:30.465Z",
+  "syntheticNetwork": true,
+  "nativeMobile": false,
+  "checks": [
+    {
+      "name": "native EN and JA credential guides expose SecretStorage controls and official links",
+      "status": "pass",
+      "details": [
+        {
+          "language": "en",
+          "controls": 4,
+          "officialLinks": 2
+        },
+        {
+          "language": "ja",
+          "controls": 4,
+          "officialLinks": 2
+        }
+      ]
+    },
+    {
+      "name": "English search requires setup and offline connection tests send nothing",
+      "status": "pass",
+      "details": {
+        "requestsWhileOffline": 0,
+        "setupRequired": true
+      }
+    },
+    {
+      "name": "Japanese UI creates an English IGDB note through search and preview",
+      "status": "pass",
+      "details": {
+        "noteLanguage": "en",
+        "uiLanguage": "ja",
+        "localCover": true,
+        "sourceId": "igdb:424242"
+      }
+    },
+    {
+      "name": "Japanese notes, English notes and manual notes preserve their own log language",
+      "status": "pass",
+      "details": {
+        "englishLog": "12 min",
+        "japaneseLog": "17 分",
+        "manualLanguage": "ja",
+        "duplicateOpened": true
+      }
+    },
+    {
+      "name": "source refresh preserves edited titles, body and source identity after defaults change",
+      "status": "pass",
+      "details": {
+        "conflictProtected": true,
+        "bodyPreserved": true,
+        "wrongSourceRejected": true
+      }
+    },
+    {
+      "name": "legacy notes require an explicit language before saving another session",
+      "status": "pass",
+      "details": {
+        "unresolvedSaveRejected": true,
+        "unchangedOnRejection": true,
+        "nativeLanguageSelection": true,
+        "savedUnit": "min"
+      }
+    },
+    {
+      "name": "language switching retains four unique working localized commands",
+      "status": "pass",
+      "details": {
+        "languages": [
+          "en",
+          "ja",
+          "en"
+        ],
+        "commands": 4,
+        "execution": true
+      }
+    },
+    {
+      "name": "credentials and tokens are absent from plugin persistence and generated notes",
+      "status": "pass",
+      "details": {
+        "persistedSecrets": false,
+        "persistedTokens": false,
+        "secretReferenceSaved": true
+      }
+    },
+    {
+      "name": "custom property-name profiles survive plugin reload for both providers",
+      "status": "pass",
+      "details": {
+        "restoredId": "igdb:424243",
+        "language": "en",
+        "propertyProfile": true
+      }
+    }
+  ],
+  "app": {
+    "title": "Game Shelf - vault - Obsidian 1.15.1",
+    "plugin": "1.1.0"
+  }
+}

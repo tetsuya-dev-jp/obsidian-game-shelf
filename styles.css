@@ -734,3 +734,17 @@
     animation: none;
   }
 }
+@media (max-width: 600px) {
+  .gs-igdb-setup .setting-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .gs-igdb-setup .setting-item-info {
+    margin-inline-end: 0;
+  }
+  .gs-igdb-setup .setting-item-control {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}

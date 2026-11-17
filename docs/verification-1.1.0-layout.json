@@ -1,0 +1,28 @@
+{
+  "nativeMobile": false,
+  "app": "Obsidian 1.13.7 desktop",
+  "checks": [
+    {
+      "language": "en",
+      "width": 390,
+      "modalWidth": 312,
+      "contentWidth": 266,
+      "scrollWidth": 266,
+      "scrollable": true,
+      "settingDirection": "column",
+      "labelWidth": 266,
+      "links": 2
+    },
+    {
+      "language": "ja",
+      "width": 390,
+      "modalWidth": 312,
+      "contentWidth": 266,
+      "scrollWidth": 266,
+      "scrollable": true,
+      "settingDirection": "column",
+      "labelWidth": 266,
+      "links": 2
+    }
+  ]
+}

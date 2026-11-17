@@ -3,17 +3,22 @@ import type {
   FieldGroup,
   Game,
   LibraryItem,
+  Locale,
   Metadata,
   MetadataValue,
   ShelfSettings,
 } from './domain';
-import { text } from './i18n';
+import { DEFAULT_SETTINGS } from './domain';
+import { text, noteLocale, locale, LocalizedError, localizedText } from './i18n';
+import { IgdbError } from './igdb';
+import { SourceError } from './source';
 import {
   JOURNAL_MARKER,
   PERSONAL_KEYS,
   appendSession,
   changesFor,
   filename,
+  gameId,
   libraryItem,
   markdownText,
   patchProperties,
@@ -28,6 +33,7 @@ import {
 } from './note-format';
 
 export interface CreateOptions {
+  language?: Locale;
   title: string;
   status: string;
   rating: number | null;
@@ -69,13 +75,16 @@ export class NoteStore {
     ]));
     for (const field of fields) {
       const id = properties[field];
-      if (typeof id === 'string' && /^(gnd:|manual:)/.test(id))
-        return {
+      if (typeof id === 'string' && /^(gnd:|igdb:|manual:)/.test(id)) {
+        const settings = {
           ...this.settings,
           propertyNames:
             this.context.schemas[id] ??
             (field === property(this.settings, 'game_id') ? this.settings.propertyNames : {}),
         };
+        const language = properties[property(settings, 'note_language')];
+        return { ...settings, noteLanguage: language === 'ja' || language === 'en' ? language : 'auto' };
+      }
     }
     return this.settings;
   }
@@ -116,14 +125,14 @@ export class NoteStore {
   file(path: string): TFile {
     const file = this.app.vault.getAbstractFileByPath(path);
     if (!(file instanceof TFile))
-      throw new Error('The note no longer exists. Reopen your library.');
+      throw new LocalizedError('noteMissing');
     return file;
   }
   async open(file: TFile): Promise<void> {
     await this.app.workspace.getLeaf(false).openFile(file);
   }
   create(game: Game, options: CreateOptions): Promise<CreateResult> {
-    const id = `gnd:${game.slug}`;
+    const id = gameId(game);
     const pending = this.pending.get(id);
     if (pending) return pending;
     const promise = this.createFromGame(game, options).finally(() => this.pending.delete(id));
@@ -137,7 +146,7 @@ export class NoteStore {
       const current = parts.slice(0, i).join('/');
       const existing = this.app.vault.getAbstractFileByPath(current);
       if (existing instanceof TFolder) continue;
-      if (existing) throw new Error(`A file blocks the folder: ${current}`);
+      if (existing) throw new LocalizedError('folderBlocked', { path: current });
       try {
         await this.app.vault.createFolder(current);
       } catch (error) {
@@ -145,13 +154,14 @@ export class NoteStore {
       }
     }
   }
-  private async cover(game: Game): Promise<string | null> {
+  private async cover(game: Game, settings: ShelfSettings): Promise<string | null> {
     if (!game.cover_url) return null;
     const url = new URL(game.cover_url);
-    if (url.protocol !== 'https:' || url.hostname !== 'media.gamesneverdie.com')
-      throw new Error('Unexpected cover host.');
+    const host = game.source === 'igdb' ? 'images.igdb.com' : 'media.gamesneverdie.com';
+    if (url.protocol !== 'https:' || url.hostname !== host || url.username || url.password || url.port)
+      throw new LocalizedError('coverHost');
     const binary = await this.context.download(url.href);
-    if (binary.byteLength > 3 * 1024 * 1024) throw new Error('The cover exceeds 3 MiB.');
+    if (binary.byteLength > 3 * 1024 * 1024) throw new LocalizedError('coverSize');
     const bytes = new Uint8Array(binary);
     const signature = (start: number, end: number) =>
       String.fromCharCode(...bytes.slice(start, end));
@@ -163,13 +173,14 @@ export class NoteStore {
           : bytes[0] === 0xff && bytes[1] === 0xd8
             ? 'jpg'
             : null;
-    if (!extension) throw new Error('The cover response is not a supported image.');
-    const dir = vaultPath(this.settings.coverFolder);
+    if (!extension) throw new LocalizedError('coverFormat');
+    const dir = vaultPath(settings.coverFolder);
     await this.folder(dir);
-    const path = normalizePath(`${dir}/gnd-${game.slug}.${extension}`);
+    const prefix = game.source === 'igdb' ? 'igdb' : 'gnd';
+    const path = normalizePath(`${dir}/${prefix}-${game.id}.${extension}`);
     const existing = this.app.vault.getAbstractFileByPath(path);
     if (existing instanceof TFile) return path;
-    if (existing) throw new Error('A folder blocks the cover filename.');
+    if (existing) throw new LocalizedError('coverFolderBlocked');
     await this.app.vault.createBinary(path, binary);
     return path;
   }
@@ -178,15 +189,17 @@ export class NoteStore {
     game: Pick<Game, 'title' | 'slug' | 'release_date' | 'platforms'>,
     metadata: Metadata,
     body: string,
+    settings: ShelfSettings,
+    language: Locale,
   ): Promise<TFile> {
-    const dir = vaultPath(this.settings.folder, true);
+    const dir = vaultPath(settings.folder, true);
     await this.folder(dir);
-    const name = filename(this.settings.filename, { ...game, title });
+    const name = filename(settings.filename, { ...game, title });
     const edition = filename('{{title}}', {
       ...game,
       title:
         [game.release_date?.match(/^\d{4}/)?.[0], game.platforms[0]].filter(Boolean).join(' ') ||
-        'Edition',
+        localizedText(language, 'editionLabel'),
     });
     for (let i = 0; i < 100; i++) {
       const suffix = i ? ` (${edition}${i > 1 ? ` ${i}` : ''})` : '';
@@ -198,16 +211,16 @@ export class NoteStore {
         if (!this.app.vault.getAbstractFileByPath(path)) throw error;
       }
     }
-    throw new Error('Too many notes share that filename. Choose another filename template.');
+    throw new LocalizedError('filenameCollisions');
   }
-  private personal(options: CreateOptions): Metadata {
-    if (!options.title.trim()) throw new Error(text(this.settings, 'invalidTitle'));
-    if (!options.status.trim()) throw new Error('Choose a play status.');
+  private personal(options: CreateOptions, settings: ShelfSettings): Metadata {
+    if (!options.title.trim()) throw new LocalizedError('invalidTitle');
+    if (!options.status.trim()) throw new LocalizedError('invalidStatus');
     if (
       options.rating !== null &&
       (!Number.isFinite(options.rating) || options.rating < 0 || options.rating > 5)
     )
-      throw new Error('Rating must be between 0 and 5.');
+      throw new LocalizedError('invalidRating');
     return Object.fromEntries(
       Object.entries({
         status: options.status,
@@ -217,84 +230,100 @@ export class NoteStore {
         finished: options.status === 'completed' ? localDate() : null,
         playtime_minutes: 0,
         tags: ['games'],
-      }).map(([key, value]) => [property(this.settings, key), value]),
+      }).map(([key, value]) => [property(settings, key), value]),
     );
   }
   private async createFromGame(game: Game, options: CreateOptions): Promise<CreateResult> {
-    const id = `gnd:${game.slug}`;
+    const settings = structuredClone(this.settings);
+    const language = options.language ?? noteLocale(settings);
+    const id = gameId(game);
     const existing = this.find(id);
     if (existing) return { file: existing, existing: true, warning: null };
-    const personal = this.personal(options);
-    const imported = sourceMetadata(game, options.groups, this.settings);
+    const personal = this.personal(options, settings);
+    const imported = sourceMetadata(game, options.groups, settings);
     let cover: string | null = game.cover_url;
     let warning: string | null = null;
     if (options.saveCover && game.cover_url) {
       try {
-        cover = await this.cover(game);
+        cover = await this.cover(game, settings);
       } catch (error) {
-        warning = `Cover was not saved offline: ${message(error)}`;
+        warning = text(settings, 'coverWarning', { detail: message(error, settings) });
       }
     }
     const metadata = {
       ...imported,
       ...personal,
       cssclasses: ['game-shelf-note'],
-      [property(this.settings, 'title')]: options.title.trim(),
-      [property(this.settings, 'cover')]: cover,
+      [property(settings, 'title')]: options.title.trim(),
+      [property(settings, 'cover')]: cover,
+      [property(settings, 'note_language')]: language,
     };
     const body = this.body(
       options.title,
       cover,
-      sourceBody(game, options.groups, text(this.settings, 'sourceHeading')),
+      sourceBody(game, options.groups, localizedText(language, 'sourceHeading'), language),
+      language,
+      settings,
     );
-    const file = await this.write(options.title, game, metadata, body);
+    const file = await this.write(options.title, game, metadata, body, settings, language);
     this.created.set(id, file);
-    this.context.schemas[id] = { ...this.settings.propertyNames };
+    this.context.schemas[id] = { ...settings.propertyNames };
     this.context.snapshots[id] = imported;
     try {
       await this.context.save();
     } catch (error) {
-      warning = `Note created, but import history could not be saved: ${message(error)}`;
+      warning = text(settings, 'importHistoryWarning', { detail: message(error, settings) });
     }
     return { file, existing: false, warning };
   }
   async manual(options: CreateOptions): Promise<CreateResult> {
+    const settings = structuredClone(this.settings);
+    const language = options.language ?? noteLocale(settings);
     const id = `manual:${crypto.randomUUID()}`;
     const metadata: Metadata = {
-      ...this.personal(options),
+      ...this.personal(options, settings),
       cssclasses: ['game-shelf-note'],
-      [property(this.settings, 'game_id')]: id,
-      [property(this.settings, 'game_source')]: 'manual',
-      [property(this.settings, 'title')]: options.title.trim(),
+      [property(settings, 'game_id')]: id,
+      [property(settings, 'game_source')]: 'manual',
+      [property(settings, 'title')]: options.title.trim(),
+      [property(settings, 'note_language')]: language,
     };
     const file = await this.write(
       options.title,
       { title: options.title, slug: id.replace(':', '-'), release_date: null, platforms: [] },
       metadata,
-      this.body(options.title, null, ''),
+      this.body(options.title, null, '', language, settings),
+      settings,
+      language,
     );
     this.created.set(id, file);
-    this.context.schemas[id] = { ...this.settings.propertyNames };
+    this.context.schemas[id] = { ...settings.propertyNames };
     let warning: string | null = null;
     try {
       await this.context.save();
     } catch (error) {
-      warning = `Note created, but its property-name profile could not be saved: ${message(error)}`;
+      warning = text(settings, 'manualHistoryWarning', { detail: message(error, settings) });
     }
     return { file, existing: false, warning };
   }
-  body(title: string, cover: string | null, source: string): string {
+  body(
+    title: string,
+    cover: string | null,
+    source: string,
+    language = noteLocale(this.settings),
+    settings = this.settings,
+  ): string {
     const image = cover
       ? cover.startsWith('https://')
-        ? `![Cover](<${cover}>)`
+        ? `![${localizedText(language, 'coverAlt')}](<${cover}>)`
         : `![[${cover}]]`
       : '';
-    return renderBody(this.settings.template, {
+    return renderBody(settings.template, {
       title: markdownText(title),
       cover: image,
       source,
-      notes_heading: text(this.settings, 'notesHeading'),
-      journal_heading: text(this.settings, 'journalHeading'),
+      notes_heading: localizedText(language, 'notesHeading'),
+      journal_heading: localizedText(language, 'journalHeading'),
       journal_marker: JOURNAL_MARKER,
     });
   }
@@ -310,15 +339,15 @@ export class NoteStore {
       value !== null &&
       (typeof value !== 'number' || value < 0 || value > 5 || !Number.isFinite(value))
     )
-      throw new Error('Rating must be between 0 and 5.');
+      throw new LocalizedError('invalidRating');
     if (key === 'status' && (typeof value !== 'string' || !value.trim()))
-      throw new Error('Choose a play status.');
+      throw new LocalizedError('invalidStatus');
     if (
       (key === 'started' || key === 'finished') &&
       value !== null &&
       (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value))
     )
-      throw new Error('Choose a valid date.');
+      throw new LocalizedError('invalidDate');
     await this.updateProperties(file, (fm: Record<string, unknown>) => {
       fm[name] = value;
       if (key === 'status' && value === 'playing' && !fm[property(settings, 'started')])
@@ -327,11 +356,21 @@ export class NoteStore {
         fm[property(settings, 'finished')] = localDate();
     });
   }
+  async setLanguage(file: TFile, language: Locale): Promise<void> {
+    const settings = this.settingsFor(file);
+    await this.updateProperties(file, (fm) => {
+      fm[property(settings, 'note_language')] = language;
+    });
+  }
   async session(file: TFile, note: string, minutes: number | null): Promise<void> {
     const settings = this.settingsFor(file);
+    let language: Locale | null = null;
     await this.updateProperties(
       file,
       (parsed) => {
+        const stored = parsed[property(settings, 'note_language')];
+        if (stored !== 'en' && stored !== 'ja') throw new LocalizedError('chooseNoteLanguage');
+        language = stored;
         const key = property(settings, 'playtime_minutes');
         const previous = parsed[key];
         if (
@@ -339,10 +378,13 @@ export class NoteStore {
           previous !== null &&
           (typeof previous !== 'number' || !Number.isFinite(previous) || previous < 0)
         )
-          throw new Error('The existing playtime property is not a nonnegative number.');
+          throw new LocalizedError('invalidPlaytime');
         parsed[key] = (typeof previous === 'number' ? previous : 0) + (minutes ?? 0);
       },
-      (body) => appendSession(body, localDate(), note, minutes),
+      (body) => {
+        if (language === null) throw new LocalizedError('chooseNoteLanguage');
+        return appendSession(body, localDate(), note, minutes, language);
+      },
     );
   }
   private async updateProperties(
@@ -360,9 +402,11 @@ export class NoteStore {
   }
   previewChanges(file: TFile, game: Game, groups: FieldGroup[]): MetadataChange[] {
     const fm: unknown = this.app.metadataCache.getFileCache(file)?.frontmatter;
-    if (!record(fm)) throw new Error('Note properties are not indexed yet. Try again in a moment.');
-    const baseline = this.context.snapshots[`gnd:${game.slug}`];
+    if (!record(fm)) throw new LocalizedError('notIndexed');
     const settings = this.settingsFor(file);
+    const id = gameId(game);
+    if (fm[property(settings, 'game_id')] !== id) throw new LocalizedError('identityMismatch');
+    const baseline = this.context.snapshots[id];
     const metadata = sourceMetadata(game, groups, settings);
     const incoming = baseline
       ? Object.fromEntries(Object.entries(metadata).filter(([key]) => key in baseline))
@@ -377,14 +421,16 @@ export class NoteStore {
   ): Promise<void> {
     if (!selected.size) throw new Error(text(this.settings, 'noSelection'));
     const chosen = changes.filter((change) => selected.has(change.key));
+    const settings = this.settingsFor(file);
+    const id = gameId(game);
     await this.updateProperties(file, (fm: Record<string, unknown>) => {
+      if (fm[property(settings, 'game_id')] !== id) throw new LocalizedError('identityMismatch');
       for (const change of chosen) {
         if (JSON.stringify(fm[change.key]) !== JSON.stringify(change.before))
-          throw new Error('This note changed after the preview. Review the changes again.');
+          throw new LocalizedError('stalePreview');
       }
       for (const change of chosen) fm[change.key] = change.after;
     });
-    const id = `gnd:${game.slug}`;
     this.context.snapshots[id] = {
       ...this.context.snapshots[id],
       ...Object.fromEntries(chosen.map((change) => [change.key, change.after])),
@@ -393,7 +439,18 @@ export class NoteStore {
   }
 }
 
-export function message(error: unknown): string {
+export function message(error: unknown, settings?: ShelfSettings): string {
+  const language = locale(settings ?? DEFAULT_SETTINGS);
+  if (error instanceof LocalizedError) return localizedText(language, error.key, error.values);
+  if (error instanceof IgdbError) {
+    const keys = {
+      credentials: 'igdbCredentials', auth: 'igdbAuth', rateLimit: 'igdbRateLimit',
+      network: 'igdbNetwork', response: 'igdbResponse', notFound: 'igdbNotFound', identifier: 'igdbIdentifier',
+    } as const;
+    return localizedText(language, keys[error.code]);
+  }
+  if (error instanceof SourceError)
+    return localizedText(language, 'gndFailure', { detail: error.message });
   return error instanceof Error ? error.message : String(error);
 }
 export function localDate(): string {

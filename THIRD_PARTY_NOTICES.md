@@ -32,3 +32,9 @@ Obsidian, Games Never Die, IGDB, Steam and game publishers retain their own
 trademarks and content rights. The plugin license does not cover fetched
 artwork, descriptions or linked articles. Documentation screenshots contain
 game covers as part of demonstrating the plugin's actual interface.
+
+English metadata and artwork are supplied by [IGDB](https://www.igdb.com/)
+through each user's own application credentials. Use is subject to the
+[Twitch Developer Service Agreement](https://www.twitch.tv/p/en/legal/developer-agreement/).
+The [IGDB API documentation](https://api-docs.igdb.com/#getting-started) describes
+free non-commercial usage and separate commercial partnerships.

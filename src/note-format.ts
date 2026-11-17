@@ -4,12 +4,14 @@ import {
   type FieldGroup,
   type Game,
   type LibraryItem,
+  type Locale,
   type Metadata,
   type MetadataValue,
   type PlayStatus,
   type ShelfSettings,
 } from './domain';
 import { parseDocument } from 'yaml';
+import { LocalizedError, localizedText } from './translations';
 
 export const JOURNAL_MARKER = '<!-- game-shelf:journal -->';
 export const PERSONAL_KEYS = [
@@ -25,6 +27,9 @@ export const PROPERTY_KEYS = [
   'game_id',
   'game_source',
   'game_slug',
+  'source_id',
+  'note_language',
+  'metadata_language',
   'game_url',
   'title',
   'release_date',
@@ -60,8 +65,14 @@ export function isMetadataValue(value: unknown): value is MetadataValue {
 export function property(settings: ShelfSettings, key: string): string {
   return settings.propertyNames[key] ?? key;
 }
+export function gameId(game: Pick<Game, 'source' | 'id'>): string {
+  return `${game.source === 'gamesneverdie' ? 'gnd' : 'igdb'}:${game.id}`;
+}
+export function sourceName(game: Pick<Game, 'source'>): string {
+  return game.source === 'gamesneverdie' ? 'Games Never Die' : 'IGDB';
+}
 export function validateMapping(mapping: unknown): Record<string, string> {
-  if (!record(mapping)) throw new Error('Property names must be a JSON object.');
+  if (!record(mapping)) throw new LocalizedError('invalidMapping');
   const result: Record<string, string> = {};
   for (const [key, value] of Object.entries(mapping)) {
     if (
@@ -70,14 +81,14 @@ export function validateMapping(mapping: unknown): Record<string, string> {
       !/^[A-Za-z_][A-Za-z0-9_-]*$/.test(value) ||
       ['__proto__', 'constructor', 'prototype'].includes(value)
     )
-      throw new Error(`Invalid property name: ${key}`);
+      throw new LocalizedError('invalidProperty', { key });
     if (key === 'cssclasses' && value !== 'cssclasses')
-      throw new Error('The reserved cssclasses property cannot be renamed.');
+      throw new LocalizedError('reservedCss');
     result[key] = value;
   }
   const names = PROPERTY_KEYS.map((key) => result[key] ?? key);
   if (new Set(names).size !== names.length)
-    throw new Error('Two properties cannot use the same name.');
+    throw new LocalizedError('duplicateProperty');
   return result;
 }
 export function vaultPath(input: string, allowRoot = false): string {
@@ -89,7 +100,7 @@ export function vaultPath(input: string, allowRoot = false): string {
     /[\p{Cc}:*?"<>|]/u.test(path) ||
     path.split('/').some((p) => !p || p === '.' || p === '..' || p.startsWith('.'))
   )
-    throw new Error('Choose a normal folder inside this vault.');
+    throw new LocalizedError('invalidFolder');
   return path;
 }
 export function filename(
@@ -103,7 +114,7 @@ export function filename(
     platform: game.platforms[0] ?? '',
   };
   const rendered = template.replace(/{{\s*(\w+)\s*}}/g, (_, key: string) => {
-    if (!(key in values)) throw new Error(`Unknown filename token: ${key}`);
+    if (!(key in values)) throw new LocalizedError('unknownFilenameToken', { key });
     return values[key] ?? '';
   });
   const cleaned = rendered
@@ -115,7 +126,7 @@ export function filename(
     .slice(0, 150)
     .trim();
   if (!cleaned || /{{|}}/.test(cleaned))
-    throw new Error('The filename is empty or contains an invalid token.');
+    throw new LocalizedError('invalidFilename');
   return /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(?:\.|$)/i.test(cleaned)
     ? `Game ${cleaned}`
     : cleaned;
@@ -137,8 +148,10 @@ export function sourceMetadata(
   settings: ShelfSettings,
 ): Metadata {
   const fields: Metadata = {
-    game_id: `gnd:${game.slug}`,
-    game_source: 'gamesneverdie',
+    game_id: gameId(game),
+    game_source: game.source,
+    source_id: game.id,
+    metadata_language: game.dataLanguage,
     game_slug: game.slug,
     game_url: game.url,
     title: game.title,
@@ -166,20 +179,23 @@ export function sourceMetadata(
     Object.entries(fields).map(([key, value]) => [property(settings, key), value]),
   );
 }
-export function sourceBody(game: Game, groups: readonly FieldGroup[], heading: string): string {
+export function sourceBody(
+  game: Game,
+  groups: readonly FieldGroup[],
+  heading: string,
+  language: Locale = 'en',
+): string {
+  const t = (key: Parameters<typeof localizedText>[1], values?: Record<string, string | number>) =>
+    localizedText(language, key, values);
   const lines = [
     `## ${heading}`,
     '',
-    `${link('Games Never Die', game.url)} · ${game.fetched_at.slice(0, 10)}`,
+    `${link(sourceName(game), game.url)} · ${game.fetched_at.slice(0, 10)}`,
   ];
   if (groups.includes('description') && game.description)
     lines.push(
       '',
-      game.description
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/`/g, '&#96;'),
+      game.description.split(/\r\n|\r|\n/).map(markdownText).join('\n'),
     );
   if (groups.includes('stores') && game.stores.length)
     lines.push('', game.stores.map((s) => link(s.name, s.url)).join(' · '));
@@ -194,14 +210,14 @@ export function sourceBody(game: Game, groups: readonly FieldGroup[], heading: s
   if (groups.includes('media'))
     lines.push(
       '',
-      ...game.trailers.map((url, i) => `- ${link(`Trailer ${i + 1}`, url)}`),
-      ...game.screenshots.flatMap((url, i) => ['', `!${link(`Screenshot ${i + 1}`, url)}`]),
+      ...game.trailers.map((url, i) => `- ${link(t('trailerLabel', { number: i + 1 }), url)}`),
+      ...game.screenshots.flatMap((url, i) => ['', `!${link(t('screenshotLabel', { number: i + 1 }), url)}`]),
     );
   if (groups.includes('steam') && game.steam) {
     const steam = game.steam;
     lines.push(
       '',
-      `Steam · ${markdownText(steam.price?.formatted ?? '—')} · ${steam.players ?? '—'} players · ${markdownText(steam.fetched_at.slice(0, 10))}`,
+      `Steam · ${markdownText(steam.price?.formatted ?? '—')} · ${t('playersLabel', { count: steam.players ?? '—' })} · ${markdownText(steam.fetched_at.slice(0, 10))}`,
     );
   }
   return lines.join('\n');
@@ -210,7 +226,7 @@ export function renderBody(template: string, values: Record<string, string>): st
   return (
     template
       .replace(/{{\s*(\w+)\s*}}/g, (_, key: string) => {
-        if (!(key in values)) throw new Error(`Unknown template token: ${key}`);
+        if (!(key in values)) throw new LocalizedError('unknownTemplateToken', { key });
         return values[key] ?? '';
       })
       .trim() + '\n'
@@ -231,12 +247,10 @@ export function patchProperties(
 ): string {
   const document = parseDocument(yaml, { uniqueKeys: true });
   if (document.errors.length)
-    throw new Error(
-      'The note properties contain invalid YAML. Fix them before updating this note.',
-    );
+    throw new LocalizedError('invalidYaml');
   const original: unknown = document.toJS({ maxAliasCount: 100 });
   if (original !== null && !record(original))
-    throw new Error('The note properties must be a YAML mapping.');
+    throw new LocalizedError('invalidFrontmatter');
   const before = original ?? {};
   const after: Record<string, unknown> = { ...before };
   update(after);
@@ -262,7 +276,7 @@ export function changesFor(
   const protectedNames = new Set(PERSONAL_KEYS.map((k) => property(settings, k)));
   return Object.entries(incoming).flatMap<MetadataChange>(([key, after]) => {
     if (protectedNames.has(key))
-      throw new Error('A source property conflicts with a personal property.');
+      throw new LocalizedError('personalConflict');
     const raw = current[key];
     if (JSON.stringify(raw) === JSON.stringify(after)) return [];
     if (raw !== undefined && !isMetadataValue(raw))
@@ -280,16 +294,17 @@ export function appendSession(
   date: string,
   note: string,
   minutes: number | null,
+  language: Locale = 'en',
 ): string {
   if (!body.includes(JOURNAL_MARKER))
-    throw new Error('The play-log marker is missing from this note.');
-  if (!note.trim()) throw new Error('Write a session note.');
+    throw new LocalizedError('missingJournal');
+  if (!note.trim()) throw new LocalizedError('emptySession');
   if (minutes !== null && (!Number.isFinite(minutes) || minutes < 0 || minutes > 1440))
-    throw new Error('Minutes must be between 0 and 1440.');
+    throw new LocalizedError('invalidMinutes');
   const safe = note.trim().replace(/<!--\s*game-shelf:/gi, '&lt;!-- game-shelf:');
   return body.replace(
     JOURNAL_MARKER,
-    `${JOURNAL_MARKER}\n\n### ${date}${minutes !== null ? ` · ${minutes} min` : ''}\n\n${safe}`,
+    `${JOURNAL_MARKER}\n\n### ${date}${minutes !== null ? ` · ${minutes} ${localizedText(language, 'minutesUnit')}` : ''}\n\n${safe}`,
   );
 }
 export function readStatus(value: unknown): PlayStatus {
@@ -311,6 +326,8 @@ export function libraryItem(
   const read = (key: string) => fm[property(settings, key)];
   const id = read('game_id');
   if (typeof id !== 'string' || !id) return null;
+  const match = /^(gnd|igdb|manual):(.+)$/.exec(id);
+  if (!match?.[2]) return null;
   const title = read('title'),
     slug = read('game_slug'),
     cover = read('cover'),
@@ -320,6 +337,9 @@ export function libraryItem(
   return {
     path,
     id,
+    source: match[1] === 'gnd' ? 'gamesneverdie' : match[1] === 'igdb' ? 'igdb' : 'manual',
+    sourceId: match[2],
+    noteLanguage: read('note_language') === 'en' ? 'en' : read('note_language') === 'ja' ? 'ja' : null,
     slug: typeof slug === 'string' ? slug : null,
     title:
       typeof title === 'string' ? title : (path.split('/').pop()?.replace(/\.md$/, '') ?? path),
@@ -335,7 +355,7 @@ export function libraryItem(
 }
 export function parseSettings(raw: unknown): ShelfSettings {
   if (raw === undefined || raw === null) return structuredClone(DEFAULT_SETTINGS);
-  if (!record(raw)) throw new Error('Saved settings are invalid.');
+  if (!record(raw)) throw new LocalizedError('invalidSavedSettings');
   const result = structuredClone(DEFAULT_SETTINGS);
   for (const key of ['folder', 'coverFolder', 'filename', 'template'] as const)
     if (typeof raw[key] === 'string') result[key] = raw[key];
@@ -357,6 +377,12 @@ export function parseSettings(raw: unknown): ShelfSettings {
   });
   if (raw.language === 'ja' || raw.language === 'en' || raw.language === 'auto')
     result.language = raw.language;
+  if (raw.noteLanguage === 'ja' || raw.noteLanguage === 'en' || raw.noteLanguage === 'auto')
+    result.noteLanguage = raw.noteLanguage;
+  if (raw.provider === 'auto' || raw.provider === 'gamesneverdie' || raw.provider === 'igdb')
+    result.provider = raw.provider;
+  if (typeof raw.igdbClientId === 'string') result.igdbClientId = raw.igdbClientId.trim();
+  if (typeof raw.igdbClientSecret === 'string') result.igdbClientSecret = raw.igdbClientSecret.trim();
   if (typeof raw.online === 'boolean') result.online = raw.online;
   if (typeof raw.saveCover === 'boolean') result.saveCover = raw.saveCover;
   const groups = raw.groups;

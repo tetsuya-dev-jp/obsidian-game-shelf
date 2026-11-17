@@ -145,6 +145,9 @@ export function parseGame(html: string, slug: string): Game {
     .filter(Boolean);
   const updated = /\d{4}-\d{2}-\d{2}/.exec(text(doc.querySelector('main .ur-updated')));
   return {
+    source: 'gamesneverdie',
+    id: slug,
+    dataLanguage: 'ja',
     slug,
     url: `${BASE}/ja/games/${slug}`,
     title,
@@ -190,6 +193,8 @@ export function parseSearch(html: string, query: string, page: number): SearchPa
       seen.add(link.slug);
       items.push({
         ...link,
+        source: 'gamesneverdie',
+        id: link.slug,
         cover_url: image(a),
         rating: number(text(a.querySelector('.score'))),
         subtitle: text(a.querySelector('.meta')) || null,

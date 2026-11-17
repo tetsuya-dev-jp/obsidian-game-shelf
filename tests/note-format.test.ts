@@ -5,6 +5,7 @@ import {
   appendSession,
   changesFor,
   filename,
+  gameId,
   libraryItem,
   markdownText,
   parseSettings,
@@ -19,6 +20,9 @@ import {
 
 function game(overrides: Partial<Game> = {}): Game {
   return {
+    source: 'gamesneverdie',
+    id: 'test-game',
+    dataLanguage: 'ja',
     slug: 'test-game',
     url: 'https://gamesneverdie.com/ja/games/test-game',
     title: 'Test Game',
@@ -97,6 +101,42 @@ describe('paths and filenames', () => {
 });
 
 describe('mapping and source metadata', () => {
+  it('keeps the provider ID stable when a localized title or slug changes', () => {
+    const first = game({ source: 'igdb', id: '1942', slug: 'example-game', dataLanguage: 'en' });
+    const renamed = { ...first, title: '別の表示名', slug: 'new-slug' };
+    expect(gameId(first)).toBe('igdb:1942');
+    expect(gameId(renamed)).toBe(gameId(first));
+    const metadata = sourceMetadata(first, [], settings());
+    expect(metadata).toMatchObject({
+      game_id: 'igdb:1942', game_source: 'igdb', source_id: '1942',
+      game_slug: 'example-game', metadata_language: 'en',
+    });
+    expect(metadata).not.toHaveProperty('note_language');
+  });
+
+  it('projects both providers and mapped per-note languages without guessing from the source', () => {
+    const custom = parseSettings({ propertyNames: { note_language: 'writing_language' } });
+    const english = libraryItem('Games/Example.md', 0, {
+      game_id: 'igdb:1942', game_slug: 'human-readable', writing_language: 'ja',
+    }, custom);
+    expect(english).toMatchObject({ source: 'igdb', sourceId: '1942', noteLanguage: 'ja' });
+    const legacy = libraryItem('Games/Legacy.md', 0, { game_id: 'gnd:legacy' }, custom);
+    expect(legacy).toMatchObject({ source: 'gamesneverdie', sourceId: 'legacy', noteLanguage: null });
+    expect(libraryItem('Other.md', 0, { game_id: 'unrelated:example' }, custom)).toBeNull();
+  });
+
+  it('keeps UI language, note language, provider and secret references independent in settings', () => {
+    const saved = parseSettings({
+      language: 'ja', noteLanguage: 'en', provider: 'igdb',
+      igdbClientId: ' publicclient ', igdbClientSecret: 'game-shelf-secret',
+    });
+    expect(saved).toMatchObject({
+      language: 'ja', noteLanguage: 'en', provider: 'igdb',
+      igdbClientId: 'publicclient', igdbClientSecret: 'game-shelf-secret',
+    });
+    expect(parseSettings({ language: 'ja' })).toMatchObject({ noteLanguage: 'auto', provider: 'auto' });
+    expect(parseSettings({ noteLanguage: 'fr', provider: 'other' })).toMatchObject({ noteLanguage: 'auto', provider: 'auto' });
+  });
   it('rejects unknown, protected, duplicate and invalid property mappings', () => {
     expect(validateMapping({ rating: 'my_score', status: 'play_status' })).toEqual({
       rating: 'my_score',
@@ -206,9 +246,21 @@ describe('safe note rendering', () => {
     );
     expect(body).not.toContain('<%');
     expect(body).not.toContain('<script');
-    expect(body).toContain('&lt;%*');
+    expect(body).toContain('&lt;%\\*');
     expect(body).toContain('tp.file.rename');
-    expect(body).toContain('&#96;code&#96;');
+    expect(body).toContain('\\`code\\`');
+  });
+
+  it('keeps provider description paragraphs as inert text', () => {
+    const body = sourceBody(
+      game({ description: 'First ![x](https://unapproved-host/image.png) and [link](https://unapproved-host/)\r\n\r\n<% tp.file.rename("x") %>\n<script>alert(1)</script>' }),
+      ['description'],
+      'Source',
+    );
+    expect(body).toContain('First \\!\\[x\\](https://unapproved-host/image.png) and \\[link\\](https://unapproved-host/)\n\n&lt;% tp.file.rename("x") %&gt;\n&lt;script&gt;alert(1)&lt;/script&gt;');
+    expect(body).not.toMatch(/(?<!\\)!\[[^\]]*\]\(https:\/\/unapproved-host/);
+    expect(body).not.toContain('<%');
+    expect(body).not.toContain('<script');
   });
 
   it('escapes hostile article dates and Steam prices without losing their text', () => {
@@ -258,6 +310,23 @@ describe('safe note rendering', () => {
     expect(body).not.toContain('secret ending');
     expect(body).not.toContain('Ending explained');
     expect(body).not.toContain('Spoiler');
+  });
+
+  it('writes localized media labels and preserves the original provider prose', () => {
+    const body = sourceBody(game({
+      source: 'igdb', id: '42', dataLanguage: 'en',
+      description: 'English source text.',
+      screenshots: ['https://images.igdb.com/igdb/image/upload/t_screenshot_huge/example.jpg'],
+      trailers: ['https://www.youtube.com/watch?v=video'],
+    }), ['description', 'media'], 'ゲーム情報', 'ja');
+    expect(body).toContain('## ゲーム情報');
+    expect(body).toContain('[IGDB]');
+    expect(body).toContain('English source text.');
+    expect(body).toContain('[予告編 1]');
+    expect(body).toContain('![スクリーンショット 1]');
+    expect(body).not.toContain('Games Never Die');
+    expect(appendSession(JOURNAL_MARKER, '2026-11-17', '記録', 12, 'ja')).toContain('12 分');
+    expect(appendSession(JOURNAL_MARKER, '2026-11-17', 'A note', 12, 'en')).toContain('12 min');
   });
 
   it('omits screenshot embeds and trailer links when media is disabled', () => {

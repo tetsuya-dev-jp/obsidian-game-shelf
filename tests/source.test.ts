@@ -20,6 +20,7 @@ describe('HTML parsing', () => {
   it('extracts regional dates, numbers, media and article metadata without sidebar content', () => {
     const game = parseGame(gameHtml, 'test-game');
     expect(game.title).toBe('Test & Game');
+    expect([game.source, game.id, game.dataLanguage]).toEqual(['gamesneverdie', 'test-game', 'ja']);
     expect(game.description).toBe('A fictional game.\n\nSecond paragraph.');
     expect(game.developers).toEqual(['Studio A', 'Studio B']);
     expect(game.platforms).toEqual(['PC', 'Steam']);
@@ -79,6 +80,9 @@ describe('HTML parsing', () => {
     const page = parseSearch(searchHtml, 'Test', 1);
     expect([page.total, page.total_pages]).toEqual([1234, 45]);
     expect(page.items.map((item) => item.slug)).toEqual(['test-game', 'another-game']);
+    expect(page.items.map((item) => [item.source, item.id])).toEqual([
+      ['gamesneverdie', 'test-game'], ['gamesneverdie', 'another-game'],
+    ]);
     expect(page.items[1]?.rating).toBeNull();
     expect(
       parseSearch('<main><p>該当するタイトルがありません</p></main>', 'none', 1).items,

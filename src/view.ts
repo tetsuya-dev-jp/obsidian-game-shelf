@@ -8,9 +8,12 @@ import {
   setIcon,
 } from 'obsidian';
 import type GameShelf from './main';
-import { FIELD_GROUPS, type Game, type LibraryItem, type SearchPage } from './domain';
+import { FIELD_GROUPS, type Game, type LibraryItem, type SearchPage, type Provider } from './domain';
+import { noteLocale, localizedText } from './i18n';
 import {
   filename,
+  gameId,
+  sourceName,
   property,
   record,
   renderNote,
@@ -28,9 +31,9 @@ type SearchState =
   | { kind: 'error'; message: string };
 type Selection =
   | { kind: 'empty' }
-  | { kind: 'loading'; slug: string }
+  | { kind: 'loading'; slug: string; provider: Provider }
   | { kind: 'ready'; game: Game }
-  | { kind: 'error'; slug: string; message: string };
+  | { kind: 'error'; slug: string; provider: Provider; message: string };
 
 export class ShelfView extends ItemView {
   private tab: 'library' | 'discover' = 'library';
@@ -136,11 +139,24 @@ export class ShelfView extends ItemView {
           ?.setText(`${item.minutes} ${this.t('minutesTotal')}`);
     }
   }
+  settingsChanged(resetSource: boolean): void {
+    if (this.closed) return;
+    if (resetSource || !this.shelf.settings.online) {
+      this.requestId++;
+      this.detailId++;
+      this.search = { kind: 'idle' };
+      this.selected = { kind: 'empty' };
+      if (!this.manual) this.options = null;
+    }
+    if (this.options) this.options.language = noteLocale(this.shelf.settings);
+    this.render();
+  }
   private t(key: Parameters<GameShelf['t']>[0]): string {
     return this.shelf.t(key);
   }
   private defaults(title: string): CreateOptions {
     return {
+      language: noteLocale(this.shelf.settings),
       title,
       status: 'backlog',
       rating: null,
@@ -455,6 +471,11 @@ export class ShelfView extends ItemView {
   private renderDiscover(shell: HTMLElement): void {
     const pane = shell.createDiv({ cls: 'gs-search-pane' });
     pane.createEl('h2', { text: this.t('discover') });
+    const provider = this.shelf.selectedProvider();
+    pane.createEl('p', { cls: 'gs-subtle', text: this.shelf.t('providerStatus', {
+      provider: provider === 'igdb' ? 'IGDB' : 'Games Never Die',
+      language: this.t(noteLocale(this.shelf.settings) === 'ja' ? 'languageJa' : 'languageEn'),
+    }) });
     if (!this.shelf.settings.online) {
       const intro = pane.createDiv({ cls: 'gs-online' });
       intro.createEl('h3', { text: this.t('onlineTitle') });
@@ -469,6 +490,13 @@ export class ShelfView extends ItemView {
         { primary: true },
       );
       this.button(intro, this.t('manual'), () => this.openManual());
+      return;
+    }
+    if (provider === 'igdb' && !this.shelf.hasIgdbCredentials()) {
+      const setup = pane.createDiv({ cls: 'gs-online' });
+      setup.createEl('p', { text: this.t('missingIgdbSetup') });
+      this.button(setup, this.t('settingsButton'), () => this.shelf.openIgdbSetup(), { primary: true });
+      this.button(setup, this.t('manual'), () => this.openManual());
       return;
     }
     const form = pane.createEl('form', {
@@ -515,16 +543,16 @@ export class ShelfView extends ItemView {
         const button = results.createEl('button', { cls: 'gs-result', attr: { type: 'button' } });
         button.toggleClass(
           'is-selected',
-          this.selected.kind === 'ready' && this.selected.game.slug === item.slug,
+          this.selected.kind === 'ready' && gameId(this.selected.game) === gameId(item),
         );
         this.image(button, item.cover_url, item.title, 'gs-result-cover');
         const info = button.createSpan({ cls: 'gs-result-info' });
         info.createSpan({ text: item.title, cls: 'gs-result-title' });
         info.createSpan({ text: item.subtitle ?? '', cls: 'gs-card-meta' });
-        if (this.shelf.notes.find(`gnd:${item.slug}`))
+        if (this.shelf.notes.find(gameId(item)))
           info.createSpan({ text: this.t('alreadyAdded'), cls: 'gs-added' });
         this.screen.registerDomEvent(button, 'click', () => {
-          void this.selectGame(item.slug);
+          void this.selectGame(item.id, false, item.source);
         });
         this.screen.registerDomEvent(button, 'keydown', (event) => {
           if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
@@ -566,7 +594,8 @@ export class ShelfView extends ItemView {
     } else if (this.selected.kind === 'loading') this.loading(detail, this.t('loading'));
     else if (this.selected.kind === 'error') {
       const slug = this.selected.slug;
-      this.error(detail, this.selected.message, () => this.selectGame(slug));
+      const provider = this.selected.provider;
+      this.error(detail, this.selected.message, () => this.selectGame(slug, false, provider));
     } else this.renderCreate(detail, this.selected.game);
   }
   private async performSearch(page: number): Promise<void> {
@@ -581,23 +610,23 @@ export class ShelfView extends ItemView {
     this.search = { kind: 'loading' };
     this.render();
     try {
-      const data = await this.shelf.source.search(requestedQuery, page);
+      const data = await this.shelf.sourceFor(this.shelf.selectedProvider()).search(requestedQuery, page);
       if (this.closed || id !== this.requestId) return;
       this.search =
         this.query.trim() === requestedQuery ? { kind: 'ready', data } : { kind: 'idle' };
     } catch (error) {
       if (this.closed || id !== this.requestId) return;
-      this.search = { kind: 'error', message: message(error) };
+      this.search = { kind: 'error', message: message(error, this.shelf.settings) };
     }
     this.render();
     this.contentEl.querySelector<HTMLButtonElement>('.gs-result')?.focus();
   }
-  private async selectGame(identifier: string, includeSteam = false): Promise<void> {
+  private async selectGame(identifier: string, includeSteam = false, provider = this.shelf.selectedProvider()): Promise<void> {
     const id = ++this.detailId;
-    this.selected = { kind: 'loading', slug: identifier };
+    this.selected = { kind: 'loading', slug: identifier, provider };
     this.render();
     try {
-      const game = await this.shelf.source.get(
+      const game = await this.shelf.sourceFor(provider).get(
         identifier,
         includeSteam || this.shelf.settings.groups.includes('steam'),
       );
@@ -606,7 +635,7 @@ export class ShelfView extends ItemView {
       if (!includeSteam || !this.options) this.options = this.defaults(game.title);
     } catch (error) {
       if (this.closed || id !== this.detailId) return;
-      this.selected = { kind: 'error', slug: identifier, message: message(error) };
+      this.selected = { kind: 'error', slug: identifier, provider, message: message(error, this.shelf.settings) };
     }
     this.render();
     this.contentEl.querySelector<HTMLElement>('.gs-detail')?.scrollIntoView({ block: 'nearest' });
@@ -638,7 +667,12 @@ export class ShelfView extends ItemView {
       });
       heading.createEl('p', { text: game.tags.join(' · '), cls: 'gs-subtle' });
     }
-    const existing = game ? this.shelf.notes.find(`gnd:${game.slug}`) : null;
+    const language = options.language ?? noteLocale(this.shelf.settings);
+    if (game && game.dataLanguage !== language)
+      parent.createEl('p', { cls: 'gs-subtle', text: this.shelf.t('dataLanguageMismatch', {
+        language: this.t(game.dataLanguage === 'ja' ? 'languageJa' : 'languageEn'),
+      }) });
+    const existing = game ? this.shelf.notes.find(gameId(game)) : null;
     if (existing) {
       parent.createEl('p', { text: this.t('alreadyAdded'), cls: 'gs-added' });
       this.button(parent, this.t('openNote'), () => this.shelf.notes.open(existing), {
@@ -696,7 +730,7 @@ export class ShelfView extends ItemView {
             `${this.shelf.settings.folder ? this.shelf.settings.folder + '/' : ''}${filename(this.shelf.settings.filename, { title: options.title || 'Game', slug: game?.slug ?? 'manual', release_date: game?.release_date ?? null, platforms: game?.platforms ?? [] })}.md`,
           );
         } catch (error) {
-          target.setText(message(error));
+          target.setText(message(error, this.shelf.settings));
         }
       if (!previewCode) return;
       try {
@@ -709,27 +743,29 @@ export class ShelfView extends ItemView {
           [property(this.shelf.settings, 'status')]: options.status,
           [property(this.shelf.settings, 'rating')]: options.rating,
           [property(this.shelf.settings, 'ownership')]: options.ownership,
+          [property(this.shelf.settings, 'note_language')]: language,
         };
         const body = this.shelf.notes.body(
           options.title,
           game?.cover_url ?? null,
-          game ? sourceBody(game, options.groups, this.t('sourceHeading')) : '',
+          game ? sourceBody(game, options.groups, localizedText(language, 'sourceHeading'), language) : '',
+          language,
         );
         previewCode.setText(renderNote(metadata, body));
       } catch (error) {
-        previewCode.setText(message(error));
+        previewCode.setText(message(error, this.shelf.settings));
       }
     };
     if (game) {
       const includes = fields.createEl('details', { cls: 'gs-field-selection' });
       includes.createEl('summary', { text: this.t('include') });
-      for (const group of FIELD_GROUPS)
+      for (const group of FIELD_GROUPS.filter((group) => game.source !== 'igdb' || (group !== 'articles' && group !== 'steam')))
         this.checkbox(includes, this.t(group), options.groups.includes(group), (checked) => {
           options.groups = checked
             ? [...new Set([...options.groups, group])]
             : options.groups.filter((g) => g !== group);
           updatePreview();
-          if (group === 'steam' && checked) void this.selectGame(game.slug, true);
+          if (group === 'steam' && checked) void this.selectGame(game.id, true, game.source);
         });
       this.checkbox(fields, this.t('saveCover'), options.saveCover, (checked) => {
         options.saveCover = checked;
@@ -769,7 +805,7 @@ export class ShelfView extends ItemView {
     if (game)
       fields.createEl('p', {
         cls: 'gs-subtle gs-provenance',
-        text: `Games Never Die · ${game.fetched_at.slice(0, 10)}`,
+        text: `${sourceName(game)} · ${game.fetched_at.slice(0, 10)}`,
       });
   }
   private checkbox(
@@ -827,6 +863,40 @@ export class ShelfView extends ItemView {
     const noteSettings = this.shelf.notes.settingsFor(file);
     const read = (key: string) => (record(fm) ? fm[property(noteSettings, key)] : undefined);
     const personal = parent.createDiv({ cls: 'gs-personal-grid' });
+    let writingLanguage = noteSettings.noteLanguage === 'auto' ? '' : noteSettings.noteLanguage;
+    const languageRow = this.field(personal, this.t('noteWritingLanguage'));
+    const languageGuide = writingLanguage ? null : languageRow.createEl('p', {
+      cls: 'gs-subtle', text: this.t('noteWritingLanguageGuide'),
+    });
+    const languageSelect = this.select(
+      languageRow,
+      this.t('noteWritingLanguage'),
+      writingLanguage,
+      [
+        ['', this.t('noteWritingLanguagePrompt')],
+        ['en', this.t('languageEn')],
+        ['ja', this.t('languageJa')],
+      ],
+      (value) => {
+        if (value !== 'en' && value !== 'ja') {
+          languageSelect.value = writingLanguage;
+          return;
+        }
+        languageSelect.disabled = true;
+        submit.setDisabled(true);
+        void this.run(async () => {
+          try {
+            await this.shelf.notes.setLanguage(file, value);
+            writingLanguage = value;
+            languageGuide?.remove();
+          } finally {
+            languageSelect.value = writingLanguage;
+            languageSelect.disabled = false;
+            submit.setDisabled(this.busy || !writingLanguage);
+          }
+        });
+      },
+    );
     this.select(
       this.field(personal, this.t('status')),
       this.t('status'),
@@ -892,11 +962,11 @@ export class ShelfView extends ItemView {
     minutes.max = '1440';
     const submit = new ButtonComponent(journal).setButtonText(this.t('saveSession')).setCta();
     submit.buttonEl.type = 'submit';
-    submit.setDisabled(this.busy);
+    submit.setDisabled(this.busy || !writingLanguage);
     this.screen.registerDomEvent(journal, 'submit', (event) => {
       event.preventDefault();
       void this.run(async () => {
-        if (this.busy) return;
+        if (this.busy || !writingLanguage) return;
         this.busy = true;
         submit.setDisabled(true);
         try {
@@ -912,16 +982,17 @@ export class ShelfView extends ItemView {
           this.render();
         } finally {
           this.busy = false;
-          submit.setDisabled(false);
+          submit.setDisabled(!writingLanguage);
         }
       });
     });
-    if (item.slug && this.shelf.settings.online)
+    if (item.source !== 'manual' && this.shelf.settings.online)
       this.button(
         parent,
         this.t('refresh'),
         async () => {
-          const game = await this.shelf.source.get(item.slug ?? '', false, true);
+          if (item.source === 'manual') return;
+          const game = await this.shelf.sourceFor(item.source).get(item.sourceId, false, true);
           const changes = this.shelf.notes.previewChanges(file, game, this.shelf.settings.groups);
           this.updatePreview = {
             game,

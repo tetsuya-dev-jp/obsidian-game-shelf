@@ -1,4 +1,6 @@
 export interface SearchItem {
+  source: Provider;
+  id: string;
   slug: string;
   title: string;
   url: string;
@@ -17,6 +19,9 @@ export interface SearchPage {
 }
 
 export interface Game {
+  source: Provider;
+  id: string;
+  dataLanguage: Locale;
   slug: string;
   url: string;
   title: string;
@@ -76,6 +81,7 @@ export const STATUSES = [
 ] as const;
 export type PlayStatus = string;
 export type Locale = 'en' | 'ja';
+export type Provider = 'gamesneverdie' | 'igdb';
 export type MetadataValue = string | number | boolean | null | string[];
 export type Metadata = Record<string, MetadataValue>;
 
@@ -95,6 +101,10 @@ export interface ShelfSettings {
   coverFolder: string;
   filename: string;
   language: 'auto' | Locale;
+  noteLanguage: 'auto' | Locale;
+  provider: 'auto' | Provider;
+  igdbClientId: string;
+  igdbClientSecret: string;
   online: boolean;
   saveCover: boolean;
   groups: FieldGroup[];
@@ -110,6 +120,10 @@ export const DEFAULT_SETTINGS: ShelfSettings = {
   coverFolder: 'Games/Attachments',
   filename: '{{title}}',
   language: 'auto',
+  noteLanguage: 'auto',
+  provider: 'auto',
+  igdbClientId: '',
+  igdbClientSecret: '',
   online: false,
   saveCover: true,
   groups: ['basics', 'ratings', 'stores', 'media'],
@@ -121,6 +135,9 @@ export const DEFAULT_SETTINGS: ShelfSettings = {
 export interface LibraryItem {
   path: string;
   id: string;
+  source: Provider | 'manual';
+  sourceId: string;
+  noteLanguage: Locale | null;
   slug: string | null;
   title: string;
   status: PlayStatus;

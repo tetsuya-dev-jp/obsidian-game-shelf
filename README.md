@@ -3,9 +3,11 @@
 Find a game. Make a note. Remember why you played it.
 
 Game Shelf brings game discovery, a local backlog, and personal play journals to
-Obsidian. It creates ordinary Markdown notes from
-[Games Never Die](https://gamesneverdie.com/ja), with no API key, Python install,
-account, server, Dataview, or other required plugin.
+Obsidian. It creates ordinary Markdown notes using
+[Games Never Die](https://gamesneverdie.com/ja) for Japanese game data or
+[IGDB](https://www.igdb.com/) for English game data. IGDB requires your own
+Twitch application Client ID and Client Secret. No plugin server, Python
+installation, Dataview, or other plugin is required. Manual notes work offline.
 
 ![Game Shelf library in Obsidian](docs/media/library-dark.png)
 
@@ -31,6 +33,9 @@ account, server, Dataview, or other required plugin.
 
 The interface follows your Obsidian theme and supports English and Japanese,
 keyboard operation and narrow panes. There are no default hotkeys.
+Choose the language of new notes separately from the interface. Automatic
+source selection uses Games Never Die for Japanese notes and IGDB for English
+notes. Saved notes retain their writing language and original source.
 
 ![Find and preview a game](docs/media/discover.png)
 
@@ -66,21 +71,30 @@ demonstration text.
 ## Start with one game
 
 1. Open **Game Shelf** from the ribbon or run **Game Shelf: Find and add a game**.
-2. Enable online search after reading the service disclosure. Search a title or
-   paste a `https://gamesneverdie.com/ja/games/...` URL.
-3. Check the date/platform and choose your play status and optional rating.
-4. Choose which source information to include, and whether to save the cover
+2. Choose your new-note language in Game Shelf settings. For English game data,
+   select **Set up IGDB credentials** and follow the guide, or use the
+   [written setup instructions](docs/igdb-setup.md).
+3. Enable online search after reading the service disclosure. Search a title or
+   paste a game URL from your selected source.
+4. Check the date/platform and choose your play status and optional rating.
+5. Choose which source information to include, and whether to save the cover
    offline. Open **Note preview** if you want to inspect the template.
-5. Select **Create note**. The note opens in Obsidian; its ordinary Markdown
+6. Select **Create note**. The note opens in Obsidian; its ordinary Markdown
    remains useful if you disable or remove Game Shelf.
 
-The source catalog is Japanese. English search works, but titles, genres and
-source descriptions follow the site's displayed language. This plugin does not
-translate or independently verify them.
+Games Never Die supplies Japanese metadata; IGDB supplies its original game
+data, generally in English. Neither source guarantees a translated name or
+description for every game. Imported text is not machine-translated. The note
+preview shows what will be saved. Choosing a source whose data language differs
+from your note language displays a notice; failed English lookups never silently
+switch to Japanese. GND articles and its optional Steam statistics are not
+available from IGDB.
 
 **Already added?** The existing note is offered instead of being overwritten.
 Different source editions have different IDs; colliding filenames get a
 year/platform suffix. Manual entries also never overwrite an existing file.
+IDs are source-specific. An IGDB record and a GND record are not automatically
+merged even when their titles match; remakes, editions and ports may differ.
 
 ## Organize and remember
 
@@ -118,11 +132,17 @@ available from the source-page link or a new preview.
 
 ## Templates and properties
 
-Defaults work without setup. Settings are searchable in current Obsidian.
+Settings are searchable in current Obsidian. English online lookups require
+IGDB credential setup; local writing and Japanese GND lookups do not.
 
 | Setting | Default / supported values |
 | --- | --- |
 | Notes folder | `Games` |
+| Interface language | Match Obsidian, English, Japanese |
+| New-note language | Match interface, English, Japanese |
+| Game data source | Automatic by note language, Games Never Die, IGDB |
+| IGDB Client ID | Your public Twitch application ID |
+| IGDB Client Secret | A reference selected with Obsidian SecretStorage |
 | Local cover folder | `Games/Attachments` |
 | Filename | `{{title}}`; also `{{year}}`, `{{platform}}`, `{{slug}}` |
 | Note template | `{{title}}`, `{{cover}}`, `{{source}}`, `{{notes_heading}}`, `{{journal_heading}}`, `{{journal_marker}}` |
@@ -171,12 +191,15 @@ folder. Indexing does not read note bodies; only recognized game notes enter
 the library. The index stays in memory and is updated by vault events. File
 paths and cached properties are not sent to the game provider.
 
-When you enable online use and explicitly search or look up a game:
+Online use allows searches, game lookups, connection tests and remote artwork previews:
 
 | Destination | Purpose |
 | --- | --- |
 | `gamesneverdie.com` | Search terms, game pages and optional `/api/steam` lookups |
 | `media.gamesneverdie.com` | Cover previews, screenshot images and optional local cover downloads |
+| `id.twitch.tv` | Exchange your IGDB application credentials for an access token |
+| `api.igdb.com` | English game searches, details and explicit connection tests |
+| `images.igdb.com` | IGDB cover previews, screenshots and optional local cover downloads |
 
 The note can contain external store, article and YouTube links and embedded
 screenshot images. Remote screenshots load when the note is rendered.
@@ -184,11 +207,27 @@ Game Shelf does not open those pages or fetch article bodies automatically.
 Remote cover previews can load when shown. Library covers saved in the vault
 are local; turn online search off to suppress remote-cover fallbacks.
 
-Requests are spaced by at least one second, deduplicated in flight and cached
+GND requests are spaced by at least one second, deduplicated in flight and cached
 in memory for the plugin session (games: 24h; search: 1h; Steam: 5min). Caches are
 bounded and can be cleared in settings. HTTP failures are explicit and not
 automatically retried. The network timeout is 20 seconds; cover downloads are
 limited to 3 MiB and supported image signatures are verified before saving.
+IGDB requests are serialized at least 250 ms apart. Responses are cached in
+memory (games: 24h; searches: 1h), with bounded caches and concurrent-request
+deduplication. An expired token is renewed; one 401 response triggers one
+reauthentication attempt. Rate limits and other failures are not automatically
+retried. Tokens are held only in memory and never saved in notes or plugin data.
+
+The Client ID is public and saved in plugin settings. The Client Secret is read
+from Obsidian SecretStorage; plugin settings save only its reference, not its
+value. SecretStorage is scoped to the vault and is not an assurance of encrypted
+storage. Protect your devices and backups. Synced settings may contain a secret
+reference without the secret; configure it on each device when necessary.
+
+Each new note stores its writing language independently of the interface and
+future defaults. For notes created before 1.1.0, choose **Note writing language**
+in the library detail before adding another play-log entry. This choice saves
+only the language property; it does not translate or rewrite existing prose.
 
 [The site's disclaimer](https://gamesneverdie.com/ja/disclaimer) asks users to
 refrain from automated bulk extraction; its

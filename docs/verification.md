@@ -1,5 +1,42 @@
 # Verification
 
+## Version 1.1.0 — release candidate
+
+The English/Japanese update passed 56 unit tests, official Obsidian lint rules,
+TypeScript checks, build and release validation. The production dependency audit
+reported zero vulnerabilities. No dependency was added for this update.
+
+The [native test script](../e2e/bilingual.mjs) passed all nine scenarios on real
+Obsidian desktop **1.15.1** ([report](verification-1.1.0.json)) and the minimum
+supported **1.13.7** ([report](verification-1.1.0-min.json)) in an isolated vault:
+
+- English and Japanese native credential guides and official links.
+- Missing-credential setup gate and zero requests while offline.
+- Japanese interface creating an English IGDB note through search and preview.
+- Stable per-note English/Japanese log units, manual notes and duplicate identity.
+- Refresh preserving personal edits and rejecting another provider's identity.
+- Legacy notes refusing writes until the user explicitly chooses a language.
+- Four localized commands remaining unique and executable through EN→JA→EN.
+- No synthetic secret or token values in plugin data or generated notes.
+- Custom property mappings and note language surviving plugin reload.
+
+These checks use synthetic credentials, API responses and images. They verify
+native UI, persistence and integration, not authenticated upstream availability.
+No real user secret was accessed. Native iOS/Android execution was not tested.
+Narrow desktop setup controls are checked separately in the
+[layout report](verification-1.1.0-layout.json); this is not a mobile run.
+
+Independent [correctness/security](review-1.1.0-security.md) and
+[Obsidian policy/API](review-1.1.0-policy.md) re-reviews passed after fixing the
+recorded findings. This does not constitute approval by the Obsidian team.
+The release remains unpublished pending the owner's default-settings checkpoint.
+CI and release-asset verification must be recorded separately when available.
+
+To reproduce, start the isolated harness with `OBSIDIAN_BINARY`, run
+`node e2e/bilingual.mjs`, then stop it with `node e2e/launch.mjs stop`.
+The script writes `verification-1.1.0.json`; preserve each version's report
+before running another version.
+
 ## Version 1.0.3
 
 Screenshot links are now Markdown image embeds separated by blank lines.
