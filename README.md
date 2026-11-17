@@ -46,10 +46,13 @@ demonstration text.
 
 ## Install
 
-### Before community-directory approval
+1. In Obsidian, open **Settings → Community plugins**.
+2. If prompted, select **Turn on community plugins**.
+3. Select **Browse**, search for **Game Shelf**, and open its listing.
+4. Select **Install**, then **Enable**.
 
-Use [BRAT](https://github.com/TfTHacker/obsidian42-brat) to add
-`tetsuya-dev-jp/obsidian-game-shelf`, or install manually:
+<details>
+<summary>Manual installation</summary>
 
 1. Download `main.js`, `manifest.json` and `styles.css` from the
    [latest release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/latest).
@@ -58,9 +61,7 @@ Use [BRAT](https://github.com/TfTHacker/obsidian42-brat) to add
    folders also work.
 3. Reload Obsidian and enable **Game Shelf** in Community plugins.
 
-Community-directory availability requires a separate Obsidian review. A GitHub
-release and successful local checks do not mean the plugin has been approved.
-See [submission preparation](docs/submission.md) for the current process.
+</details>
 
 ## Start with one game
 
