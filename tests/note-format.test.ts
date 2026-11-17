@@ -126,6 +126,8 @@ describe('mapping and source metadata', () => {
   });
 
   it('keeps UI language, note language, provider and secret references independent in settings', () => {
+    expect(parseSettings(null).online).toBe(true);
+    expect(parseSettings({ online: false }).online).toBe(false);
     const saved = parseSettings({
       language: 'ja', noteLanguage: 'en', provider: 'igdb',
       igdbClientId: ' publicclient ', igdbClientSecret: 'game-shelf-secret',

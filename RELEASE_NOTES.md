@@ -13,8 +13,8 @@ reference is saved in plugin settings. Access tokens stay in memory.
 See [the setup guide](docs/igdb-setup.md).
 
 New installations follow Obsidian's interface language, use that language for
-new notes, and choose GND for Japanese or IGDB for English. Online search is off
-and credentials are empty until configured. Existing saved preferences are
+new notes, and choose GND for Japanese or IGDB for English. Online search is on
+by default; credentials are empty until configured. Existing saved preferences are
 preserved. IGDB does not provide the GND-specific articles or Steam statistics.
 
 Each note keeps its own writing language and source identity. Changing defaults

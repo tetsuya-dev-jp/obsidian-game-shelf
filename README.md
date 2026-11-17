@@ -74,8 +74,8 @@ demonstration text.
 2. Choose your new-note language in Game Shelf settings. For English game data,
    select **Set up IGDB credentials** and follow the guide, or use the
    [written setup instructions](docs/igdb-setup.md).
-3. Enable online search after reading the service disclosure. Search a title or
-   paste a game URL from your selected source.
+3. Search a title or paste a game URL from your selected source. Online search
+   is enabled by default; you can turn it off in settings.
 4. Check the date/platform and choose your play status and optional rating.
 5. Choose which source information to include, and whether to save the cover
    offline. Open **Note preview** if you want to inspect the template.
@@ -181,7 +181,8 @@ Obsidian Bases, Dataview, searches and your own scripts.
 ## Privacy, networking and upstream limits
 
 Game Shelf sends **no vault text, personal ratings, play logs or telemetry** to a
-service. Online search is initially off. There is no background crawling,
+service. Online search is enabled by default and can be disabled in settings.
+There is no background crawling,
 scheduled refresh, account sync, self-updater, advertising or analytics.
 
 The local library lists Markdown file paths across the vault and checks

@@ -124,7 +124,7 @@ export const DEFAULT_SETTINGS: ShelfSettings = {
   provider: 'auto',
   igdbClientId: '',
   igdbClientSecret: '',
-  online: false,
+  online: true,
   saveCover: true,
   groups: ['basics', 'ratings', 'stores', 'media'],
   template: DEFAULT_TEMPLATE,

@@ -1,0 +1,15 @@
+{
+  "app": "Obsidian 1.15.1",
+  "plugin": "1.1.0",
+  "checks": {
+    "freshInstallOnline": true,
+    "englishDirectCredentialGuide": true,
+    "englishNoSearchFormWithoutCredentials": true,
+    "guideAndNativeSecretDialog": true,
+    "manualEntryWithoutCredentials": true,
+    "japaneseDirectSearchForm": true,
+    "savedOfflineChoiceAfterReload": true
+  },
+  "credentialsUsed": false,
+  "authenticatedRequests": false
+}

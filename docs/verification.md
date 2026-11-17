@@ -6,6 +6,14 @@ The English/Japanese update passed 56 unit tests, official Obsidian lint rules,
 TypeScript checks, build and release validation. The production dependency audit
 reported zero vulnerabilities. No dependency was added for this update.
 
+Online search is enabled by default for new installations. The follow-up
+[native check](verification-1.1.0-online-default.json) used a fresh 1.15.1 vault
+with no saved plugin data: English opens the credential guide directly, Japanese
+opens the search form, and a saved offline choice survives plugin reload.
+A continuous native recording shows the English setup guide, Obsidian's secret
+input dialog and manual entry without entering credentials or making auth/API
+requests. The 56-test check also verifies the new default and retained saved OFF.
+
 The [native test script](../e2e/bilingual.mjs) passed all nine scenarios on real
 Obsidian desktop **1.15.1** ([report](verification-1.1.0.json)) and the minimum
 supported **1.13.7** ([report](verification-1.1.0-min.json)) in an isolated vault:
