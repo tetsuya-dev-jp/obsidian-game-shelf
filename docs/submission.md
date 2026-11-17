@@ -25,17 +25,20 @@ assets and have verified attestations; see
 The latest observed entry was a draft; a new directory verdict has not been
 observed and community approval is not claimed.
 
-## 1.1.0 release candidate
+## 1.1.0 release
 
-The bilingual candidate adds user-owned IGDB credentials without a plugin
+The bilingual update adds user-owned IGDB credentials without a plugin
 server. Accounts, destinations and SecretStorage limitations are disclosed in
 README and the in-app English/Japanese setup guide. The independent static
 [policy/API review](review-1.1.0-policy.md) and
 [correctness/security review](review-1.1.0-security.md) passed after corrections.
 Native fixture scenarios passed on Obsidian 1.13.7 and 1.15.1; see
 [verification](verification.md). Authenticated live IGDB and native mobile
-execution have not been tested. The candidate is not yet published, and no
-new official Community-directory verdict is claimed.
+execution have not been tested. The
+[1.1.0 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.1.0)
+is public; its source passed three-OS CI and all three downloaded assets match
+the tested local files. See [release verification](release-verification-1.1.0.json).
+No new official Community-directory verdict is claimed.
 
 ## Current route
 

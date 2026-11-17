@@ -1,6 +1,6 @@
 # Verification
 
-## Version 1.1.0 — release candidate
+## Version 1.1.0
 
 The English/Japanese update passed 56 unit tests, official Obsidian lint rules,
 TypeScript checks, build and release validation. The production dependency audit
@@ -39,8 +39,12 @@ check also decoded both GND and IGDB local covers and verified the same
 Independent [correctness/security](review-1.1.0-security.md) and
 [Obsidian policy/API](review-1.1.0-policy.md) re-reviews passed after fixing the
 recorded findings. This does not constitute approval by the Obsidian team.
-The release remains unpublished pending the owner's default-settings checkpoint.
-CI and release-asset verification must be recorded separately when available.
+The [1.1.0 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.1.0)
+is public. Its source passed Windows, macOS and Linux CI, and the release
+workflow completed successfully. All three published assets were downloaded
+and compared directly with the tested local files; they are identical. See
+[release verification](release-verification-1.1.0.json) for source, workflow and
+asset details, including the limits of the checks.
 
 To reproduce, start the isolated harness with `OBSIDIAN_BINARY`, run
 `node e2e/bilingual.mjs`, then stop it with `node e2e/launch.mjs stop`.
