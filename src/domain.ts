@@ -112,7 +112,7 @@ export const DEFAULT_SETTINGS: ShelfSettings = {
   language: 'auto',
   online: false,
   saveCover: true,
-  groups: ['basics', 'ratings', 'stores'],
+  groups: ['basics', 'ratings', 'stores', 'media'],
   template: DEFAULT_TEMPLATE,
   propertyNames: {},
   statuses: [...STATUSES],

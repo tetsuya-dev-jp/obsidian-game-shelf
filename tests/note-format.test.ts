@@ -238,12 +238,39 @@ describe('safe note rendering', () => {
     expect(() => renderBody('{{surprise}}', { title: 'Test' })).toThrow(/Unknown template token/);
   });
 
-  it('excludes description, articles and media spoilers from default source block', () => {
-    const body = sourceBody(game(), DEFAULT_SETTINGS.groups, 'Game information');
+  it('embeds screenshots by default while keeping trailers as links and text spoilers opt-in', () => {
+    const body = sourceBody(
+      game({
+        screenshots: [
+          'https://media.gamesneverdie.com/first.webp',
+          'https://media.gamesneverdie.com/second (1).webp',
+        ],
+        trailers: ['https://www.youtube.com/watch?v=test'],
+      }),
+      DEFAULT_SETTINGS.groups,
+      'Game information',
+    );
     expect(body).toContain('Steam');
+    expect(body).toContain('- [Trailer 1](<https://www.youtube.com/watch?v=test>)');
+    expect(body).toContain(
+      '\n\n![Screenshot 1](<https://media.gamesneverdie.com/first.webp>)\n\n![Screenshot 2](<https://media.gamesneverdie.com/second%20(1).webp>)',
+    );
     expect(body).not.toContain('secret ending');
     expect(body).not.toContain('Ending explained');
     expect(body).not.toContain('Spoiler');
+  });
+
+  it('omits screenshot embeds and trailer links when media is disabled', () => {
+    const body = sourceBody(
+      game({
+        screenshots: ['https://media.gamesneverdie.com/first.webp'],
+        trailers: ['https://www.youtube.com/watch?v=test'],
+      }),
+      ['basics', 'stores'],
+      'Game information',
+    );
+    expect(body).not.toContain('Screenshot');
+    expect(body).not.toContain('Trailer');
   });
 });
 
@@ -325,8 +352,8 @@ describe('journal and settings', () => {
 
   it('loads defaults independently and validates persisted paths, mappings and tokens', () => {
     const first = parseSettings(undefined);
-    first.groups.push('media');
-    expect(parseSettings(undefined).groups).not.toContain('media');
+    first.groups.push('articles');
+    expect(parseSettings(undefined).groups).not.toContain('articles');
     const loaded = parseSettings({
       folder: ' Games\\JRPG ',
       coverFolder: 'Covers',

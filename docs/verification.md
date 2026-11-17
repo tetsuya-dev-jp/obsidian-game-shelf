@@ -1,5 +1,15 @@
 # Verification
 
+## Version 1.0.3
+
+Screenshot links are now Markdown image embeds separated by blank lines.
+New installations include media by default; saved selections are preserved.
+All 35 unit tests, lint, types and build passed. Native fixture checks on
+Obsidian 1.15.1 under xvfb verified two 640 × 360 screenshot images in each
+cover-saving mode. Screenshots remain remote even when covers are saved
+locally. Provider responses and cover downloads were synthetic in these checks;
+live provider availability and native mobile execution were not rechecked.
+
 ## Version 1.0.2
 
 The [1.0.2 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.0.2)

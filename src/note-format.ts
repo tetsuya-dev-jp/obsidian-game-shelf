@@ -195,7 +195,7 @@ export function sourceBody(game: Game, groups: readonly FieldGroup[], heading: s
     lines.push(
       '',
       ...game.trailers.map((url, i) => `- ${link(`Trailer ${i + 1}`, url)}`),
-      ...game.screenshots.map((url, i) => `- ${link(`Screenshot ${i + 1}`, url)}`),
+      ...game.screenshots.flatMap((url, i) => ['', `!${link(`Screenshot ${i + 1}`, url)}`]),
     );
   if (groups.includes('steam') && game.steam) {
     const steam = game.steam;

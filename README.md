@@ -135,6 +135,13 @@ not evaluate scripts or invoke Templater. Provider text is escaped when inserted
 into a note. Your own template remains your responsibility if another plugin
 processes it as code.
 
+New installations include screenshots and trailers by default. Screenshots
+appear as images separated by blank lines; trailers remain links. You can turn
+them off under **Include in note**. Saved field selections and custom templates
+are preserved. **Save cover in vault for offline use** saves only the cover;
+screenshots use remote images with either cover setting and require a network
+connection. Existing note bodies are not rewritten.
+
 Property mappings apply to **new notes**. Existing notes keep the names used
 when they were created; the plugin remembers their profiles in its local data.
 It does not silently rename properties across your vault. Keep the plugin data
@@ -169,9 +176,10 @@ When you enable online use and explicitly search or look up a game:
 | Destination | Purpose |
 | --- | --- |
 | `gamesneverdie.com` | Search terms, game pages and optional `/api/steam` lookups |
-| `media.gamesneverdie.com` | Cover previews and optional local cover downloads |
+| `media.gamesneverdie.com` | Cover previews, screenshot images and optional local cover downloads |
 
-The note can contain external store, article, screenshot and YouTube links.
+The note can contain external store, article and YouTube links and embedded
+screenshot images. Remote screenshots load when the note is rendered.
 Game Shelf does not open those pages or fetch article bodies automatically.
 Remote cover previews can load when shown. Library covers saved in the vault
 are local; turn online search off to suppress remote-cover fallbacks.
