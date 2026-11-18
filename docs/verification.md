@@ -22,6 +22,12 @@ The eight focused-input cases, actual journal persistence and nine bilingual
 checks also passed on minimum-supported Obsidian 1.13.7. See the linked audit
 for separate reports from each native app version.
 
+The [1.1.2 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.1.2)
+is public and was verified as latest. Its exact source passed all three OS CI
+jobs and the release workflow, including asset attestation. All three downloaded
+assets match the tested local files byte for byte. See
+[release verification](release-verification-1.1.2.json).
+
 ## Version 1.1.1: global note language simplification (2026-11-18)
 
 Note creation and new play-log entries now use the global **Note language**

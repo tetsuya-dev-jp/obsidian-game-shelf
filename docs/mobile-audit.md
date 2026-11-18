@@ -14,6 +14,11 @@ after keyboard space reduced the view by 344px, the focused journal field stayed
 below the visible area. A second regression placed a focused manual-entry select
 under the sticky create action. These tests failed before their respective fixes.
 
+In the original failing journal case at 375x812, the focused field occupied
+y=461.6–594.3 after keyboard space opened, below the visible bottom at y=434.
+The follow-up select case was hit-tested under the create button rather than
+the focused select. The regression checks now reject both conditions.
+
 ## Changes
 
 - Use the native `.view-content` as the sole vertical scroller, with a sticky
@@ -32,6 +37,10 @@ under the sticky create action. These tests failed before their respective fixes
   Keep input text at least 16px. Invisible native dropdown measuring elements
   must not create a horizontal settings scroller; visible controls and readable
   text are checked independently for clipping.
+
+The date-control change addresses the native-control sizing path described in
+[WebKit's iOS date input width report](https://bugs.webkit.org/show_bug.cgi?id=301648).
+That upstream report is not evidence of a successful test on this user's device.
 
 ## Automated evidence
 
