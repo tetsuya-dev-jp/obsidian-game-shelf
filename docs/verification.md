@@ -24,6 +24,11 @@ All 57 unit tests, lint, types, build and release-file checks passed.
 Tests use isolated desktop Obsidian with its mobile UI and simulated
 keyboard space; physical iPad/iPhone/Android keyboards remain untested.
 
+The [1.1.3 release](https://github.com/tetsuya-dev-jp/obsidian-game-shelf/releases/tag/1.1.3)
+is public and verified as latest. Source CI passed on all three OSes; tag CI
+and the release workflow also passed. All three downloaded assets match the
+tested build byte for byte. See [release verification](release-verification-1.1.3.json).
+
 ## Version 1.1.2: mobile input and layout follow-up (2026-11-18)
 
 The [mobile audit](mobile-audit.md) records the reported iPhone 13 mini/iOS 27.2
