@@ -29,7 +29,8 @@ async function tap(selector) {
   const point = await run(selector => {
     const el = document.querySelector(selector), r = el.getBoundingClientRect();
     const x = r.left + r.width / 2, y = r.top + r.height / 2;
-    if (!el.contains(document.elementFromPoint(x, y))) throw new Error(`Covered control: ${selector}`);
+    if (!el.contains(document.elementFromPoint(x, y)))
+      throw new Error(`Covered control: ${selector} at ${x},${y}; ${document.elementFromPoint(x, y)?.outerHTML.slice(0,300)}`);
     return { x, y };
   }, selector);
   await c.call('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ ...point, radiusX: 1, radiusY: 1 }] });
@@ -57,6 +58,11 @@ async function layout(language, screen) {
       if (!r.width || !r.height) continue;
       if (r.left < bounds.left - 1 || r.right > bounds.right + 1)
         issues.push(`outside pane: ${el.className || el.tagName}`);
+      if (el.matches('.gs-field input, .gs-field select')) {
+        const field = el.parentElement.getBoundingClientRect();
+        if (r.left < field.left - 1 || r.right > field.right + 1)
+          issues.push(`outside field: ${el.getAttribute('aria-label')}`);
+      }
       if (el.matches('button, input:not([type="checkbox"]), select, summary') && r.height < 44)
         issues.push(`short touch target: ${el.textContent || el.getAttribute('aria-label')}`);
       if (el.matches('button.gs-with-icon, .gs-nav button')) {
@@ -79,7 +85,7 @@ async function layout(language, screen) {
       issues,
     };
   });
-  assert.deepEqual(geometry.rootOverflow, [0, 0], JSON.stringify({ language, screen, ...geometry }));
+  assert.equal(geometry.rootOverflow[0], 0, JSON.stringify({ language, screen, ...geometry }));
   assert(geometry.horizontalOverflow <= 1, JSON.stringify({ language, screen, ...geometry }));
   assert.deepEqual(geometry.issues, [], JSON.stringify({ language, screen, ...geometry }));
   if (screen === 'detail' || screen === 'manual')
@@ -91,7 +97,7 @@ try {
   await until(`!!app.plugins.plugins['game-shelf']`);
   saved = await run(() => {
     const p = app.plugins.plugins['game-shelf'];
-    return { settings: structuredClone(p.settings), theme: document.body.className };
+    return { settings: structuredClone(p.settings), theme: app.vault.getConfig('theme') };
   });
   await run(() => app.changeTheme('obsidian'));
   report.app = await c.evaluate('document.title');
@@ -175,14 +181,14 @@ try {
     assert(persisted.body.includes(text));
     report.interactions.push({ language, touchCreate: true, rotationPreservesDraft: true, touchSaveAboveKeyboard: true, persistedMinutes: 17 });
     await viewport(390, 844);
-    await run(() => { document.activeElement.blur(); document.querySelector('.gs-shell').scrollTop = 0; });
+    await run(() => { document.activeElement.blur(); document.querySelector('.gs-root').scrollTop = 0; });
     const header = await c.evaluate(`document.querySelector('.gs-header').getBoundingClientRect().top`);
-    const start = await run(() => { const r = document.querySelector('.gs-shell').getBoundingClientRect(); return { x: r.left + 8, y: r.top + r.height * .7 }; });
+    const start = await run(() => { const r = document.querySelector('.gs-root').getBoundingClientRect(); return { x: r.left + 8, y: r.top + r.height * .7 }; });
     await swipe(start, 0, -200);
-    assert(await c.evaluate(`document.querySelector('.gs-shell').scrollTop > 0`), 'Touch must scroll the content');
+    assert(await c.evaluate(`document.querySelector('.gs-root').scrollTop > 0`), 'Touch must scroll the content');
     await swipe({ ...start, x: start.x + 140 }, -120, 0);
-    assert.equal(await c.evaluate(`document.querySelector('.gs-shell').scrollLeft`), 0);
-    assert.equal(await c.evaluate(`document.querySelector('.gs-root').scrollTop`), 0);
+    assert.equal(await c.evaluate(`document.querySelector('.gs-root').scrollLeft`), 0);
+    assert.equal(await c.evaluate(`document.querySelector('.gs-shell').scrollTop`), 0);
     assert.equal(await c.evaluate(`document.querySelector('.gs-header').getBoundingClientRect().top`), header);
     report.interactions.push({ language, verticalTouchScroll: true, noHorizontalPan: true, headerFixed: true });
     await run(async () => {
@@ -209,11 +215,12 @@ try {
   await pause();
   await layout('en', 'light-search-results');
   await c.screenshot(new URL('../docs/media/mobile-light-744.png', import.meta.url).pathname);
-  // Floating navigation/home-indicator space stays outside the content scroller.
+  // The final content stays reachable above the floating navigation/home indicator.
   await run(() => document.querySelector('.gs-root').parentElement.style.setProperty('--view-bottom-spacing', '84px'));
   const bottom = await run(() => {
-    const r = document.querySelector('.gs-root').getBoundingClientRect();
-    return r.bottom - document.querySelector('.gs-shell').getBoundingClientRect().bottom;
+    const root = document.querySelector('.gs-root');
+    root.scrollTop = root.scrollHeight;
+    return root.getBoundingClientRect().bottom - root.querySelector('.gs-shell').getBoundingClientRect().bottom;
   });
   assert(bottom >= 84);
   report.interactions.push({ floatingNavigationReserved: bottom });
@@ -230,7 +237,7 @@ try {
     parent?.style.removeProperty('--view-bottom-spacing');
     if (saved) {
       await p.updateSettings(saved.settings);
-      app.changeTheme(saved.theme.includes('theme-light') ? 'moonstone' : 'obsidian');
+      app.changeTheme(saved.theme);
       await p.openShelf('library');
     }
   }, files, saved);

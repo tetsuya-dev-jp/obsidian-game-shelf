@@ -1,0 +1,242 @@
+{
+  "date": "2026-11-18T00:45:39.558Z",
+  "nativeMobile": false,
+  "keyboard": "simulated Obsidian --keyboard-height",
+  "checks": [
+    {
+      "selector": ".gs-toolbar input",
+      "focused": true,
+      "value": "library",
+      "top": 257,
+      "bottom": 301,
+      "visibleTop": 173,
+      "visibleBottom": 434,
+      "paneHeight": 372,
+      "headerTop": 96,
+      "paneTop": 96
+    },
+    {
+      "selector": ".gs-title-input",
+      "focused": true,
+      "value": "manual",
+      "top": 308.59375,
+      "bottom": 352.59375,
+      "visibleTop": 173,
+      "visibleBottom": 434,
+      "paneHeight": 372,
+      "headerTop": 96,
+      "paneTop": 96
+    },
+    {
+      "selector": ".gs-create-fields select[aria-label=\"プレイ状況\"]",
+      "visible": true,
+      "coveredBy": "<select aria-label=\"プレイ状況\"><option value=\"backlog\">積みゲー</option><option value=\"playing\">プレイ中</option><option value=\"completed\">クリア済み</option><option value=\"paused\">お休み中</option><option value=\"dropped\">プレイ終了</option><option value=\"wishlist\">気になる</option></select>",
+      "top": 309.1875,
+      "bottom": 353.1875
+    },
+    {
+      "selector": ".gs-create-fields select[aria-label=\"自分の評価\"]",
+      "visible": true,
+      "coveredBy": "<select aria-label=\"自分の評価\"><option value=\"\">未評価</option><option value=\"0\">0/5</option><option value=\"0.5\">0.5/5</option><option value=\"1\">1/5</option><option value=\"1.5\">1.5/5</option><option value=\"2\">2/5</option><option value=\"2.5\">2.5/5</option><option value=\"3\">3/5</option><option value=\"3.5\">3.",
+      "top": 308.78125,
+      "bottom": 352.78125
+    },
+    {
+      "selector": ".gs-create-fields select[aria-label=\"所有状況\"]",
+      "visible": true,
+      "coveredBy": "<select aria-label=\"所有状況\"><option value=\"owned\">持っている</option><option value=\"not-owned\">持っていない</option><option value=\"subscription\">サブスクリプション</option></select>",
+      "top": 309.375,
+      "bottom": 353.375
+    },
+    {
+      "selector": ".gs-journal-text",
+      "focused": true,
+      "value": "A session kept after keyboard resize.",
+      "top": 289.5625,
+      "bottom": 422.3125,
+      "visibleTop": 173,
+      "visibleBottom": 434,
+      "paneHeight": 372,
+      "headerTop": 96,
+      "paneTop": 96
+    },
+    {
+      "selector": ".gs-journal input",
+      "focused": true,
+      "value": "17",
+      "top": 378.3125,
+      "bottom": 422.3125,
+      "visibleTop": 173,
+      "visibleBottom": 434,
+      "paneHeight": 372,
+      "headerTop": 96,
+      "paneTop": 96
+    },
+    {
+      "selector": ".gs-search-form input",
+      "focused": true,
+      "value": "Zelda",
+      "top": 263.1875,
+      "bottom": 307.1875,
+      "visibleTop": 173,
+      "visibleBottom": 434,
+      "paneHeight": 372,
+      "headerTop": 96,
+      "paneTop": 96
+    }
+  ],
+  "dates": [
+    {
+      "viewportWidth": 320,
+      "controls": [
+        {
+          "value": "",
+          "width": 276,
+          "fieldWidth": 276,
+          "left": 16,
+          "right": 292,
+          "fieldLeft": 16,
+          "fieldRight": 292,
+          "appearance": "none"
+        },
+        {
+          "value": "2026-11-18",
+          "width": 276,
+          "fieldWidth": 276,
+          "left": 16,
+          "right": 292,
+          "fieldLeft": 16,
+          "fieldRight": 292,
+          "appearance": "none"
+        }
+      ]
+    },
+    {
+      "viewportWidth": 375,
+      "controls": [
+        {
+          "value": "",
+          "width": 331,
+          "fieldWidth": 331,
+          "left": 16,
+          "right": 347,
+          "fieldLeft": 16,
+          "fieldRight": 347,
+          "appearance": "none"
+        },
+        {
+          "value": "2026-11-18",
+          "width": 331,
+          "fieldWidth": 331,
+          "left": 16,
+          "right": 347,
+          "fieldLeft": 16,
+          "fieldRight": 347,
+          "appearance": "none"
+        }
+      ]
+    },
+    {
+      "viewportWidth": 390,
+      "controls": [
+        {
+          "value": "",
+          "width": 346,
+          "fieldWidth": 346,
+          "left": 16,
+          "right": 362,
+          "fieldLeft": 16,
+          "fieldRight": 362,
+          "appearance": "none"
+        },
+        {
+          "value": "2026-11-18",
+          "width": 346,
+          "fieldWidth": 346,
+          "left": 16,
+          "right": 362,
+          "fieldLeft": 16,
+          "fieldRight": 362,
+          "appearance": "none"
+        }
+      ]
+    },
+    {
+      "viewportWidth": 430,
+      "controls": [
+        {
+          "value": "",
+          "width": 386,
+          "fieldWidth": 386,
+          "left": 16,
+          "right": 402,
+          "fieldLeft": 16,
+          "fieldRight": 402,
+          "appearance": "none"
+        },
+        {
+          "value": "2026-11-18",
+          "width": 386,
+          "fieldWidth": 386,
+          "left": 16,
+          "right": 402,
+          "fieldLeft": 16,
+          "fieldRight": 402,
+          "appearance": "none"
+        }
+      ]
+    },
+    {
+      "viewportWidth": 744,
+      "controls": [
+        {
+          "value": "",
+          "width": 336,
+          "fieldWidth": 336,
+          "left": 372,
+          "right": 708,
+          "fieldLeft": 372,
+          "fieldRight": 708,
+          "appearance": "none"
+        },
+        {
+          "value": "2026-11-18",
+          "width": 336,
+          "fieldWidth": 336,
+          "left": 24,
+          "right": 360,
+          "fieldLeft": 24,
+          "fieldRight": 360,
+          "appearance": "none"
+        }
+      ]
+    },
+    {
+      "viewportWidth": 1024,
+      "controls": [
+        {
+          "value": "",
+          "width": 331,
+          "fieldWidth": 331,
+          "left": 657,
+          "right": 988,
+          "fieldLeft": 657,
+          "fieldRight": 988,
+          "appearance": "none"
+        },
+        {
+          "value": "2026-11-18",
+          "width": 331,
+          "fieldWidth": 331,
+          "left": 657,
+          "right": 988,
+          "fieldLeft": 657,
+          "fieldRight": 988,
+          "appearance": "none"
+        }
+      ]
+    }
+  ],
+  "app": "Game Shelf - vault - Obsidian 1.15.1",
+  "persistedMinutes": 172
+}

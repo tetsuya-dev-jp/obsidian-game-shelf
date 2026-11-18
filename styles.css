@@ -6,7 +6,9 @@
   flex-direction: column;
   min-width: 0;
   min-height: 0;
-  overflow: hidden;
+  overflow: hidden auto;
+  overscroll-behavior: none;
+  scroll-padding-block: calc(var(--gs-header-height, 70px) + 16px) 16px;
   /* The native status bar overlays the bottom of narrow desktop panes. */
   padding: 0 0 var(--status-bar-height, 28px);
   font-family: var(--font-interface);
@@ -74,6 +76,9 @@
   caret-color: var(--interactive-accent);
 }
 .gs-header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
   flex: none;
   min-height: 70px;
   padding: 16px 24px;
@@ -129,12 +134,9 @@
 }
 .gs-shell {
   display: grid;
-  flex: 1;
+  flex: 1 0 auto;
   grid-template-columns: minmax(0, 1fr);
   min-height: 0;
-  overflow: hidden auto;
-  overscroll-behavior: none;
-  scroll-padding-block: 16px;
 }
 .gs-shell.has-details {
   grid-template-columns: minmax(310px, 1fr) minmax(300px, 380px);
@@ -175,7 +177,7 @@
   flex-shrink: 0;
 }
 .gs-root .gs-with-icon {
-  white-space: nowrap;
+  white-space: normal;
 }
 .gs-button-icon {
   display: flex;
@@ -480,6 +482,7 @@
 }
 .gs-online p {
   line-height: 1.8;
+  overflow-wrap: anywhere;
   color: var(--text-muted);
 }
 .gs-online button {
@@ -536,6 +539,9 @@
   max-width: 100%;
 }
 .gs-field input[type='date'] {
+  /* iOS's native appearance imposes an intrinsic width outside the CSS box model. */
+  appearance: none;
+  display: block;
   overflow: hidden;
 }
 .gs-field input[type='date']::-webkit-date-and-time-value {
@@ -617,6 +623,11 @@
 .gs-create-action button {
   min-height: max(38px, var(--gs-control-height, 0px));
   padding-inline: 20px;
+}
+.gs-input-room .gs-header,
+.gs-input-room .gs-create-action {
+  /* Short keyboard viewports need the space normally occupied by sticky actions. */
+  position: static;
 }
 .gs-journal {
   display: flex;
@@ -728,7 +739,7 @@
     display: none;
   }
 }
-@container gs-detail (max-width: 340px) {
+@container gs-detail (max-width: 480px) {
   .gs-personal-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -791,6 +802,31 @@
     var(--view-bottom-spacing, 0px),
     var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px))
   );
+}
+.is-mobile :is(.gs-settings, .gs-igdb-setup) :is(input, select, textarea) {
+  font-size: max(16px, var(--font-ui-small));
+  min-width: 0;
+  max-width: 100%;
+}
+.gs-settings .setting-item-control,
+.gs-igdb-setup .setting-item-control {
+  min-width: 0;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.gs-settings {
+  /* Obsidian's invisible dropdown measurers can be wider than the settings pane. */
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+}
+.gs-igdb-setup button {
+  max-width: 100%;
+  white-space: normal;
+  height: auto;
+  min-height: var(--input-height);
+}
+.gs-igdb-setup .modal-content {
+  overflow-wrap: anywhere;
 }
 @media (pointer: coarse) {
   .gs-root {

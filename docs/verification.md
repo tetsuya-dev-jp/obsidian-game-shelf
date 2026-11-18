@@ -1,5 +1,27 @@
 # Verification
 
+## Version 1.1.2: mobile input and layout follow-up (2026-11-18)
+
+The [mobile audit](mobile-audit.md) records the reported iPhone 13 mini/iOS 27.2
+failure, reproduced keyboard/overlap failures, fixes, regression coverage and
+remaining real-device limits. The native host mobile UI passed 264 layout and
+24 keyboard cases across phones, tablets, split widths, orientation, both
+languages/themes and text scales up to 2x. Eight focused-input cases retained
+typed values and saved a real journal entry; dates fit their fields at six
+widths. The existing 127-layout touch suite and nine bilingual scenarios also
+passed. All 57 unit tests, lint, types, build and release-file checks passed.
+
+Linux WebKit 27.2 passed eight DOM/CSS snapshot layouts. Its required older
+libraries were extracted into temporary storage; no system install was needed.
+This does not verify iOS native date widgets, software keyboards, focus zoom,
+IME or physical devices. The exact iPhone-reported whole-content disappearance
+still requires a real-device recheck after updating. Independent static review
+passed after fixing the recorded findings.
+
+The eight focused-input cases, actual journal persistence and nine bilingual
+checks also passed on minimum-supported Obsidian 1.13.7. See the linked audit
+for separate reports from each native app version.
+
 ## Version 1.1.1: global note language simplification (2026-11-18)
 
 Note creation and new play-log entries now use the global **Note language**

@@ -1,7 +1,7 @@
 {
   "id": "game-shelf",
   "name": "Game Shelf",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "minAppVersion": "1.13.7",
   "description": "Create game notes, organize your backlog, and keep play journals in a local Markdown library.",
   "author": "tetsuya-dev-jp",

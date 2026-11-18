@@ -82,6 +82,23 @@ export class ShelfView extends ItemView {
     this.closed = false;
     this.addChild(this.screen);
     this.render();
+    const win = this.contentEl.win;
+    let frame = 0;
+    const reveal = () => {
+      win.cancelAnimationFrame(frame);
+      frame = win.requestAnimationFrame(() => this.revealFocusedInput());
+    };
+    const observer = new ResizeObserver(reveal);
+    observer.observe(this.contentEl);
+    this.registerDomEvent(this.contentEl, 'focusin', reveal);
+    this.registerDomEvent(this.contentEl, 'focusout', reveal);
+    const viewport = win.visualViewport;
+    viewport?.addEventListener('resize', reveal);
+    this.register(() => {
+      observer.disconnect();
+      viewport?.removeEventListener('resize', reveal);
+      win.cancelAnimationFrame(frame);
+    });
   }
   async onClose(): Promise<void> {
     this.closed = true;
@@ -253,6 +270,34 @@ export class ShelfView extends ItemView {
       this.app.metadataCache.getFirstLinkpathDest(path, item.path);
     return file instanceof TFile ? this.app.vault.getResourcePath(file) : null;
   }
+  private revealFocusedInput(): void {
+    const root = this.contentEl;
+    const header = root.querySelector('.gs-header')?.getBoundingClientRect();
+    if (this.closed || !header || !root.clientHeight) return;
+    const input = root.doc.activeElement;
+    const focused = input !== null && root.contains(input) && input.matches('input, textarea, select');
+    const pane = root.getBoundingClientRect();
+    const viewport = root.win.visualViewport;
+    let bottom = Math.min(
+      pane.bottom - parseFloat(root.win.getComputedStyle(root).paddingBottom),
+      viewport ? viewport.offsetTop + viewport.height : pane.bottom,
+    );
+    const actions = root.querySelector('.gs-create-action')?.getBoundingClientRect();
+    const cramped = focused && bottom - pane.top < header.height +
+      (actions?.height ?? 0) + input.getBoundingClientRect().height + 24;
+    root.toggleClass('gs-input-room', cramped);
+    root.style.setProperty('--gs-header-height', cramped ? '0px' : `${header.height}px`);
+    if (!focused) return;
+    const top = Math.max(pane.top, cramped ? pane.top : header.bottom, viewport?.offsetTop ?? pane.top) + 12;
+    if (!cramped && actions && actions.height && actions.bottom > top && actions.top < bottom)
+      bottom = actions.top;
+    bottom -= 12;
+    if (bottom <= top) return;
+    const bounds = input.getBoundingClientRect();
+    // Keep the focused control visible as the software keyboard resizes the view.
+    if (bounds.height > bottom - top || bounds.top < top) root.scrollTop += bounds.top - top;
+    else if (bounds.bottom > bottom) root.scrollTop += bounds.bottom - bottom;
+  }
   private render(): void {
     if (this.closed) return;
     this.removeChild(this.screen);
@@ -260,6 +305,8 @@ export class ShelfView extends ItemView {
     this.addChild(this.screen);
     const root = this.contentEl;
     root.empty();
+    root.scrollTop = 0;
+    root.removeClass('gs-input-room');
     root.addClass('gs-root');
     this.libraryResults = null;
     this.screen.registerDomEvent(root, 'keydown', (event) => {

@@ -1,0 +1,4760 @@
+{
+  "date": "2026-11-18T00:46:29.594Z",
+  "nativeMobile": false,
+  "layouts": [
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "library",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "detail",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "manual",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "offline",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "library",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "detail",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "manual",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "offline",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "credential-guide",
+      "width": 351,
+      "height": 768,
+      "overflowX": "auto",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "settings",
+      "width": 375,
+      "height": 768,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "library",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "detail",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "manual",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "offline",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "library",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "detail",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "manual",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "offline",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "library",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "detail",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "manual",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "offline",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "library",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "detail",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "manual",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "offline",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "library",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "detail",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "manual",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "offline",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "credential-guide",
+      "width": 560,
+      "height": 963.046875,
+      "overflowX": "visible",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "settings",
+      "width": 467.59375,
+      "height": 961.0468139648438,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "library",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "detail",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "manual",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "offline",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "library",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "detail",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "manual",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "offline",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "library",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "detail",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "manual",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "offline",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "library",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "detail",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "manual",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "offline",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "library",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "detail",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "manual",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "offline",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "credential-guide",
+      "width": 351,
+      "height": 768.0000610351562,
+      "overflowX": "auto",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "settings",
+      "width": 375,
+      "height": 768,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "library",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "detail",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "manual",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "offline",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "library",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "detail",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "manual",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "offline",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "library",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "detail",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "manual",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "offline",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "library",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "detail",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "manual",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "offline",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "library",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "detail",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "manual",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "offline",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "credential-guide",
+      "width": 560,
+      "height": 963.046875,
+      "overflowX": "visible",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "settings",
+      "width": 467.59375,
+      "height": 961.046875,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "library",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "detail",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "manual",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "offline",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "library",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "detail",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "manual",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "offline",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "library",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "detail",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "manual",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "offline",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "library",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "detail",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "manual",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "offline",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "library",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "detail",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "manual",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "offline",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "credential-guide",
+      "width": 351,
+      "height": 768,
+      "overflowX": "auto",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "settings",
+      "width": 375,
+      "height": 768,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "library",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "detail",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "manual",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "offline",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "library",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "detail",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "manual",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "offline",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "library",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "detail",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "manual",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "offline",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "library",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "detail",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "manual",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "offline",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "library",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "detail",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "manual",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "offline",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "credential-guide",
+      "width": 560,
+      "height": 963.046875,
+      "overflowX": "visible",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "settings",
+      "width": 467.59375,
+      "height": 961.046875,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "library",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "detail",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "manual",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "offline",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "library",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "detail",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "manual",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "offline",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "library",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "detail",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "manual",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "offline",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "library",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "detail",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "manual",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "offline",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "library",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "detail",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "manual",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "offline",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "credential-guide",
+      "width": 351,
+      "height": 767.9999389648438,
+      "overflowX": "auto",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "settings",
+      "width": 375,
+      "height": 768,
+      "overflowX": "hidden",
+      "horizontalOverflow": 19,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "library",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "detail",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "manual",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "offline",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "library",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "detail",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "manual",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "offline",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "library",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "detail",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "manual",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "offline",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "library",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "detail",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "manual",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "offline",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "library",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "detail",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "manual",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "offline",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "credential-guide",
+      "width": 560,
+      "height": 963.046875,
+      "overflowX": "visible",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "settings",
+      "width": 467.59375,
+      "height": 961.046875,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "library",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "detail",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "manual",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "offline",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "library",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "detail",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "manual",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "offline",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "library",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "detail",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "manual",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "offline",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "library",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "detail",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "manual",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "offline",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "library",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "detail",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "manual",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "offline",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "credential-guide",
+      "width": 351,
+      "height": 768,
+      "overflowX": "auto",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "settings",
+      "width": 375,
+      "height": 768,
+      "overflowX": "hidden",
+      "horizontalOverflow": 51,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "library",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "detail",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "manual",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "offline",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "library",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "detail",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "manual",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "offline",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "library",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "detail",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "manual",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "offline",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "library",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "detail",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "manual",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "offline",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "library",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "detail",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "manual",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "offline",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "credential-guide",
+      "width": 560,
+      "height": 963.046875,
+      "overflowX": "visible",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "settings",
+      "width": 467.59375,
+      "height": 961.0468139648438,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "library",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "detail",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "manual",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "offline",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "library",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "detail",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "manual",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "offline",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "library",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "detail",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "manual",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "offline",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "library",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "detail",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "manual",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        320,
+        568
+      ],
+      "surface": "offline",
+      "width": 320,
+      "height": 472,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "library",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "detail",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "manual",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "offline",
+      "width": 375,
+      "height": 716,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "credential-guide",
+      "width": 351,
+      "height": 768,
+      "overflowX": "auto",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "surface": "settings",
+      "width": 375,
+      "height": 768,
+      "overflowX": "hidden",
+      "horizontalOverflow": 119,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "library",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "detail",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "manual",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "offline",
+      "width": 390,
+      "height": 748,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "library",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "detail",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "manual",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        430,
+        932
+      ],
+      "surface": "offline",
+      "width": 430,
+      "height": 836,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "library",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "detail",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "manual",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        507,
+        744
+      ],
+      "surface": "offline",
+      "width": 507,
+      "height": 648,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "library",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "detail",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "manual",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        600,
+        960
+      ],
+      "surface": "offline",
+      "width": 600,
+      "height": 824,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "library",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "detail",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "manual",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "offline",
+      "width": 744,
+      "height": 997,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "credential-guide",
+      "width": 560,
+      "height": 963.046875,
+      "overflowX": "visible",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        744,
+        1133
+      ],
+      "surface": "settings",
+      "width": 467.59375,
+      "height": 961.046875,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "library",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "detail",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "manual",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        812,
+        375
+      ],
+      "surface": "offline",
+      "width": 812,
+      "height": 279,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "library",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "detail",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "manual",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        1024,
+        768
+      ],
+      "surface": "offline",
+      "width": 1024,
+      "height": 632,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "library",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "detail",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "manual",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        1133,
+        744
+      ],
+      "surface": "offline",
+      "width": 1133,
+      "height": 608,
+      "overflowX": "hidden",
+      "horizontalOverflow": 0,
+      "issues": []
+    }
+  ],
+  "keyboards": [
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "keyboard": 344,
+      "selector": ".gs-title-input",
+      "visible": true,
+      "bounds": {
+        "x": 16,
+        "y": 308.59375,
+        "width": 331,
+        "height": 44,
+        "top": 308.59375,
+        "right": 347,
+        "bottom": 352.59375,
+        "left": 16
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 375,
+        "height": 372,
+        "top": 96,
+        "right": 375,
+        "bottom": 468,
+        "left": 0
+      },
+      "coveredBy": "INPUT.gs-title-input"
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "keyboard": 344,
+      "selector": ".gs-create-fields select",
+      "visible": true,
+      "bounds": {
+        "x": 16,
+        "y": 309.1875,
+        "width": 331,
+        "height": 44,
+        "top": 309.1875,
+        "right": 347,
+        "bottom": 353.1875,
+        "left": 16
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 375,
+        "height": 372,
+        "top": 96,
+        "right": 375,
+        "bottom": 468,
+        "left": 0
+      },
+      "coveredBy": "SELECT."
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        812,
+        375
+      ],
+      "keyboard": 170,
+      "selector": ".gs-title-input",
+      "visible": true,
+      "bounds": {
+        "x": 24,
+        "y": 114.59375,
+        "width": 752,
+        "height": 44,
+        "top": 114.59375,
+        "right": 776,
+        "bottom": 158.59375,
+        "left": 24
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 812,
+        "height": 109,
+        "top": 96,
+        "right": 812,
+        "bottom": 205,
+        "left": 0
+      },
+      "coveredBy": "INPUT.gs-title-input"
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        812,
+        375
+      ],
+      "keyboard": 170,
+      "selector": ".gs-create-fields select",
+      "visible": true,
+      "bounds": {
+        "x": 24,
+        "y": 115.1875,
+        "width": 370,
+        "height": 44,
+        "top": 115.1875,
+        "right": 394,
+        "bottom": 159.1875,
+        "left": 24
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 812,
+        "height": 109,
+        "top": 96,
+        "right": 812,
+        "bottom": 205,
+        "left": 0
+      },
+      "coveredBy": "SELECT."
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "keyboard": 344,
+      "selector": ".gs-title-input",
+      "visible": true,
+      "bounds": {
+        "x": 16,
+        "y": 308.59375,
+        "width": 331,
+        "height": 44,
+        "top": 308.59375,
+        "right": 347,
+        "bottom": 352.59375,
+        "left": 16
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 375,
+        "height": 372,
+        "top": 96,
+        "right": 375,
+        "bottom": 468,
+        "left": 0
+      },
+      "coveredBy": "INPUT.gs-title-input"
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        375,
+        812
+      ],
+      "keyboard": 344,
+      "selector": ".gs-create-fields select",
+      "visible": true,
+      "bounds": {
+        "x": 16,
+        "y": 309.1875,
+        "width": 331,
+        "height": 44,
+        "top": 309.1875,
+        "right": 347,
+        "bottom": 353.1875,
+        "left": 16
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 375,
+        "height": 372,
+        "top": 96,
+        "right": 375,
+        "bottom": 468,
+        "left": 0
+      },
+      "coveredBy": "SELECT."
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        812,
+        375
+      ],
+      "keyboard": 170,
+      "selector": ".gs-title-input",
+      "visible": true,
+      "bounds": {
+        "x": 24,
+        "y": 114.59375,
+        "width": 752,
+        "height": 44,
+        "top": 114.59375,
+        "right": 776,
+        "bottom": 158.59375,
+        "left": 24
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 812,
+        "height": 109,
+        "top": 96,
+        "right": 812,
+        "bottom": 205,
+        "left": 0
+      },
+      "coveredBy": "INPUT.gs-title-input"
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 1,
+      "viewport": [
+        812,
+        375
+      ],
+      "keyboard": 170,
+      "selector": ".gs-create-fields select",
+      "visible": true,
+      "bounds": {
+        "x": 24,
+        "y": 115.1875,
+        "width": 370,
+        "height": 44,
+        "top": 115.1875,
+        "right": 394,
+        "bottom": 159.1875,
+        "left": 24
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 812,
+        "height": 109,
+        "top": 96,
+        "right": 812,
+        "bottom": 205,
+        "left": 0
+      },
+      "coveredBy": "SELECT."
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "keyboard": 344,
+      "selector": ".gs-title-input",
+      "visible": true,
+      "bounds": {
+        "x": 16,
+        "y": 308.59375,
+        "width": 331,
+        "height": 44,
+        "top": 308.59375,
+        "right": 347,
+        "bottom": 352.59375,
+        "left": 16
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 375,
+        "height": 372,
+        "top": 96,
+        "right": 375,
+        "bottom": 468,
+        "left": 0
+      },
+      "coveredBy": "INPUT.gs-title-input"
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "keyboard": 344,
+      "selector": ".gs-create-fields select",
+      "visible": true,
+      "bounds": {
+        "x": 16,
+        "y": 309.1875,
+        "width": 331,
+        "height": 44,
+        "top": 309.1875,
+        "right": 347,
+        "bottom": 353.1875,
+        "left": 16
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 375,
+        "height": 372,
+        "top": 96,
+        "right": 375,
+        "bottom": 468,
+        "left": 0
+      },
+      "coveredBy": "SELECT."
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        812,
+        375
+      ],
+      "keyboard": 170,
+      "selector": ".gs-title-input",
+      "visible": true,
+      "bounds": {
+        "x": 24,
+        "y": 114.59375,
+        "width": 752,
+        "height": 44,
+        "top": 114.59375,
+        "right": 776,
+        "bottom": 158.59375,
+        "left": 24
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 812,
+        "height": 109,
+        "top": 96,
+        "right": 812,
+        "bottom": 205,
+        "left": 0
+      },
+      "coveredBy": "INPUT.gs-title-input"
+    },
+    {
+      "language": "ja",
+      "theme": "obsidian",
+      "scale": 1.5,
+      "viewport": [
+        812,
+        375
+      ],
+      "keyboard": 170,
+      "selector": ".gs-create-fields select",
+      "visible": true,
+      "bounds": {
+        "x": 24,
+        "y": 115.1875,
+        "width": 370,
+        "height": 44,
+        "top": 115.1875,
+        "right": 394,
+        "bottom": 159.1875,
+        "left": 24
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 812,
+        "height": 109,
+        "top": 96,
+        "right": 812,
+        "bottom": 205,
+        "left": 0
+      },
+      "coveredBy": "SELECT."
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "keyboard": 344,
+      "selector": ".gs-title-input",
+      "visible": true,
+      "bounds": {
+        "x": 16,
+        "y": 280.59375,
+        "width": 331,
+        "height": 44,
+        "top": 280.59375,
+        "right": 347,
+        "bottom": 324.59375,
+        "left": 16
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 375,
+        "height": 372,
+        "top": 96,
+        "right": 375,
+        "bottom": 468,
+        "left": 0
+      },
+      "coveredBy": "INPUT.gs-title-input"
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        375,
+        812
+      ],
+      "keyboard": 344,
+      "selector": ".gs-create-fields select",
+      "visible": true,
+      "bounds": {
+        "x": 16,
+        "y": 309.1875,
+        "width": 331,
+        "height": 44,
+        "top": 309.1875,
+        "right": 347,
+        "bottom": 353.1875,
+        "left": 16
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 375,
+        "height": 372,
+        "top": 96,
+        "right": 375,
+        "bottom": 468,
+        "left": 0
+      },
+      "coveredBy": "SELECT."
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        812,
+        375
+      ],
+      "keyboard": 170,
+      "selector": ".gs-title-input",
+      "visible": true,
+      "bounds": {
+        "x": 24,
+        "y": 114.59375,
+        "width": 752,
+        "height": 44,
+        "top": 114.59375,
+        "right": 776,
+        "bottom": 158.59375,
+        "left": 24
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 812,
+        "height": 109,
+        "top": 96,
+        "right": 812,
+        "bottom": 205,
+        "left": 0
+      },
+      "coveredBy": "INPUT.gs-title-input"
+    },
+    {
+      "language": "en",
+      "theme": "moonstone",
+      "scale": 1.5,
+      "viewport": [
+        812,
+        375
+      ],
+      "keyboard": 170,
+      "selector": ".gs-create-fields select",
+      "visible": true,
+      "bounds": {
+        "x": 24,
+        "y": 115.1875,
+        "width": 370,
+        "height": 44,
+        "top": 115.1875,
+        "right": 394,
+        "bottom": 159.1875,
+        "left": 24
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 812,
+        "height": 109,
+        "top": 96,
+        "right": 812,
+        "bottom": 205,
+        "left": 0
+      },
+      "coveredBy": "SELECT."
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "keyboard": 344,
+      "selector": ".gs-title-input",
+      "visible": true,
+      "bounds": {
+        "x": 16,
+        "y": 300.59375,
+        "width": 331,
+        "height": 44,
+        "top": 300.59375,
+        "right": 347,
+        "bottom": 344.59375,
+        "left": 16
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 375,
+        "height": 372,
+        "top": 96,
+        "right": 375,
+        "bottom": 468,
+        "left": 0
+      },
+      "coveredBy": "INPUT.gs-title-input"
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "keyboard": 344,
+      "selector": ".gs-create-fields select",
+      "visible": true,
+      "bounds": {
+        "x": 16,
+        "y": 301.1875,
+        "width": 331,
+        "height": 44,
+        "top": 301.1875,
+        "right": 347,
+        "bottom": 345.1875,
+        "left": 16
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 375,
+        "height": 372,
+        "top": 96,
+        "right": 375,
+        "bottom": 468,
+        "left": 0
+      },
+      "coveredBy": "SELECT."
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        812,
+        375
+      ],
+      "keyboard": 170,
+      "selector": ".gs-title-input",
+      "visible": true,
+      "bounds": {
+        "x": 24,
+        "y": 114.59375,
+        "width": 752,
+        "height": 44,
+        "top": 114.59375,
+        "right": 776,
+        "bottom": 158.59375,
+        "left": 24
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 812,
+        "height": 109,
+        "top": 96,
+        "right": 812,
+        "bottom": 205,
+        "left": 0
+      },
+      "coveredBy": "INPUT.gs-title-input"
+    },
+    {
+      "language": "ja",
+      "theme": "moonstone",
+      "scale": 2,
+      "viewport": [
+        812,
+        375
+      ],
+      "keyboard": 170,
+      "selector": ".gs-create-fields select",
+      "visible": true,
+      "bounds": {
+        "x": 24,
+        "y": 115.1875,
+        "width": 370,
+        "height": 44,
+        "top": 115.1875,
+        "right": 394,
+        "bottom": 159.1875,
+        "left": 24
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 812,
+        "height": 109,
+        "top": 96,
+        "right": 812,
+        "bottom": 205,
+        "left": 0
+      },
+      "coveredBy": "SELECT."
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "keyboard": 344,
+      "selector": ".gs-title-input",
+      "visible": true,
+      "bounds": {
+        "x": 16,
+        "y": 335.59375,
+        "width": 331,
+        "height": 44,
+        "top": 335.59375,
+        "right": 347,
+        "bottom": 379.59375,
+        "left": 16
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 375,
+        "height": 372,
+        "top": 96,
+        "right": 375,
+        "bottom": 468,
+        "left": 0
+      },
+      "coveredBy": "INPUT.gs-title-input"
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        375,
+        812
+      ],
+      "keyboard": 344,
+      "selector": ".gs-create-fields select",
+      "visible": true,
+      "bounds": {
+        "x": 16,
+        "y": 304.1875,
+        "width": 331,
+        "height": 44,
+        "top": 304.1875,
+        "right": 347,
+        "bottom": 348.1875,
+        "left": 16
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 375,
+        "height": 372,
+        "top": 96,
+        "right": 375,
+        "bottom": 468,
+        "left": 0
+      },
+      "coveredBy": "SELECT."
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        812,
+        375
+      ],
+      "keyboard": 170,
+      "selector": ".gs-title-input",
+      "visible": true,
+      "bounds": {
+        "x": 24,
+        "y": 114.59375,
+        "width": 752,
+        "height": 44,
+        "top": 114.59375,
+        "right": 776,
+        "bottom": 158.59375,
+        "left": 24
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 812,
+        "height": 109,
+        "top": 96,
+        "right": 812,
+        "bottom": 205,
+        "left": 0
+      },
+      "coveredBy": "INPUT.gs-title-input"
+    },
+    {
+      "language": "en",
+      "theme": "obsidian",
+      "scale": 2,
+      "viewport": [
+        812,
+        375
+      ],
+      "keyboard": 170,
+      "selector": ".gs-create-fields select",
+      "visible": true,
+      "bounds": {
+        "x": 24,
+        "y": 115.1875,
+        "width": 370,
+        "height": 44,
+        "top": 115.1875,
+        "right": 394,
+        "bottom": 159.1875,
+        "left": 24
+      },
+      "pane": {
+        "x": 0,
+        "y": 96,
+        "width": 812,
+        "height": 109,
+        "top": 96,
+        "right": 812,
+        "bottom": 205,
+        "left": 0
+      },
+      "coveredBy": "SELECT."
+    }
+  ]
+}

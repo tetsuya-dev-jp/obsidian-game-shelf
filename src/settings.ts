@@ -60,6 +60,7 @@ export class ShelfSettingsTab extends PluginSettingTab {
     private shelf: GameShelf,
   ) {
     super(app, shelf);
+    this.containerEl.addClass('gs-settings');
   }
   getSettingDefinitions(): SettingDefinitionItem[] {
     const t = this.shelf.t.bind(this.shelf);

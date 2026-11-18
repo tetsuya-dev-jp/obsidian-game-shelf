@@ -1,0 +1,248 @@
+{
+  "engine": "Linux WebKit",
+  "version": "27.2",
+  "nativeIOSWidgets": false,
+  "source": "Snapshot of actual Obsidian mobile DOM and styles",
+  "layouts": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "paneWidth": 320,
+      "overflow": 0,
+      "fields": [
+        {
+          "value": "",
+          "appearance": "none",
+          "width": 276,
+          "fieldWidth": 276,
+          "left": 16,
+          "right": 292,
+          "fieldLeft": 16,
+          "fieldRight": 292
+        },
+        {
+          "value": "2026-11-18",
+          "appearance": "none",
+          "width": 276,
+          "fieldWidth": 276,
+          "left": 16,
+          "right": 292,
+          "fieldLeft": 16,
+          "fieldRight": 292
+        }
+      ]
+    },
+    {
+      "viewport": [
+        375,
+        812
+      ],
+      "paneWidth": 375,
+      "overflow": 0,
+      "fields": [
+        {
+          "value": "",
+          "appearance": "none",
+          "width": 331,
+          "fieldWidth": 331,
+          "left": 16,
+          "right": 347,
+          "fieldLeft": 16,
+          "fieldRight": 347
+        },
+        {
+          "value": "2026-11-18",
+          "appearance": "none",
+          "width": 331,
+          "fieldWidth": 331,
+          "left": 16,
+          "right": 347,
+          "fieldLeft": 16,
+          "fieldRight": 347
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "paneWidth": 390,
+      "overflow": 0,
+      "fields": [
+        {
+          "value": "",
+          "appearance": "none",
+          "width": 346,
+          "fieldWidth": 346,
+          "left": 16,
+          "right": 362,
+          "fieldLeft": 16,
+          "fieldRight": 362
+        },
+        {
+          "value": "2026-11-18",
+          "appearance": "none",
+          "width": 346,
+          "fieldWidth": 346,
+          "left": 16,
+          "right": 362,
+          "fieldLeft": 16,
+          "fieldRight": 362
+        }
+      ]
+    },
+    {
+      "viewport": [
+        430,
+        932
+      ],
+      "paneWidth": 430,
+      "overflow": 0,
+      "fields": [
+        {
+          "value": "",
+          "appearance": "none",
+          "width": 386,
+          "fieldWidth": 386,
+          "left": 16,
+          "right": 402,
+          "fieldLeft": 16,
+          "fieldRight": 402
+        },
+        {
+          "value": "2026-11-18",
+          "appearance": "none",
+          "width": 386,
+          "fieldWidth": 386,
+          "left": 16,
+          "right": 402,
+          "fieldLeft": 16,
+          "fieldRight": 402
+        }
+      ]
+    },
+    {
+      "viewport": [
+        600,
+        960
+      ],
+      "paneWidth": 600,
+      "overflow": 0,
+      "fields": [
+        {
+          "value": "",
+          "appearance": "none",
+          "width": 272,
+          "fieldWidth": 272,
+          "left": 300,
+          "right": 572,
+          "fieldLeft": 300,
+          "fieldRight": 572
+        },
+        {
+          "value": "2026-11-18",
+          "appearance": "none",
+          "width": 272,
+          "fieldWidth": 272,
+          "left": 16,
+          "right": 288,
+          "fieldLeft": 16,
+          "fieldRight": 288
+        }
+      ]
+    },
+    {
+      "viewport": [
+        744,
+        1133
+      ],
+      "paneWidth": 744,
+      "overflow": 0,
+      "fields": [
+        {
+          "value": "",
+          "appearance": "none",
+          "width": 342,
+          "fieldWidth": 342,
+          "left": 378,
+          "right": 720,
+          "fieldLeft": 378,
+          "fieldRight": 720
+        },
+        {
+          "value": "2026-11-18",
+          "appearance": "none",
+          "width": 342,
+          "fieldWidth": 342,
+          "left": 24,
+          "right": 366,
+          "fieldLeft": 24,
+          "fieldRight": 366
+        }
+      ]
+    },
+    {
+      "viewport": [
+        812,
+        375
+      ],
+      "paneWidth": 812,
+      "overflow": 0,
+      "fields": [
+        {
+          "value": "",
+          "appearance": "none",
+          "width": 370,
+          "fieldWidth": 370,
+          "left": 406,
+          "right": 776,
+          "fieldLeft": 406,
+          "fieldRight": 776
+        },
+        {
+          "value": "2026-11-18",
+          "appearance": "none",
+          "width": 370,
+          "fieldWidth": 370,
+          "left": 24,
+          "right": 394,
+          "fieldLeft": 24,
+          "fieldRight": 394
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "paneWidth": 1024,
+      "overflow": 0,
+      "fields": [
+        {
+          "value": "",
+          "appearance": "none",
+          "width": 331,
+          "fieldWidth": 331,
+          "left": 657,
+          "right": 988,
+          "fieldLeft": 657,
+          "fieldRight": 988
+        },
+        {
+          "value": "2026-11-18",
+          "appearance": "none",
+          "width": 331,
+          "fieldWidth": 331,
+          "left": 657,
+          "right": 988,
+          "fieldLeft": 657,
+          "fieldRight": 988
+        }
+      ]
+    }
+  ]
+}
