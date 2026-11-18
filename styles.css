@@ -613,9 +613,6 @@
   font-size: 11px;
 }
 .gs-create-action {
-  position: sticky;
-  bottom: 0;
-  z-index: 2;
   padding: 12px 0;
   background: var(--background-secondary);
   border-top: 1px solid var(--background-modifier-border);
@@ -624,9 +621,8 @@
   min-height: max(38px, var(--gs-control-height, 0px));
   padding-inline: 20px;
 }
-.gs-input-room .gs-header,
-.gs-input-room .gs-create-action {
-  /* Short keyboard viewports need the space normally occupied by sticky actions. */
+.gs-input-room .gs-header {
+  /* Short keyboard viewports need the space normally occupied by the header. */
   position: static;
 }
 .gs-journal {

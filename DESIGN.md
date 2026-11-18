@@ -29,7 +29,7 @@ An Obsidian-native working library. The game covers provide personality; the int
 
 Search is submitted explicitly to avoid needless requests. Enter submits, arrow keys move result focus, Escape returns from detail where appropriate. Source failures offer retry and manual creation without losing the query. No automatic network on startup. State survives switching between library and discovery during a session. No silent overwrites, remote HTML insertion, or default hotkeys.
 
-The native view-content element is the only vertical scroller. The header stays visible with sticky positioning; focused inputs are revealed after keyboard and viewport changes, reserving space for sticky create actions. When sticky controls leave too little input space, they scroll normally until focus leaves or space returns. Narrow detail forms use one column; touch controls are at least 44px tall, with inputs at least 16px to avoid focus zoom on iOS. Mobile padding reserves Obsidian's floating navigation and safe area. Missing covers use a gamepad icon; titles remain in the adjacent text.
+The native view-content element is the only vertical scroller. The header stays visible with sticky positioning; focused inputs are revealed after keyboard and viewport changes. When the header leaves too little input space, it scrolls normally until focus leaves or space returns. The create action always follows the form in normal document flow so it cannot cover earlier fields. Narrow detail forms use one column; touch controls are at least 44px tall, with inputs at least 16px to avoid focus zoom on iOS. Mobile padding reserves Obsidian's floating navigation and safe area. Missing covers use a gamepad icon; titles remain in the adjacent text.
 
 ## Verification contract
 

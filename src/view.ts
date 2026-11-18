@@ -282,15 +282,12 @@ export class ShelfView extends ItemView {
       pane.bottom - parseFloat(root.win.getComputedStyle(root).paddingBottom),
       viewport ? viewport.offsetTop + viewport.height : pane.bottom,
     );
-    const actions = root.querySelector('.gs-create-action')?.getBoundingClientRect();
     const cramped = focused && bottom - pane.top < header.height +
-      (actions?.height ?? 0) + input.getBoundingClientRect().height + 24;
+      input.getBoundingClientRect().height + 24;
     root.toggleClass('gs-input-room', cramped);
     root.style.setProperty('--gs-header-height', cramped ? '0px' : `${header.height}px`);
     if (!focused) return;
     const top = Math.max(pane.top, cramped ? pane.top : header.bottom, viewport?.offsetTop ?? pane.top) + 12;
-    if (!cramped && actions && actions.height && actions.bottom > top && actions.top < bottom)
-      bottom = actions.top;
     bottom -= 12;
     if (bottom <= top) return;
     const bounds = input.getBoundingClientRect();

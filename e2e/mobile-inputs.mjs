@@ -14,7 +14,7 @@ async function until(expression) {
   }
   throw new Error(`Timed out: ${expression}`);
 }
-const report = { date: new Date().toISOString(), nativeMobile: false, keyboard: 'simulated Obsidian --keyboard-height', checks: [], dates: [] };
+const report = { date: new Date().toISOString(), nativeMobile: false, keyboard: 'simulated Obsidian --keyboard-height', checks: [], dates: [], createActions: [] };
 let saved;
 let filePath;
 let emulated = false;
@@ -110,6 +110,49 @@ try {
   await checkInput('.gs-title-input', 'manual');
   for (const label of ['プレイ状況', '自分の評価', '所有状況'])
     await checkSelect(`.gs-create-fields select[aria-label="${label}"]`);
+  for (const [width, height] of [[375, 812], [744, 1133], [840, 1280], [1024, 768]]) {
+    await c.call('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false });
+    for (const keyboardHeight of [0, 344]) {
+      await run(() => document.querySelector('.gs-title-input').focus({ preventScroll: true }));
+      await keyboard(keyboardHeight);
+      assert(await run(() => {
+        const input = document.querySelector('.gs-title-input'), root = document.querySelector('.gs-root');
+        const r = input.getBoundingClientRect();
+        return document.activeElement === input &&
+          r.top >= Math.max(root.getBoundingClientRect().top, root.querySelector('.gs-header').getBoundingClientRect().bottom) - 1 &&
+          r.bottom <= root.getBoundingClientRect().bottom - parseFloat(getComputedStyle(root).paddingBottom) + 1;
+      }), `Focused title must remain visible at ${width}×${height}, keyboard ${keyboardHeight}`);
+      for (const expanded of [false, true]) {
+        await run(expanded => { document.querySelector('.gs-note-preview').open = expanded; }, expanded);
+        await pause();
+        for (const fraction of [0, 0.5, 1]) {
+          await run(fraction => {
+            const root = document.querySelector('.gs-root');
+            root.scrollTop = (root.scrollHeight - root.clientHeight) * fraction;
+          }, fraction);
+          await pause();
+          const result = await run(() => {
+            const root = document.querySelector('.gs-root');
+            const action = root.querySelector('.gs-create-action').getBoundingClientRect();
+            const path = root.querySelector('.gs-target-path').getBoundingClientRect();
+            const button = root.querySelector('.gs-create-action button');
+            const r = button.getBoundingClientRect(), pane = root.getBoundingClientRect();
+            const top = Math.max(r.top, pane.top, root.querySelector('.gs-header').getBoundingClientRect().bottom);
+            const bottom = Math.min(r.bottom, pane.bottom - parseFloat(getComputedStyle(root).paddingBottom));
+            const visible = bottom > top + 1;
+            return { actionTop: action.top, precedingBottom: path.bottom, scrollTop: root.scrollTop,
+              visible, reachable: !visible || button.contains(document.elementFromPoint(r.left + r.width / 2, (top + bottom) / 2)) };
+          });
+          assert(result.actionTop >= result.precedingBottom - 1,
+            `Create action overlaps earlier form content: ${JSON.stringify({ width, height, keyboardHeight, expanded, fraction, ...result })}`);
+          assert(result.reachable, 'Visible create button must remain reachable');
+          report.createActions.push({ width, height, keyboardHeight, expanded, fraction, ...result });
+        }
+      }
+    }
+  }
+  await keyboard(0);
+  await c.call('Emulation.setDeviceMetricsOverride', { width: 375, height: 812, deviceScaleFactor: 1, mobile: false });
   filePath = await run(async () => {
     const p = app.plugins.plugins['game-shelf'];
     const result = await p.notes.manual({ title: 'Mobile input regression', status: 'backlog', rating: null, ownership: 'owned', groups: [], saveCover: false });
@@ -150,6 +193,7 @@ try {
   await checkInput('.gs-search-form input', 'Zelda');
   await writeFile(new URL('../docs/mobile-input-checks.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
   console.log(`PASS ${report.checks.length} focused inputs survive opening/closing the simulated keyboard`);
+  console.log(`PASS ${report.createActions.length} create actions stay after the form while scrolling`);
 } finally {
   await keyboard(0);
   if (saved) await run(async (saved, path) => {

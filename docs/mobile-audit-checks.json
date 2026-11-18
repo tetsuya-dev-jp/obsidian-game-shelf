@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-18T00:46:29.594Z",
+  "date": "2026-11-18T01:25:34.065Z",
   "nativeMobile": false,
   "layouts": [
     {
@@ -477,7 +477,7 @@
       ],
       "surface": "settings",
       "width": 467.59375,
-      "height": 961.0468139648438,
+      "height": 961.046875,
       "overflowX": "hidden",
       "horizontalOverflow": 0,
       "issues": []
@@ -792,7 +792,7 @@
       ],
       "surface": "credential-guide",
       "width": 351,
-      "height": 768.0000610351562,
+      "height": 768,
       "overflowX": "auto",
       "horizontalOverflow": 0,
       "issues": []
@@ -1137,7 +1137,7 @@
       ],
       "surface": "settings",
       "width": 467.59375,
-      "height": 961.046875,
+      "height": 961.0469360351562,
       "overflowX": "hidden",
       "horizontalOverflow": 0,
       "issues": []
@@ -2112,7 +2112,7 @@
       ],
       "surface": "credential-guide",
       "width": 351,
-      "height": 767.9999389648438,
+      "height": 768,
       "overflowX": "auto",
       "horizontalOverflow": 0,
       "issues": []
@@ -2787,7 +2787,7 @@
       ],
       "surface": "settings",
       "width": 375,
-      "height": 768,
+      "height": 767.9999389648438,
       "overflowX": "hidden",
       "horizontalOverflow": 51,
       "issues": []
@@ -3117,7 +3117,7 @@
       ],
       "surface": "settings",
       "width": 467.59375,
-      "height": 961.0468139648438,
+      "height": 961.046875,
       "overflowX": "hidden",
       "horizontalOverflow": 0,
       "issues": []
@@ -3447,7 +3447,7 @@
       ],
       "surface": "settings",
       "width": 375,
-      "height": 768,
+      "height": 768.0000610351562,
       "overflowX": "hidden",
       "horizontalOverflow": 119,
       "issues": []
@@ -3777,7 +3777,7 @@
       ],
       "surface": "settings",
       "width": 467.59375,
-      "height": 961.046875,
+      "height": 961.0469360351562,
       "overflowX": "hidden",
       "horizontalOverflow": 0,
       "issues": []
@@ -3977,12 +3977,12 @@
       "visible": true,
       "bounds": {
         "x": 16,
-        "y": 308.59375,
+        "y": 326.59375,
         "width": 331,
         "height": 44,
-        "top": 308.59375,
+        "top": 326.59375,
         "right": 347,
-        "bottom": 352.59375,
+        "bottom": 370.59375,
         "left": 16
       },
       "pane": {
@@ -4010,12 +4010,12 @@
       "visible": true,
       "bounds": {
         "x": 16,
-        "y": 309.1875,
+        "y": 378.1875,
         "width": 331,
         "height": 44,
-        "top": 309.1875,
+        "top": 378.1875,
         "right": 347,
-        "bottom": 353.1875,
+        "bottom": 422.1875,
         "left": 16
       },
       "pane": {
@@ -4109,12 +4109,12 @@
       "visible": true,
       "bounds": {
         "x": 16,
-        "y": 308.59375,
+        "y": 359.59375,
         "width": 331,
         "height": 44,
-        "top": 308.59375,
+        "top": 359.59375,
         "right": 347,
-        "bottom": 352.59375,
+        "bottom": 403.59375,
         "left": 16
       },
       "pane": {
@@ -4142,12 +4142,12 @@
       "visible": true,
       "bounds": {
         "x": 16,
-        "y": 309.1875,
+        "y": 378.1875,
         "width": 331,
         "height": 44,
-        "top": 309.1875,
+        "top": 378.1875,
         "right": 347,
-        "bottom": 353.1875,
+        "bottom": 422.1875,
         "left": 16
       },
       "pane": {
@@ -4241,12 +4241,12 @@
       "visible": true,
       "bounds": {
         "x": 16,
-        "y": 308.59375,
+        "y": 360.59375,
         "width": 331,
         "height": 44,
-        "top": 308.59375,
+        "top": 360.59375,
         "right": 347,
-        "bottom": 352.59375,
+        "bottom": 404.59375,
         "left": 16
       },
       "pane": {
@@ -4274,12 +4274,12 @@
       "visible": true,
       "bounds": {
         "x": 16,
-        "y": 309.1875,
+        "y": 378.1875,
         "width": 331,
         "height": 44,
-        "top": 309.1875,
+        "top": 378.1875,
         "right": 347,
-        "bottom": 353.1875,
+        "bottom": 422.1875,
         "left": 16
       },
       "pane": {
@@ -4373,12 +4373,12 @@
       "visible": true,
       "bounds": {
         "x": 16,
-        "y": 280.59375,
+        "y": 359.59375,
         "width": 331,
         "height": 44,
-        "top": 280.59375,
+        "top": 359.59375,
         "right": 347,
-        "bottom": 324.59375,
+        "bottom": 403.59375,
         "left": 16
       },
       "pane": {
@@ -4406,12 +4406,12 @@
       "visible": true,
       "bounds": {
         "x": 16,
-        "y": 309.1875,
+        "y": 378.1875,
         "width": 331,
         "height": 44,
-        "top": 309.1875,
+        "top": 378.1875,
         "right": 347,
-        "bottom": 353.1875,
+        "bottom": 422.1875,
         "left": 16
       },
       "pane": {
@@ -4505,12 +4505,12 @@
       "visible": true,
       "bounds": {
         "x": 16,
-        "y": 300.59375,
+        "y": 377.59375,
         "width": 331,
         "height": 44,
-        "top": 300.59375,
+        "top": 377.59375,
         "right": 347,
-        "bottom": 344.59375,
+        "bottom": 421.59375,
         "left": 16
       },
       "pane": {
@@ -4538,12 +4538,12 @@
       "visible": true,
       "bounds": {
         "x": 16,
-        "y": 301.1875,
+        "y": 378.1875,
         "width": 331,
         "height": 44,
-        "top": 301.1875,
+        "top": 378.1875,
         "right": 347,
-        "bottom": 345.1875,
+        "bottom": 422.1875,
         "left": 16
       },
       "pane": {
@@ -4637,12 +4637,12 @@
       "visible": true,
       "bounds": {
         "x": 16,
-        "y": 335.59375,
+        "y": 377.59375,
         "width": 331,
         "height": 44,
-        "top": 335.59375,
+        "top": 377.59375,
         "right": 347,
-        "bottom": 379.59375,
+        "bottom": 421.59375,
         "left": 16
       },
       "pane": {
@@ -4670,12 +4670,12 @@
       "visible": true,
       "bounds": {
         "x": 16,
-        "y": 304.1875,
+        "y": 378.1875,
         "width": 331,
         "height": 44,
-        "top": 304.1875,
+        "top": 378.1875,
         "right": 347,
-        "bottom": 348.1875,
+        "bottom": 422.1875,
         "left": 16
       },
       "pane": {

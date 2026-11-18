@@ -1,5 +1,29 @@
 # Verification
 
+## Version 1.1.3: create action follows the form (2026-11-18)
+
+The reported iPad screenshot showed the sticky create-note action covering
+earlier form controls while the keyboard was open. The action now follows
+the form in normal document flow; focused-field scrolling no longer reserves
+space for it. The conditional sticky header remains.
+
+The regression failed against 1.1.2: at 375px width, the action appeared at
+y=657 while the preceding path ended at y=729.67. The corrected build passes
+48 action-placement and hit-test cases at 375, 744, 840 and 1024px widths,
+with keyboard space on/off, preview collapsed/expanded and three scroll
+positions. Focused title visibility is also checked at those sizes. See
+[focused inputs and create actions](mobile-input-checks.json). The same
+48 action cases and eight input cases also pass on minimum-supported
+Obsidian 1.13.7; see [minimum-version checks](mobile-input-checks-min.json).
+
+The native host mobile audit passed 264 layouts and 24 keyboard cases.
+The existing 127-layout suite also passed, including actual creation, journal
+persistence and synthesized touch scrolling in both languages.
+All 57 unit tests, lint, types, build and release-file checks passed.
+[Independent static review](review-1.1.3.json) found no blocking issues.
+Tests use isolated desktop Obsidian with its mobile UI and simulated
+keyboard space; physical iPad/iPhone/Android keyboards remain untested.
+
 ## Version 1.1.2: mobile input and layout follow-up (2026-11-18)
 
 The [mobile audit](mobile-audit.md) records the reported iPhone 13 mini/iOS 27.2
